@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ProgressBar.IndicatorBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ProgressBar.Background" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ProgressBar.TextForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ProgressBar.OuterTextForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ProgressBar.RootBorderBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ProgressBar.PrimaryForeground" ResourceKey="Brush-Highlight" />
+</ResourceDictionary>

@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="AutoCompleteBox.PopupBoxShadow" ResourceKey="BoxShadow.Elevated" />
+	<StaticResource x:Key="AutoCompleteBox.PopupBackground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="AutoCompleteBox.PopupBorderBrush" ResourceKey="Brush-Border" />
+</ResourceDictionary>

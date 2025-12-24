@@ -1,0 +1,74 @@
+﻿<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+	<ControlTheme x:Key="{x:Type u:NumericUpDown2}" TargetType="{x:Type u:NumericUpDown2}">
+		<Setter Property="CornerRadius" Value="{DynamicResource NumericUpDown.CornerRadius}" />
+		<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.DefaultHeight}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:NumericUpDown2">
+				<DataValidationErrors>
+					<ButtonSpinner
+						Name="PART_Spinner"
+						MinWidth="0"
+						HorizontalContentAlignment="Stretch"
+						VerticalContentAlignment="Stretch"
+						AllowSpin="{TemplateBinding AllowSpin}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+						<Panel>
+							<TextBox
+								Name="PART_TextBox"
+								Height="{TemplateBinding Height}"
+								MinHeight="{TemplateBinding MinHeight}"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								AcceptsReturn="False"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								DataValidationErrors.Errors="{ReflectionBinding $parent[u:NumericUpDown2].(DataValidationErrors.Errors)}"
+								FontSize="{TemplateBinding FontSize}"
+								Foreground="{TemplateBinding Foreground}"
+								InnerLeftContent="{TemplateBinding InnerLeftContent}"
+								InnerRightContent="{TemplateBinding InnerRightContent}"
+								TextWrapping="NoWrap"
+								Theme="{DynamicResource TextBox-NonError}"
+								Watermark="{TemplateBinding Watermark}" />
+							<Panel
+								Name="PART_DragPanel"
+								HorizontalAlignment="Stretch"
+								VerticalAlignment="Stretch"
+								Background="Transparent"
+								Cursor="SizeAll" />
+							<Button
+								Name="PART_ClearButton"
+								Margin="0,0,8,0"
+								HorizontalAlignment="Right"
+								Command="{Binding $parent[u:NumericUpDown2].Clear}"
+								Focusable="False"
+								IsVisible="False"
+								Content="{DynamicResource IconButton.ClearData}"
+								Theme="{DynamicResource Button-InnerIcon}" />
+						</Panel>
+					</ButtonSpinner>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^.clearButton, ^.ClearButton">
+			<Style Selector="^[IsReadOnly=False]:focus /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+			<Style Selector="^[IsReadOnly=False]:pointerover /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.SmallHeight}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

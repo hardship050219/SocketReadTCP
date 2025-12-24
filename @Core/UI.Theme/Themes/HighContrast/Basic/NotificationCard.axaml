@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="NotificationCard.BorderBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="NotificationCard.Background" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="NotificationCard.TitleForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="NotificationCard.MessageForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="NotificationCard.LightBackground" ResourceKey="Brush-Window" />
+</ResourceDictionary>

@@ -1,0 +1,26 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="ZC.UI.Themes.DesertTheme">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="/Themes/HighContrast/_index.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+	<Color x:Key="Color-Window">#FFFAEF</Color>
+	<Color x:Key="Color-WindowText">#3D3D3D</Color>
+	<Color x:Key="Color-Hotlight">#1C5E75</Color>
+	<Color x:Key="Color-GrayText">#676767</Color>
+	<Color x:Key="Color-HighlightText">#FFF5E3</Color>
+	<Color x:Key="Color-Highlight">#903909</Color>
+	<Color x:Key="Color-ButtonText">#202020</Color>
+	<Color x:Key="Color-ButtonFace">#FFFAEF</Color>
+	<SolidColorBrush x:Key="Brush-Window" Color="{StaticResource Color-Window}" />
+	<SolidColorBrush x:Key="Brush-WindowText" Color="{StaticResource Color-WindowText}" />
+	<SolidColorBrush x:Key="Brush-Hotlight" Color="{StaticResource Color-Hotlight}" />
+	<SolidColorBrush x:Key="Brush-GrayText" Color="{StaticResource Color-GrayText}" />
+	<SolidColorBrush x:Key="Brush-HighlightText" Color="{StaticResource Color-HighlightText}" />
+	<SolidColorBrush x:Key="Brush-Highlight" Color="{StaticResource Color-Highlight}" />
+	<SolidColorBrush x:Key="Brush-ButtonText" Color="{StaticResource Color-ButtonText}" />
+	<SolidColorBrush x:Key="Brush-ButtonFace" Color="{StaticResource Color-ButtonFace}" />
+</ResourceDictionary>

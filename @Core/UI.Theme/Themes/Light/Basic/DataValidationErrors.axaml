@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="DataValidation.ErrorsForeground" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="DataValidation.ErrorsBackground" ResourceKey="Brush-DangerLight" />
+	<StaticResource x:Key="DataValidation.ErrorsBorderBrush" ResourceKey="Brush-DangerLight" />
+	<StaticResource x:Key="DataValidation.ErrorsPointerOverBackground" ResourceKey="Brush-DangerLightPointerover" />
+	<StaticResource x:Key="DataValidation.ErrorsPointerOverBorderBrush" ResourceKey="Brush-DangerLightPointerover" />
+	<StaticResource x:Key="DataValidation.ErrorsPressedBackground" ResourceKey="Brush-DangerLightActive" />
+	<StaticResource x:Key="DataValidation.ErrorsPressedBorderBrush" ResourceKey="Brush-DangerLightActive" />
+	<StaticResource x:Key="DataValidation.ErrorsSelectedBackground" ResourceKey="Brush-DangerLight" />
+	<StaticResource x:Key="DataValidation.ErrorsSelectedBorderBrush" ResourceKey="Brush-Danger" />
+</ResourceDictionary>

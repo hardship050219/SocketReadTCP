@@ -1,0 +1,46 @@
+﻿<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+	<ControlTheme x:Key="{x:Type u:UiOldView}" TargetType="{x:Type u:UiOldView}">
+		<Setter Property="Background" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window.DefaultForeground}" />
+		<Setter Property="FontSize" Value="{DynamicResource Default.FontSize}" />
+		<Setter Property="FontFamily" Value="{DynamicResource Default.FontFamily}" />
+		<Setter Property="DialogHost.IsModalStatusScope" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:UiOldView">
+				<Panel>
+					<Border Background="{TemplateBinding Background}" IsHitTestVisible="False" />
+					<Panel>
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							Margin="{TemplateBinding Padding}"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}" />
+						<Grid
+							Margin="{Binding $parent[u:UiOldWindow].TitleBarMargin}"
+							VerticalAlignment="Top"
+							ColumnDefinitions="Auto, *, Auto">
+							<ContentPresenter
+								Grid.Column="0"
+								IsVisible="{TemplateBinding IsTitleBarVisible}"
+								Content="{TemplateBinding LeftContent}" />
+							<ContentPresenter
+								Grid.Column="1"
+								IsVisible="{TemplateBinding IsTitleBarVisible}"
+								Content="{TemplateBinding TitleBarContent}" />
+							<ContentPresenter
+								Grid.Column="2"
+								IsVisible="{TemplateBinding IsTitleBarVisible}"
+								Content="{TemplateBinding RightContent}" />
+						</Grid>
+						<DialogHost Name="{x:Static u:UiOldView.PART_DialogHost}" IsModalStatusReporter="True" />
+					</Panel>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

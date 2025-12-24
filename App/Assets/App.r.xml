@@ -1,0 +1,12 @@
+<Resources
+	Namespace="R.App" ValueTags="Value,#CN,#EN,#JP"
+	UsingNamespaces="System;System.IO;Avalonia;">
+	<Name Type="string" Value="App" />
+	<Message Type="string">
+		<CN>Test Message</CN>
+		<EN>Test Message</EN>
+	</Message>
+	<!--	
+		Namespace.{Instance}.{Property}
+	-->
+</Resources>

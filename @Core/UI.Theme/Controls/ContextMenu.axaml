@@ -1,0 +1,42 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
+		<Setter Property="Background" Value="{DynamicResource Menu.FlyoutBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Menu.FlyoutBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource Menu.FlyoutBorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource Menu.FlyoutCornerRadius}" />
+		<Setter Property="MaxWidth" Value="{DynamicResource Menu.FlyoutMaxWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource Menu.FlyoutMinHeight}" />
+		<Setter Property="Padding" Value="{DynamicResource Menu.FlyoutPadding}" />
+		<Setter Property="Focusable" Value="True" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="FontSize" Value="{DynamicResource Menu.FlyoutFontSize}" />
+		<Setter Property="FontWeight" Value="{DynamicResource Menu.FlyoutFontWeight}" />
+		<Setter Property="WindowManagerAddShadowHint" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ContextMenu">
+				<Border
+					MinHeight="{TemplateBinding MinHeight}"
+					MaxWidth="{TemplateBinding MaxWidth}"
+					Margin="4"
+					Padding="{TemplateBinding Padding}"
+					HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					BoxShadow="{DynamicResource Menu.FlyoutBorderBoxShadow}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<ScrollViewer Theme="{DynamicResource MenuScrollViewer}" CornerRadius="{TemplateBinding CornerRadius}">
+						<ItemsPresenter
+							Name="PART_ItemsPresenter"
+							Grid.IsSharedSizeScope="True"
+							ItemsPanel="{TemplateBinding ItemsPanel}"
+							KeyboardNavigation.TabNavigation="Continue" />
+					</ScrollViewer>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

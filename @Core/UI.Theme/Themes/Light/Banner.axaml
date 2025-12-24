@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="BannerInformationBackground" ResourceKey="Brush-PrimaryLight" />
+	<StaticResource x:Key="BannerInformationBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="BannerSuccessBackground" ResourceKey="Brush-SuccessLight" />
+	<StaticResource x:Key="BannerSuccessBorderBrush" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="BannerWarningBackground" ResourceKey="Brush-WarningLight" />
+	<StaticResource x:Key="BannerWarningBorderBrush" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="BannerErrorBackground" ResourceKey="Brush-DangerLight" />
+	<StaticResource x:Key="BannerErrorBorderBrush" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="BannerCloseButtonForeground" ResourceKey="Brush-Text2" />
+	<SolidColorBrush x:Key="BannerBorderBrush" Color="Transparent" />
+</ResourceDictionary>

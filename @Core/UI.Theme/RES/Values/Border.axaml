@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<x:Double x:Key="Border-Spacing">0</x:Double> <!-- 描边间距 - 零 -->
+	<x:Double x:Key="Border-SpacingControl">1</x:Double> <!-- 描边间距 - 默认状态 -->
+	<x:Double x:Key="Border-SpacingControlFocus">1</x:Double> <!-- 描边间距 - focus 状态 -->
+	<Thickness x:Key="Border-Thickness">0</Thickness> <!-- 描边宽度 - 零 -->
+	<Thickness x:Key="Border-ThicknessControl">1</Thickness> <!-- 描边宽度 - 默认状态 -->
+	<Thickness x:Key="Border-ThicknessControlFocus">1</Thickness> <!-- 描边宽度 - focus 状态 -->
+	<CornerRadius x:Key="Border-RadiusExtraSmall">3</CornerRadius> <!-- 圆角 - 超小 -->
+	<x:Double x:Key="Border-RadiusSpacingSmall">3</x:Double> <!-- 半径 - 小 -->
+	<x:Double x:Key="Border-RadiusSpacingMedium">6</x:Double> <!-- 半径 - 中 -->
+	<x:Double x:Key="Border-RadiusSpacingLarge">12</x:Double> <!-- 半径 - 大 -->
+	<x:Double x:Key="Border-RadiusSpacingFull">9999</x:Double> <!-- 半径 - 全圆 -->
+	<CornerRadius x:Key="Border-RadiusSmall">3</CornerRadius> <!-- 圆角 - 小 -->
+	<CornerRadius x:Key="Border-RadiusMedium">6</CornerRadius> <!-- 圆角 - 中 -->
+	<CornerRadius x:Key="Border-RadiusLarge">12</CornerRadius> <!-- 圆角 - 大 -->
+	<CornerRadius x:Key="Border-RadiusFull">9999</CornerRadius> <!-- 圆角 - 全圆 -->
+</ResourceDictionary>

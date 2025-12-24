@@ -1,0 +1,321 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
+
+	xmlns:u="https://zit.com/ui"
+	xmlns:models="clr-namespace:ZC.UI.Models;assembly=ZC.Core.UI">
+	<Design.PreviewWith>
+		<StackPanel Height="300">
+			<u:TreeComboBox
+				Watermark="Please Select"
+				Width="300"
+				MaxHeight="200">
+				<u:TreeComboBoxItem Header="Option 1">
+					<u:TreeComboBoxItem Header="Inner Option 1" />
+					<u:TreeComboBoxItem Header="Inner Option 2" />
+				</u:TreeComboBoxItem>
+				<u:TreeComboBoxItem Header="Option 2" />
+			</u:TreeComboBox>
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<converters:MarginMultiplierConverter
+		x:Key="LeftMarginConverter"
+		Indent="20"
+		Left="True" />
+
+	<ControlTheme x:Key="{x:Type u:TreeComboBox}" TargetType="u:TreeComboBox">
+		<Setter Property="Padding" Value="{DynamicResource ComboBox.SelectorDefaultPadding}" />
+		<Setter Property="FocusAdorner" Value="{x:Null}" />
+		<Setter Property="Background" Value="{DynamicResource ComboBox.SelectorBackground}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ComboBox.SelectorCornerRadius}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ComboBox.SelectorBorderBrush}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="MinHeight" Value="{DynamicResource ComboBox.DefaultHeight}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:TreeComboBox">
+				<Grid MinWidth="{TemplateBinding MinHeight}" ColumnDefinitions="Auto, *, Auto, Auto">
+					<Border
+						Name="Background"
+						Grid.Column="0"
+						Grid.ColumnSpan="4"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}" />
+					<ContentPresenter
+						Grid.Column="0"
+						Margin="8,0,0,0"
+						VerticalAlignment="Center"
+						VerticalContentAlignment="Center"
+						Content="{TemplateBinding InnerLeftContent}"
+						Foreground="{DynamicResource TextBox.InnerForeground}"
+						IsVisible="{TemplateBinding InnerLeftContent,
+                                                    Converter={x:Static ObjectConverters.IsNotNull}}" />
+					<TextBlock
+						Name="PlaceholderTextBlock"
+						Grid.Column="1"
+						Margin="{TemplateBinding Padding}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						Foreground="{TemplateBinding Foreground}"
+						IsVisible="{TemplateBinding SelectionBoxItem,
+                                                    Converter={x:Static ObjectConverters.IsNull}}"
+						Opacity="0.3"
+						Text="{TemplateBinding Watermark}"
+						TextTrimming="CharacterEllipsis" />
+					<ContentPresenter
+						Grid.Column="1"
+						Margin="{TemplateBinding Padding}"
+						VerticalAlignment="Center"
+						VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+						Content="{TemplateBinding SelectionBoxItem}">
+						<ContentPresenter.ContentTemplate>
+							<MultiBinding Converter="{x:Static SelectionBoxTemplateConverter.Instance}">
+								<TemplateBinding Property="SelectedItemTemplate" />
+								<TemplateBinding Property="ItemTemplate" />
+							</MultiBinding>
+						</ContentPresenter.ContentTemplate>
+					</ContentPresenter>
+					<ContentPresenter
+						Grid.Column="2"
+						Margin="0,0,8,0"
+						VerticalAlignment="Center"
+						VerticalContentAlignment="Center"
+						Content="{TemplateBinding InnerRightContent}"
+						Foreground="{DynamicResource TextBox.InnerForeground}"
+						IsVisible="{TemplateBinding InnerRightContent,
+                                                    Converter={x:Static ObjectConverters.IsNotNull}}" />
+					<Button
+						Name="PART_ClearButton"
+						Grid.Column="3"
+						Margin="8 0"
+						Command="{Binding $parent[u:TreeComboBox].Clear}"
+						Content="{DynamicResource IconButton.ClearData}"
+						IsVisible="False"
+						Theme="{DynamicResource Button-InnerIcon}" />
+
+					<PathIcon
+						x:Name="DropDownGlyph"
+						Grid.Column="3"
+						Margin="8 0"
+						HorizontalAlignment="Right"
+						VerticalAlignment="Center"
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{DynamicResource ComboBox.Icon}"
+						Foreground="{DynamicResource ComboBox.IconDefaultForeground}"
+						IsHitTestVisible="True"
+						UseLayoutRounding="False" />
+
+					<Popup
+						Name="{x:Static PartNames.Popup}"
+						Grid.Column="0"
+						MaxHeight="{TemplateBinding MaxDropDownHeight}"
+						ClipToBounds="False"
+						InheritsTransform="True"
+						IsLightDismissEnabled="True"
+						IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+						PlacementTarget="Background"
+						WindowManagerAddShadowHint="False">
+						<Border
+							Name="PopupBorder"
+							MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+							Margin="{DynamicResource ComboBox.PopupBorderMargin}"
+							Padding="{DynamicResource ComboBox.PopupBorderPadding}"
+							Background="{DynamicResource ComboBox.PopupBackground}"
+							BorderBrush="{DynamicResource ComboBox.PopupBorderBrush}"
+							BorderThickness="{DynamicResource ComboBox.PopupBorderThickness}"
+							BoxShadow="{DynamicResource ComboBox.PopupBoxShadow}"
+							CornerRadius="{DynamicResource ComboBox.PopupBoxCornerRadius}">
+							<DockPanel LastChildFill="True">
+								<ContentPresenter
+									Name="PART_PopupHeader"
+									Margin="8,8,8,0"
+									Content="{TemplateBinding PopupInnerTopContent}"
+									DockPanel.Dock="Top"
+									IsVisible="{TemplateBinding PopupInnerTopContent,
+                                                                Converter={x:Static ObjectConverters.IsNotNull}}" />
+								<ContentPresenter
+									Name="PART_PopupFooter"
+									Margin="8,0,8,8"
+									Content="{TemplateBinding PopupInnerBottomContent}"
+									DockPanel.Dock="Bottom"
+									IsVisible="{TemplateBinding PopupInnerBottomContent,
+                                                                Converter={x:Static ObjectConverters.IsNotNull}}" />
+								<ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}">
+									<ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" />
+								</ScrollViewer>
+							</DockPanel>
+						</Border>
+					</Popup>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^.clearButton, ^.ClearButton">
+			<Style Selector="^:pointerover /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible"
+							Value="{Binding $parent[u:TreeComboBox].SelectionBoxItem, Converter={x:Static ObjectConverters.IsNotNull}}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ PathIcon#DropDownGlyph">
+				<Setter Property="IsVisible"
+							Value="{Binding $parent[u:TreeComboBox].SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource ComboBox.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource ComboBox.SmallHeight}" />
+		</Style>
+
+		<!--  Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource ComboBox.SelectorPointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ComboBox.SelectorPointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:pointerover /template/ PathIcon#DropDownGlyph">
+			<Setter Property="Foreground" Value="{DynamicResource ComboBox.IconPointeroverForeground}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource ComboBox.SelectorPressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource ComboBox.SelectorPressedBorderBrush}" />
+			<Style Selector="^ /template/ PathIcon#DropDownGlyph">
+				<Setter Property="Foreground" Value="{DynamicResource ComboBox.IconPressedForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:dropdownopen">
+			<Setter Property="BorderBrush" Value="{DynamicResource ComboBox.SelectorPressedBorderBrush}" />
+		</Style>
+
+		<!--  Disabled State  -->
+		<Style Selector="^:disabled">
+			<Setter Property="Background" Value="{DynamicResource ComboBox.SelectorDisabledBackground}" />
+			<Style Selector="^ /template/ ContentControl#ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource ComboBox.DisabledForeground}" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PlaceholderTextBlock">
+				<Setter Property="Foreground" Value="{DynamicResource ComboBox.DisabledForeground}" />
+			</Style>
+			<Style Selector="^ /template/ PathIcon#DropDownGlyph">
+				<Setter Property="Foreground" Value="{DynamicResource ComboBox.IconDisabledForeground}" />
+			</Style>
+		</Style>
+		<!--  Error State  -->
+		<Style Selector="^:error">
+			<Style Selector="^ /template/ Border#Background">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#Background">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#Background">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:focus /template/ Border#Background">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:TreeComboBoxItem}" TargetType="u:TreeComboBoxItem">
+		<Setter Property="Background" Value="{DynamicResource TreeView.ItemDefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource TreeView.ItemDefaultForeground}" />
+		<Setter Property="CornerRadius" Value="3" />
+		<Setter Property="MinHeight" Value="32" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:TreeComboBoxItem">
+				<StackPanel>
+					<Border
+						Name="PART_LayoutRoot"
+						MinHeight="{TemplateBinding MinHeight}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						TemplatedControl.IsTemplateFocusTarget="True">
+						<Grid
+							Name="{x:Static PartNames.Header}"
+							Margin="{TemplateBinding Level,
+                                                     Mode=OneWay,
+                                                     Converter={StaticResource LeftMarginConverter}}"
+							ColumnDefinitions="Auto, *">
+							<ToggleButton
+								Name="PART_ExpandCollapseChevron"
+								Grid.Column="0"
+								Padding="{DynamicResource TreeView.ItemIconMargin}"
+								Focusable="False"
+								IsChecked="{TemplateBinding IsExpanded,
+                                                            Mode=TwoWay}"
+								Theme="{DynamicResource ToggleButtonTreeViewItemIconButton}" />
+							<ContentPresenter
+								Name="{x:Static PartNames.HeaderPresenter}"
+								Grid.Column="1"
+								Margin="{TemplateBinding Padding}"
+								Padding="{DynamicResource TreeView.ItemPadding}"
+								HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalAlignment}"
+								Content="{TemplateBinding Header}"
+								ContentTemplate="{TemplateBinding HeaderTemplate}"
+								Focusable="False"
+								Foreground="{TemplateBinding Foreground}" />
+						</Grid>
+					</Border>
+					<ItemsPresenter
+						Name="{x:Static PartNames.ItemsPresenter}"
+						IsVisible="{TemplateBinding IsExpanded}"
+						ItemsPanel="{TemplateBinding ItemsPanel}" />
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{DynamicResource TreeView.ItemPointeroverBackground}" />
+		</Style>
+
+		<!--  Pressed state  -->
+		<Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
+			<Setter Property="Background" Value="{DynamicResource TreeView.ItemPressedBackground}" />
+		</Style>
+
+		<!--  Disabled state  -->
+		<Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
+			<Setter Property="Background" Value="{DynamicResource TreeView.ItemDisabledBackground}" />
+		</Style>
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_HeaderPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource TreeView.ItemDisabledForeground}" />
+		</Style>
+
+		<!--  Selected state  -->
+		<Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+			<Setter Property="Background" Value="{DynamicResource TreeView.ItemSelectedBackground}" />
+		</Style>
+		<Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource TreeView.ItemSelectedForeground}" />
+		</Style>
+		<Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Foreground" Value="{DynamicResource TreeView.ItemSelectedForeground}" />
+		</Style>
+
+		<!--  Disabled Selected state  -->
+		<Style Selector="^:disabled:selected /template/ Border#PART_LayoutRoot">
+			<Setter Property="Background" Value="{DynamicResource TreeView.ItemSelectedDisabledBackground}" />
+		</Style>
+
+		<Style Selector="^:empty /template/ ToggleButton#PART_ExpandCollapseChevron">
+			<Setter Property="Opacity" Value="0" />
+			<Setter Property="IsHitTestVisible" Value="False" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

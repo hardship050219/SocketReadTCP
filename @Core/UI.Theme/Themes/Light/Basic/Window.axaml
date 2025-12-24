@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Window.DefaultBackground" ResourceKey="Brush-Background0" />
+	<StaticResource x:Key="Window.DefaultForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="DefaultForeground" ResourceKey="Brush-Text0" />
+</ResourceDictionary>

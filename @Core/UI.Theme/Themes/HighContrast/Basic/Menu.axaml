@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Menu.FlyoutScrollViewerIconForeground" ResourceKey="Brush-WindowText" />
+	<!--  MenuFlyout  -->
+	<StaticResource x:Key="Menu.FlyoutBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="Menu.FlyoutBorderBrush" ResourceKey="Brush-WindowText" />
+	<!--  MenuItem  -->
+	<SolidColorBrush x:Key="Menu.ItemBackground" Color="Transparent" />
+	<StaticResource x:Key="Menu.ItemForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="Menu.ItemSeparatorBackground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="Menu.ItemPointeroverForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Menu.ItemPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Menu.ItemPressedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Menu.ItemInputGestureTextForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="Menu.ItemExpandIconForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="Menu.ItemExpandIconOpenForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Menu.ItemDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="Menu.ItemDisabledInputGestureTextForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="Menu.ItemDisabledExpandIconForeground" ResourceKey="Brush-GrayText" />
+</ResourceDictionary>

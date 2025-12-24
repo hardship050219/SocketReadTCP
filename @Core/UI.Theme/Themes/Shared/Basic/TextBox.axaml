@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TextBox.DefaultHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="TextBox.SmallHeight" ResourceKey="Height-ControlSmall" />
+	<StaticResource x:Key="TextBox.LargeHeight" ResourceKey="Height-ControlLarge" />
+	<StaticResource x:Key="TextBox.DefaultCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<Thickness x:Key="TextBox.InnerLeftContentPadding">0 0 8 0</Thickness>
+	<Thickness x:Key="TextBox.InnerRightContentPadding">8 0 0 0</Thickness>
+	<Thickness x:Key="TextBox.ContentPadding">8 0</Thickness>
+	<StaticResource x:Key="TextBox.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="TextBox.TextAreaContentPadding">12 5</Thickness>
+	<x:Double x:Key="TextBox.TextAreaHeight">90</x:Double>
+	<StaticResource x:Key="TextBox.PasswordBoxRevealButtonData" ResourceKey="Icon-EyeClosedSolid" />
+	<StaticResource x:Key="TextBox.PasswordBoxHideButtonData" ResourceKey="Icon-EyeOpened" />
+</ResourceDictionary>

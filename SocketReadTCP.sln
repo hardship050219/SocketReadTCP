@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Z.SLN", "-\Z.SLN.csproj", "{E97F5E65-9013-4D70-9944-983CC323A459}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "@Core", "@Core", "{9E58A88F-1364-49C9-AE73-946575E27F16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Theme", "@Core\UI.Theme\UI.Theme.csproj", "{FAC6CBCA-C0A3-4193-991B-A2802972FE0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "App\App.csproj", "{0A221E3C-6381-423C-BDE5-10F1383795B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E97F5E65-9013-4D70-9944-983CC323A459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97F5E65-9013-4D70-9944-983CC323A459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97F5E65-9013-4D70-9944-983CC323A459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97F5E65-9013-4D70-9944-983CC323A459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC6CBCA-C0A3-4193-991B-A2802972FE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC6CBCA-C0A3-4193-991B-A2802972FE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC6CBCA-C0A3-4193-991B-A2802972FE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC6CBCA-C0A3-4193-991B-A2802972FE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A221E3C-6381-423C-BDE5-10F1383795B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A221E3C-6381-423C-BDE5-10F1383795B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A221E3C-6381-423C-BDE5-10F1383795B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A221E3C-6381-423C-BDE5-10F1383795B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FAC6CBCA-C0A3-4193-991B-A2802972FE0F} = {9E58A88F-1364-49C9-AE73-946575E27F16}
+	EndGlobalSection
+EndGlobal

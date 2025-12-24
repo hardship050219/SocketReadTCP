@@ -1,0 +1,36 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="NavigationMenu.ItemExpandIconGlyph" ResourceKey="Icon-ChevronUp" />
+
+	<x:Double x:Key="NavigationMenuExpandWidth">260</x:Double>
+	<x:Double x:Key="NavigationMenuClosedWidth">80</x:Double>
+	<x:Double x:Key="NavigationMenuExpandIconWidth">16</x:Double>
+	<x:Double x:Key="NavigationMenuExpandIconHeight">16</x:Double>
+
+	<x:Double x:Key="NavigationMenu.ItemIconMinWidth">24</x:Double>
+	<x:Double x:Key="NavigationMenu.ItemExpandIconWidth">8</x:Double>
+	<x:Double x:Key="NavigationMenu.ItemExpandIconHeight">8</x:Double>
+	<Thickness x:Key="NavigationMenu.ItemIconMargin">0</Thickness>
+	<x:Double x:Key="NavigationMenuItemCollapsedHeight">0</x:Double>
+	<x:Double x:Key="NavigationMenuItemCollapsedOpacity">0</x:Double>
+
+	<x:Double x:Key="NavigationMenuSeparatorHeaderFontSize">12</x:Double>
+	<x:Double x:Key="NavigationMenuSeparatorBorderHeight">1</x:Double>
+	<x:Double x:Key="NavigationMenuSeparatorClosedWidth">32</x:Double>
+
+
+	<Thickness x:Key="NavigationMenuHeaderMargin">12</Thickness>
+	<Thickness x:Key="NavigationMenuIconMargin">0,0,8,0</Thickness>
+
+	<Thickness x:Key="NavigationMenu.ItemDefaultMargin">0,2</Thickness>
+	<Thickness x:Key="NavigationMenu.ItemDefaultPadding">8</Thickness>
+	<CornerRadius x:Key="NavigationMenu.ItemDefaultCornerRadius">6</CornerRadius>
+	<Thickness x:Key="NavigationMenuItemHeaderMargin">12,0</Thickness>
+	<Thickness x:Key="NavigationMenu.ItemExpandIconMargin">12,0</Thickness>
+	<Thickness x:Key="NavigationMenu.ItemFlyoutMargin">8</Thickness>
+
+	<Thickness x:Key="NavigationMenuSeparatorMargin">4,0</Thickness>
+	<Thickness x:Key="NavigationMenuSeparatorHeaderMargin">4,0</Thickness>
+	<Thickness x:Key="NavigationMenuSeparatorBorderMargin">0,2</Thickness>
+</ResourceDictionary>

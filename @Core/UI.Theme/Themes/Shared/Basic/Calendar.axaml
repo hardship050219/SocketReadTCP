@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Calendar.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="Calendar.CornerRadius" ResourceKey="Border-RadiusMedium" />
+	<GridLength x:Key="Calendar.ItemWeekDayNameHeight">40</GridLength>
+	<StaticResource x:Key="Calendar.ItemWeekDayNameFontWeight" ResourceKey="FontWeight-Bold" />
+	<StaticResource x:Key="Calendar.ItemPreviousIconGlyph" ResourceKey="Icon-ChevronLeft" />
+	<StaticResource x:Key="Calendar.ItemNextIconGlyph" ResourceKey="Icon-ChevronRight" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonSelectedFontWeight" ResourceKey="FontWeight-Bold" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<x:Double x:Key="Calendar.MinWidth">240</x:Double>
+	<x:Double x:Key="Calendar.MinHeight">250</x:Double>
+	<StaticResource x:Key="Calendar.ItemWeekDayNameFontSize" ResourceKey="FontSize-Small" />
+</ResourceDictionary>

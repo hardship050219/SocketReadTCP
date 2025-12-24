@@ -1,0 +1,212 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zit.com/ui">
+	<Design.PreviewWith>
+		<ThemeVariantScope RequestedThemeVariant="Dark">
+			<ReversibleStackPanel>
+				<ToastCard ShowIcon="False" ShowClose="False" />
+				<ToastCard />
+				<ToastCard>
+					Hello, Ursa!
+				</ToastCard>
+				<ToastCard UiMessageType="Success" Classes="Light">
+					<u:Toast>
+						Hello, Ursa!
+					</u:Toast>
+				</ToastCard>
+			</ReversibleStackPanel>
+		</ThemeVariantScope>
+	</Design.PreviewWith>
+
+
+
+	<ControlTheme x:Key="{x:Type ToastCard}" TargetType="ToastCard">
+		<Setter Property="UseLayoutRounding" Value="True" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ToastBorder.CardThickness}" />
+		<Setter Property="Background" Value="{DynamicResource ToastCardBackground}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ToastCardCornerRadius}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToastCard">
+				<LayoutTransformControl x:Name="PART_LayoutTransformControl" UseRenderTransform="True">
+					<Border
+						Margin="{DynamicResource ToastCardMargin}"
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+						<Border
+							x:Name="PART_RootBorder"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							MinHeight="{DynamicResource ToastCardMinHeight}"
+							Padding="{DynamicResource ToastCardPadding}"
+							VerticalAlignment="Top"
+							BoxShadow="{DynamicResource NotificationCard.BoxShadows}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+							<DockPanel>
+								<PathIcon
+									x:Name="ToastIcon"
+									Theme="{StaticResource PathIcon-Inner}"
+									Classes="Large"
+									Margin="{DynamicResource ToastCardIconMargin}"
+									VerticalAlignment="Top"
+									IsVisible="{TemplateBinding ShowIcon}"
+									Data="{DynamicResource NotificationCard.InformationIconPathData}" />
+								<ContentControl
+									x:Name="PART_Content"
+									Margin="{DynamicResource ToastCardContentMargin}"
+									VerticalContentAlignment="Center"
+									MaxWidth="{DynamicResource ToastCardContentMaxWidth}"
+									Content="{TemplateBinding Content}">
+									<ContentControl.DataTemplates>
+										<DataTemplate DataType="IUiToast">
+											<SelectableTextBlock
+												Foreground="{DynamicResource ToastCardContentForeground}"
+												FontWeight="{DynamicResource ToastCardContentFontWeight}"
+												Text="{Binding Content}"
+												TextWrapping="Wrap" />
+										</DataTemplate>
+										<DataTemplate DataType="x:String">
+											<SelectableTextBlock
+												Foreground="{DynamicResource ToastCardContentForeground}"
+												FontWeight="{DynamicResource ToastCardContentFontWeight}"
+												Text="{Binding}"
+												TextWrapping="Wrap" />
+										</DataTemplate>
+									</ContentControl.DataTemplates>
+								</ContentControl>
+								<Button
+									x:Name="PART_CloseButton"
+									Theme="{StaticResource OverlayCloseButton}"
+									VerticalAlignment="Top"
+									IsVisible="{TemplateBinding ShowClose}"
+									UiMessageCard.CloseOnClick="True" />
+							</DockPanel>
+						</Border>
+					</Border>
+				</LayoutTransformControl>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ LayoutTransformControl#PART_LayoutTransformControl">
+			<Style.Animations>
+				<Animation
+					Easing="QuadraticEaseIn"
+					FillMode="Forward"
+					Duration="0:0:0.3">
+					<KeyFrame Cue="0%">
+						<Setter Property="Opacity" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="Opacity" Value="1" />
+					</KeyFrame>
+					<KeyFrame KeySpline="0.22,0.57,0.02,1.2" Cue="0%">
+						<Setter Property="TranslateTransform.Y" Value="-100" />
+					</KeyFrame>
+					<KeyFrame KeySpline="0.22,0.57,0.02,1.2" Cue="100%">
+						<Setter Property="TranslateTransform.Y" Value="0" />
+					</KeyFrame>
+				</Animation>
+				<Animation
+					Easing="QuadraticEaseIn"
+					FillMode="Forward"
+					Duration="0:0:0.15">
+					<KeyFrame Cue="0%">
+						<Setter Property="ScaleTransform.ScaleY" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="70%">
+						<Setter Property="ScaleTransform.ScaleY" Value="0" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="ScaleTransform.ScaleY" Value="1" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+
+		<Style Selector="^[IsClosing=true] /template/ LayoutTransformControl#PART_LayoutTransformControl">
+			<Style.Animations>
+				<Animation
+					Easing="QuadraticEaseOut"
+					FillMode="Forward"
+					Duration="0:0:0.3">
+					<KeyFrame Cue="0%">
+						<Setter Property="Opacity" Value="1" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="Opacity" Value="0" />
+					</KeyFrame>
+					<KeyFrame KeySpline="0.22,0.57,0.02,1.2" Cue="0%">
+						<Setter Property="TranslateTransform.Y" Value="0" />
+					</KeyFrame>
+					<KeyFrame KeySpline="0.22,0.57,0.02,1.2" Cue="100%">
+						<Setter Property="TranslateTransform.Y" Value="-100" />
+					</KeyFrame>
+				</Animation>
+				<Animation
+					Easing="QuadraticEaseOut"
+					FillMode="Forward"
+					Duration="0:0:0.15">
+					<KeyFrame Cue="0%">
+						<Setter Property="ScaleTransform.ScaleY" Value="1" />
+					</KeyFrame>
+					<KeyFrame Cue="70%">
+						<Setter Property="ScaleTransform.ScaleY" Value="1" />
+					</KeyFrame>
+					<KeyFrame Cue="100%">
+						<Setter Property="ScaleTransform.ScaleY" Value="0" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+
+		<Style Selector="^[IsClosing=true]">
+			<Style.Animations>
+				<Animation
+					Easing="QuadraticEaseOut"
+					FillMode="Forward"
+					Duration="0:0:0.3">
+					<KeyFrame Cue="100%">
+						<Setter Property="IsClosed" Value="True" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+
+		<Style Selector="^:information /template/ PathIcon#ToastIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.InformationIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.InformationIconPathData}" />
+		</Style>
+		<Style Selector="^:success /template/ PathIcon#ToastIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.SuccessIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.SuccessIconPathData}" />
+		</Style>
+		<Style Selector="^:warning /template/ PathIcon#ToastIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.WarningIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.WarningIconPathData}" />
+		</Style>
+		<Style Selector="^:error /template/ PathIcon#ToastIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.ErrorIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.ErrorIconPathData}" />
+		</Style>
+
+		<Style Selector="^.Light">
+			<Setter Property="Background" Value="{DynamicResource NotificationCard.LightBackground}" />
+			<Style Selector="^:information /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightInformationBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightInformationBackground}" />
+			</Style>
+			<Style Selector="^:success /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightSuccessBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightSuccessBackground}" />
+			</Style>
+			<Style Selector="^:warning /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightWarningBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightWarningBackground}" />
+			</Style>
+			<Style Selector="^:error /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightErrorBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightErrorBackground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

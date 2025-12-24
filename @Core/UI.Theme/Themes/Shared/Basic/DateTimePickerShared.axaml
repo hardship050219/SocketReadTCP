@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="DateTimePicker.ButtonUpGlyph" ResourceKey="Icon-TriangleUp" />
+	<StaticResource x:Key="DateTimePicker.ButtonDownGlyph" ResourceKey="Icon-TriangleDown" />
+	<StaticResource x:Key="DateTimePicker.AcceptGlyph" ResourceKey="Icon-Tick" />
+	<StaticResource x:Key="DateTimePicker.DismissGlyph" ResourceKey="Icon-Close" />
+	<StaticResource x:Key="DateTimePicker.PopupCornerRadius" ResourceKey="Border-RadiusMedium" />
+	<x:Double x:Key="DateTimePicker.ListBoxItemHeight">36</x:Double>
+	<StaticResource x:Key="DateTimePicker.Flyout.Padding" ResourceKey="Thickness-None" />
+	<StaticResource x:Key="DateTimePicker.FlyoutBorderMargin" ResourceKey="Thickness-Tight" />
+	<StaticResource x:Key="DateTimePicker.ButtonSmallHeight" ResourceKey="FontSize-H3" />
+	<StaticResource x:Key="DateTimePicker.ButtonDefaultHeight" ResourceKey="FontSize-H1" />
+	<StaticResource x:Key="DateTimePicker.ButtonLargeHeight" ResourceKey="Height-ControlLarge" />
+	<StaticResource x:Key="DateTimePicker.ButtonBorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="DateTimePicker.ButtonCornerRadius" ResourceKey="Border-RadiusSmall" />
+</ResourceDictionary>

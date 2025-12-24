@@ -1,0 +1,169 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+	<ControlTheme x:Key="{x:Type u:UiOldWindow}" TargetType="u:UiOldWindow">
+		<Setter Property="Background" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window.DefaultForeground}" />
+		<Setter Property="FontSize" Value="{DynamicResource Default.FontSize}" />
+		<Setter Property="FontFamily" Value="{DynamicResource Default.FontFamily}" />
+		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+		<Setter Property="DialogHost.IsModalStatusScope" Value="True" />
+		<Setter Property="IsMinimizeButtonVisible" Value="{OnPlatform {x:True},macOS={x:False}}" />
+		<Setter Property="IsRestoreButtonVisible" Value="{OnPlatform {x:True},macOS={x:False}}" />
+		<Setter Property="IsCloseButtonVisible" Value="{OnPlatform {x:True},macOS={x:False}}" />
+		<Setter Property="SystemDecorations">
+			<OnPlatform>
+				<On Options="Default">
+					<SystemDecorations>Full</SystemDecorations>
+				</On>
+				<On Options="Linux">
+					<SystemDecorations>None</SystemDecorations>
+				</On>
+			</OnPlatform>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:UiOldWindow">
+				<Panel>
+					<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+					<Border
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="InnerBorderEdge"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						IsHitTestVisible="False" />
+					<Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent" />
+					<VisualLayerManager Padding="{TemplateBinding OffScreenMargin, Mode=OneWay}">
+						<VisualLayerManager.ChromeOverlayLayer>
+							<Panel Margin="{Binding $parent[u:UiOldWindow].OffScreenMargin}">
+								<u:TitleBar
+									IsTitleBarHitTestVisible="{Binding $parent[u:UiOldWindow].(u:TitleBar.IsTitleBarHitTestVisible)}"
+									Margin="{Binding $parent[u:UiOldWindow].TitleBarMargin}"
+									Content="{Binding $parent[u:UiOldWindow].TitleBarContent}"
+									IsTitleVisible="{Binding $parent[u:UiOldWindow].IsTitleBarVisible}"
+									LeftContent="{Binding $parent[u:UiOldWindow].LeftContent}"
+									RightContent="{Binding $parent[u:UiOldWindow].RightContent}" />
+								<VisualLayerManager>
+									<Panel>
+										<DialogHost
+											Name="{x:Static u:UiOldWindow.PART_DialogHost}"
+											IsModalStatusReporter="True"
+											IsTopLevel="True" />
+										<u:WindowResizer
+											HorizontalAlignment="Stretch"
+											VerticalAlignment="Stretch"
+											IsVisible="{Binding $parent[u:UiOldWindow].IsManagedResizerVisible}" />
+									</Panel>
+								</VisualLayerManager>
+							</Panel>
+						</VisualLayerManager.ChromeOverlayLayer>
+						<Panel>
+							<ContentPresenter
+								Name="PART_ContentPresenter"
+								Margin="{TemplateBinding Padding}"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}" />
+
+						</Panel>
+					</VisualLayerManager>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:TitleBar}" TargetType="u:TitleBar">
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:TitleBar">
+				<Panel Background="Transparent">
+					<Panel>
+						<u:WindowThumb
+							Background="{TemplateBinding Background}"
+							IsHitTestVisible="{TemplateBinding IsTitleBarHitTestVisible}" />
+						<Grid HorizontalAlignment="Stretch" ColumnDefinitions="Auto, *, Auto, Auto">
+							<ContentPresenter
+								Grid.Column="0"
+								Content="{TemplateBinding LeftContent}"
+								IsVisible="{TemplateBinding IsTitleVisible}" />
+							<ContentPresenter
+								Grid.Column="1"
+								Content="{TemplateBinding Content}"
+								IsVisible="{TemplateBinding IsTitleVisible}" />
+							<ContentPresenter
+								Grid.Column="2"
+								Content="{TemplateBinding RightContent}"
+								IsVisible="{TemplateBinding IsTitleVisible}" />
+							<u:CaptionButtons
+								Name="{x:Static u:TitleBar.PART_CaptionButtons}"
+								Grid.Column="3"
+								HorizontalAlignment="Right"
+								VerticalAlignment="Top"
+								DockPanel.Dock="Right"
+								Foreground="{TemplateBinding Foreground}" />
+						</Grid>
+					</Panel>
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:CaptionButtons}" TargetType="u:CaptionButtons">
+		<Setter Property="Foreground" Value="{DynamicResource CaptionButton.Foreground}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:CaptionButtons">
+				<StackPanel Orientation="Horizontal">
+					<Button Name="PART_FullScreenButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_FullScreenButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowExpandGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_MinimizeButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_MinimizeButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowMinimizeGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_RestoreButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_RestoreButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowMaximizeGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_CloseButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_CloseButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowCloseIconGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ Button#PART_CloseButton:pointerover">
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePointeroverBackground}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_CloseButton:pressed">
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePressedBackground}" />
+		</Style>
+
+		<Style Selector="^:maximized /template/ PathIcon#PART_RestoreButtonIcon">
+			<Setter Property="Data" Value="{StaticResource WindowRestoreGlyph}" />
+		</Style>
+		<Style Selector="^:fullscreen /template/ PathIcon#PART_FullScreenButtonIcon">
+			<Setter Property="Data" Value="{StaticResource WindowCollapseGlyph}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,34 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ComboBox.SelectorBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.SelectorPlaceHolderForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ComboBox.SelectorPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.SelectorFocusBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.SelectorPressedBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.SelectorDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.SelectorDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ComboBox.SelectorBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.SelectorPointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.SelectorFocusBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.SelectorPressedBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.IconDefaultForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.IconPointeroverForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.IconFocusForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.IconPressedForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.IconDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ComboBox.DisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ComboBox.PopupBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.PopupBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ComboBox.ItemForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ComboBox.ItemBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.ItemPointeroverForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.ItemPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.ItemFocusForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.ItemFocusBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.ItemPressedForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.ItemPressedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.ItemSelectedForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ComboBox.ItemSelectedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.ItemSelectedPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ComboBox.ItemDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ComboBox.ItemSelectedDisabledBackground" ResourceKey="Brush-Window" />
+</ResourceDictionary>

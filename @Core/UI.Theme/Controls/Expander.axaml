@@ -1,0 +1,152 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<StackPanel Margin="20" Spacing="20">
+			<TextBox>Hello</TextBox>
+			<Expander Header="Hello">Content</Expander>
+		</StackPanel>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="Expander.HeaderToggleButtonTheme" TargetType="ToggleButton">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<ContentPresenter
+					Padding="{TemplateBinding Padding}"
+					Background="{TemplateBinding Background}"
+					Content="{TemplateBinding Content}" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	<ControlTheme x:Key="{x:Type Expander}" TargetType="Expander">
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Expander.SeparatorBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Expander">
+				<DockPanel>
+					<LayoutTransformControl Name="Expander.HeaderLayoutContainer" Margin="{DynamicResource Expander.HeaderMargin}">
+						<ToggleButton
+							Name="Expander.Header"
+							Padding="{DynamicResource Expander.HeaderPadding}"
+							HorizontalAlignment="Stretch"
+							HorizontalContentAlignment="Stretch"
+							Background="{DynamicResource Expander.HeaderDefaultBackground}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+							IsEnabled="{TemplateBinding IsEnabled}"
+							TextElement.FontWeight="{DynamicResource Expander.HeaderFontWeight}"
+							TextElement.Foreground="{DynamicResource Expander.HeaderForeground}"
+							Theme="{StaticResource Expander.HeaderToggleButtonTheme}">
+							<Grid Background="Transparent" ColumnDefinitions="*, Auto">
+								<ContentPresenter
+									Grid.Column="0"
+									Content="{TemplateBinding Header}"
+									ContentTemplate="{TemplateBinding HeaderTemplate}" />
+								<PathIcon
+									Name="PART_PathIcon"
+									Grid.Column="1"
+									Theme="{DynamicResource PathIcon-Inner}"
+									Margin="{DynamicResource Expander.IconMargin}"
+									Data="{DynamicResource Expander.Icon}">
+									<PathIcon.Transitions>
+										<Transitions>
+											<TransformOperationsTransition Property="RenderTransform" Duration="0.1" />
+										</Transitions>
+									</PathIcon.Transitions>
+								</PathIcon>
+							</Grid>
+						</ToggleButton>
+					</LayoutTransformControl>
+					<LayoutTransformControl Name="ExpanderContentLayoutContainer" MinHeight="1">
+						<Border
+							Name="ExpanderContent"
+							MinHeight="2"
+							BorderBrush="{DynamicResource Expander.SeparatorBorderBrush}"
+							BorderThickness="0,0,0,1">
+							<ContentPresenter
+								Name="PART_ContentPresenter"
+								Margin="{DynamicResource Expander.ContentMargin}"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								Foreground="{DynamicResource Expander.ContentForeground}"
+								IsVisible="{TemplateBinding IsExpanded, Mode=TwoWay}" />
+						</Border>
+					</LayoutTransformControl>
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:expanded /template/ PathIcon#PART_PathIcon">
+			<Setter Property="RenderTransform" Value="rotate(180deg)" />
+		</Style>
+
+		<Style Selector="^:right">
+			<Style Selector="^ /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+				<Setter Property="LayoutTransform">
+					<RotateTransform Angle="-90" />
+				</Setter>
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+			</Style>
+			<Setter Property="HorizontalAlignment" Value="Left" />
+			<Setter Property="VerticalAlignment" Value="Stretch" />
+		</Style>
+
+		<Style Selector="^:left">
+			<Style Selector="^ /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+				<Setter Property="LayoutTransform">
+					<RotateTransform Angle="90" />
+				</Setter>
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+			</Style>
+			<Setter Property="HorizontalAlignment" Value="Stretch" />
+			<Setter Property="VerticalAlignment" Value="Stretch" />
+		</Style>
+
+		<Style Selector="^:left /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+			<Setter Property="DockPanel.Dock" Value="Right" />
+		</Style>
+		<Style Selector="^:up /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+			<Setter Property="DockPanel.Dock" Value="Bottom" />
+		</Style>
+		<Style Selector="^:right /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+			<Setter Property="DockPanel.Dock" Value="Left" />
+		</Style>
+		<Style Selector="^:down /template/ LayoutTransformControl#Expander.HeaderLayoutContainer">
+			<Setter Property="DockPanel.Dock" Value="Top" />
+		</Style>
+
+		<Style Selector="^:left /template/ Border#ExpanderContent">
+			<Setter Property="MinWidth" Value="2" />
+			<Setter Property="BorderThickness" Value="{DynamicResource Expander.LeftContentBorderThickness}" />
+		</Style>
+		<Style Selector="^:up /template/ Border#ExpanderContent">
+			<Setter Property="MinHeight" Value="2" />
+			<Setter Property="BorderThickness" Value="{DynamicResource Expander.UpContentBorderThickness}" />
+		</Style>
+		<Style Selector="^:right /template/ Border#ExpanderContent">
+			<Setter Property="MinWidth" Value="2" />
+			<Setter Property="BorderThickness" Value="{DynamicResource Expander.RightContentBorderThickness}" />
+		</Style>
+		<Style Selector="^:down /template/ Border#ExpanderContent">
+			<Setter Property="MinHeight" Value="2" />
+			<Setter Property="BorderThickness" Value="{DynamicResource Expander.DownContentBorderThickness}" />
+		</Style>
+
+		<Style Selector="^ /template/ ToggleButton#Expander.Header:pointerover">
+			<Setter Property="Background" Value="{DynamicResource Expander.HeaderHoverBackground}" />
+		</Style>
+		<Style Selector="^ /template/ ToggleButton#Expander.Header:pressed">
+			<Setter Property="Background" Value="{DynamicResource Expander.HeaderPressedBackground}" />
+		</Style>
+		<Style Selector="^ /template/ ToggleButton#Expander.Header:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource Expander.HeaderDisabledForeground}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

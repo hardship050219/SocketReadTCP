@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ButtonSpinner.IncreaseButtonGlyph" ResourceKey="Icon-ChevronUp" />
+	<StaticResource x:Key="ButtonSpinner.DecreaseButtonGlyph" ResourceKey="Icon-ChevronDown" />
+	<StaticResource x:Key="ButtonSpinner.ButtonGroupCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="ButtonSpinner.ButtonGroupBorderThickness" ResourceKey="Border-ThicknessControl" />
+</ResourceDictionary>

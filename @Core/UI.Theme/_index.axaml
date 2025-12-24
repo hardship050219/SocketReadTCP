@@ -1,0 +1,31 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<ResourceDictionary.MergedDictionaries>
+
+		<ResourceInclude Source="/ControlLibs/_index.axaml" />
+		<ResourceInclude Source="/Controls/_index.axaml" />
+
+		<ResourceInclude Source="/RES/Colors/Colors.Basic.axaml" />
+		<ResourceInclude Source="/RES/Colors/Colors.Status.axaml" />
+		<ResourceInclude Source="/RES/Colors/Colors.Background.axaml" />
+		<ResourceInclude Source="/RES/Colors/Colors.Forground.axaml" />
+		<ResourceInclude Source="/RES/Colors/Colors.Fill.axaml" />
+
+		<ResourceInclude Source="/RES/Fonts/FontFamily.axaml" />
+		<ResourceInclude Source="/RES/Fonts/FontSize.axaml" />
+		<ResourceInclude Source="/RES/Fonts/FontWeight.axaml" />
+
+		<ResourceInclude Source="/RES/Icons/_index.axaml" />
+		<ResourceInclude Source="/RES/Locale/zh-cn.axaml" />
+
+		<ResourceInclude Source="/RES/Values/Border.axaml" />
+		<ResourceInclude Source="/RES/Values/Sizing.axaml" />
+		<ResourceInclude Source="/RES/Values/Spacing.axaml" />
+		<ResourceInclude Source="/RES/Values/Thickness.axaml" />
+
+		<ResourceInclude Source="/Themes/Shared/_index.axaml" />
+		<ResourceInclude Source="/Themes/LightTheme.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

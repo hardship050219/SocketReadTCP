@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="PaginationFastBackwardGlyph" ResourceKey="Icon-DoubleChevronLeft" />
+	<StaticResource x:Key="PaginationFastForwardGlyph" ResourceKey="Icon-DoubleChevronRight" />
+	<StaticResource x:Key="PaginationBackwardGlyph" ResourceKey="Icon-ChevronLeft" />
+	<StaticResource x:Key="PaginationForwardGlyph" ResourceKey="Icon-ChevronRight" />
+	<StaticResource x:Key="PaginationMoreGlyph" ResourceKey="Icon-More" />
+</ResourceDictionary>

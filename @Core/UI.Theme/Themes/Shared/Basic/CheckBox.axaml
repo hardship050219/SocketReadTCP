@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="CheckBoxFontSize" ResourceKey="FontSize-Normal" />
+	<x:Double x:Key="CheckBox.BoxWidth">16</x:Double>
+	<x:Double x:Key="CheckBox.BoxHeight">16</x:Double>
+	<Thickness x:Key="CheckBox.BoxMargin">0 2 0 0</Thickness>
+	<Thickness x:Key="CheckBox.ContentMargin">8 0 0 0</Thickness>
+	<x:Double x:Key="CheckBox.BoxGlyphWidth">16</x:Double>
+	<x:Double x:Key="CheckBox.BoxGlyphHeight">16</x:Double>
+	<StaticResource x:Key="CheckBox.BoxCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="CheckBox.BoxBorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="CheckBox.CheckGlyph" ResourceKey="Icon-CheckBoxTick" />
+	<StaticResource x:Key="CheckBox.IndeterminateGlyph" ResourceKey="Icon-CheckBoxIndeterminate" />
+	<StaticResource x:Key="CheckBox.BorderCardThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="CheckBox.CardPadding">16 12</Thickness>
+	<StaticResource x:Key="CheckBox.CardCornerRadius" ResourceKey="Border-RadiusSmall" />
+</ResourceDictionary>

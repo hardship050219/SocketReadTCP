@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="ToggleSwitch.DefaultBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedDefaultBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedPressedBackground" ResourceKey="Brush-Fill2" />
+	<SolidColorBrush x:Key="ToggleSwitch.ContainerUnCheckedDisabledBackground" Color="Transparent" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedDisabledBorderBrush" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedDefaultBackground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedPointeroverBackground" ResourceKey="Brush-SuccessPointerover" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedPressedBackground" ResourceKey="Brush-SuccessActive" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedDisabledBackground" ResourceKey="Brush-SuccessDisabled" />
+	<StaticResource x:Key="ToggleSwitch-Simple.ContainerUnCheckedForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="ToggleSwitch-Simple.ContainerCheckedForeground" ResourceKey="Color-White" />
+	<BoxShadows x:Key="ToggleSwitch.IndicatorBoxShadow">0 4 6 0 #1A000000, 0 0 1 0 #4D000000</BoxShadows>
+</ResourceDictionary>

@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Thickness x:Key="Thickness-None">0</Thickness> <!-- 宽度 - 零 -->
+	<Thickness x:Key="Thickness-SuperTight">2</Thickness> <!-- 宽度 - 极紧凑 -->
+	<Thickness x:Key="Thickness-ExtraTight">4</Thickness> <!-- 宽度 - 超紧凑 -->
+	<Thickness x:Key="Thickness-Tight">8</Thickness> <!-- 宽度 - 紧凑 -->
+	<Thickness x:Key="Thickness-BaseTight">12</Thickness> <!-- 宽度 - 偏紧凑 -->
+	<Thickness x:Key="Thickness-Base">16</Thickness> <!-- 宽度 - 默认 -->
+	<Thickness x:Key="Thickness-BaseLoose">20</Thickness> <!-- 宽度 - 偏宽松 -->
+	<Thickness x:Key="Thickness-Loose">24</Thickness> <!-- 宽度 - 宽松 -->
+	<Thickness x:Key="Thickness-ExtraLoose">32</Thickness> <!-- 宽度 - 超宽松 -->
+	<Thickness x:Key="Thickness-SuperLoose">40</Thickness> <!-- 宽度 - 极宽松 -->
+</ResourceDictionary>

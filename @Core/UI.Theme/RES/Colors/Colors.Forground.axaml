@@ -1,0 +1,35 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- 主前景色（正文、主要图标） -->
+	<Color x:Key="FgColor-Primary">#111827</Color>
+	<SolidColorBrush x:Key="Foreground.PrimaryBrush" Color="{StaticResource FgColor-Primary}" />
+
+	<!-- 次前景色（副标题、次要图标） -->
+	<Color x:Key="FgColor-Secondary">#374151</Color>
+	<SolidColorBrush x:Key="Foreground.SecondaryBrush" Color="{StaticResource FgColor-Secondary}" />
+
+	<!-- 弱化前景色（说明文字、占位符） -->
+	<Color x:Key="FgColor-Muted">#6B7280</Color>
+	<SolidColorBrush x:Key="Foreground.MutedBrush" Color="{StaticResource FgColor-Muted}" />
+
+	<!-- 禁用前景色 -->
+	<Color x:Key="FgColor-Disabled">#9CA3AF</Color>
+	<SolidColorBrush x:Key="Foreground.DisabledBrush" Color="{StaticResource FgColor-Disabled}" />
+
+	<!-- 高亮前景色（链接、强调文字） -->
+	<Color x:Key="FgColor-Highlight">#2563EB</Color>
+	<SolidColorBrush x:Key="Foreground.HighlightBrush" Color="{StaticResource FgColor-Highlight}" />
+
+	<!-- 前景色阶梯（50~950） -->
+	<Color x:Key="BgColor-50">#F9FAFB</Color>
+	<Color x:Key="BgColor-100">#F3F4F6</Color>
+	<Color x:Key="BgColor-200">#E5E7EB</Color>
+	<Color x:Key="BgColor-300">#D1D5DB</Color>
+	<Color x:Key="BgColor-400">#9CA3AF</Color>
+	<Color x:Key="BgColor-500">#6B7280</Color>
+	<Color x:Key="BgColor-600">#4B5563</Color>
+	<Color x:Key="BgColor-700">#374151</Color>
+	<Color x:Key="BgColor-800">#1F2937</Color>
+	<Color x:Key="BgColor-900">#111827</Color>
+	<Color x:Key="BgColor-950">#030712</Color>
+</ResourceDictionary>

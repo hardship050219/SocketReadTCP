@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="DateTimePicker.ListItemBackground" Color="Transparent" />
+	<StaticResource x:Key="DateTimePicker.PopupBackground" ResourceKey="Brush-Background3" />
+	<SolidColorBrush x:Key="DateTimePicker.PopupBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPointeroverForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPressedForeground" ResourceKey="Brush-Text0" />
+	<SolidColorBrush x:Key="DateTimePicker.FlyoutButtonBackground" Color="Transparent" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPressedBackground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="DateTimePicker.SeparatorBackground" ResourceKey="Brush-Border" />
+	<SolidColorBrush x:Key="DateTimePicker.ButtonBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="DateTimePicker.ButtonBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="DateTimePicker.ButtonForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="DateTimePicker.IconForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="DateTimePicker.EmptyForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="DateTimePicker.ButtonPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<SolidColorBrush x:Key="DateTimePicker.ButtonPointeroverBorderBrush" Color="Transparent" />
+	<SolidColorBrush x:Key="DateTimePicker.ButtonDisabledBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="DateTimePicker.ButtonDisabledBackground" ResourceKey="Brush-DisabledFill" />
+	<StaticResource x:Key="DateTimePicker.ButtonDisabledIconForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="DateTimePicker.FlyoutBoxShadow" ResourceKey="BoxShadow.Elevated" />
+</ResourceDictionary>

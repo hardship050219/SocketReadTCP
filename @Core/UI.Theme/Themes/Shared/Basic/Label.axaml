@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Label.TagBorderThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="Label.TagSmallPadding">8 0</Thickness>
+	<Thickness x:Key="Label.TagLargePadding">8 0</Thickness>
+	<x:Double x:Key="Label.TagSmallHeight">20</x:Double>
+	<x:Double x:Key="Label.TagLargeHeight">24</x:Double>
+	<StaticResource x:Key="Label.TagFontSize" ResourceKey="FontSize-Small" />
+	<StaticResource x:Key="Label.TagFontWeight" ResourceKey="FontWeight-Normal" />
+	<StaticResource x:Key="Label.TagSquareCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="Label.TagCircleCornerRadius" ResourceKey="Border-RadiusFull" />
+</ResourceDictionary>

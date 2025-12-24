@@ -1,0 +1,47 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="AdornerLayer.axaml" />
+		<ResourceInclude Source="AutoCompleteBox.axaml" />
+		<ResourceInclude Source="Border.axaml" />
+		<ResourceInclude Source="Button.axaml" />
+		<ResourceInclude Source="ButtonSpinner.axaml" />
+		<ResourceInclude Source="Calendar.axaml" />
+		<ResourceInclude Source="CalendarDatePicker.axaml" />
+		<ResourceInclude Source="CaptionButtons.axaml" />
+		<ResourceInclude Source="Carousel.axaml" />
+		<ResourceInclude Source="CheckBox.axaml" />
+		<ResourceInclude Source="ComboBox.axaml" />
+		<ResourceInclude Source="DataValidationErrors.axaml" />
+		<ResourceInclude Source="DatePicker.axaml" />
+		<ResourceInclude Source="DateTimePickerShared.axaml" />
+		<ResourceInclude Source="DropDownButton.axaml" />
+		<ResourceInclude Source="Expander.axaml" />
+		<ResourceInclude Source="Flyout.axaml" />
+		<ResourceInclude Source="GridSplitter.axaml" />
+		<ResourceInclude Source="HeaderedContentControl.axaml" />
+		<ResourceInclude Source="HyperlinkButton.axaml" />
+		<ResourceInclude Source="Label.axaml" />
+		<ResourceInclude Source="ListBox.axaml" />
+		<ResourceInclude Source="ManagedFileChooser.axaml" />
+		<ResourceInclude Source="Menu.axaml" />
+		<ResourceInclude Source="NotificationCard.axaml" />
+		<ResourceInclude Source="NumericUpDown.axaml" />
+		<ResourceInclude Source="ProgressBar.axaml" />
+		<ResourceInclude Source="RadioButton.axaml" />
+		<ResourceInclude Source="RefreshContainer.axaml" />
+		<ResourceInclude Source="ScrollViewer.axaml" />
+		<ResourceInclude Source="Slider.axaml" />
+		<ResourceInclude Source="SplitButton.axaml" />
+		<ResourceInclude Source="SplitView.axaml" />
+		<ResourceInclude Source="TabControl.axaml" />
+		<ResourceInclude Source="TabItem.axaml" />
+		<ResourceInclude Source="TextBlock.axaml" />
+		<ResourceInclude Source="TextBox.axaml" />
+		<ResourceInclude Source="TimePicker.axaml" />
+		<ResourceInclude Source="ToggleButton.axaml" />
+		<ResourceInclude Source="ToggleSwitch.axaml" />
+		<ResourceInclude Source="Tooltip.axaml" />
+		<ResourceInclude Source="TreeView.axaml" />
+		<ResourceInclude Source="Window.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

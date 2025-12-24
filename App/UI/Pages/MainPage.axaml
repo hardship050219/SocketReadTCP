@@ -1,0 +1,208 @@
+<UserControl
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="700"
+	x:Class="AppZC.UI.Pages.MainPage"
+	x:DataType="MainVM">
+	<Design.DataContext>
+		<MainVM />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto,*" Margin="15">
+		<!-- 连接配置区域 -->
+		<Border Grid.Row="0" 
+		        Theme="{DynamicResource Border-Card}" 
+		        Padding="15" 
+		        Margin="0,0,0,15">
+			<Grid ColumnDefinitions="Auto,150,Auto,100,Auto,100,Auto,100,Auto,*" 
+			      RowDefinitions="Auto,Auto" 
+			      ColumnSpacing="10" 
+			      RowSpacing="10">
+				<!-- 第一行：服务器地址和端口 -->
+				<TextBlock Grid.Row="0" Grid.Column="0" 
+				           Text="服务器地址:" 
+				           VerticalAlignment="Center" 
+				           Margin="0,0,5,0"/>
+				<TextBox Grid.Row="0" Grid.Column="1" 
+				         Text="{Binding ServerIp}" 
+				         Watermark="127.0.0.1"
+				         IsEnabled="{Binding !IsConnected}"/>
+				
+				<TextBlock Grid.Row="0" Grid.Column="2" 
+				           Text="端口:" 
+				           VerticalAlignment="Center" 
+				           Margin="10,0,5,0"/>
+				<NumericUpDown Grid.Row="0" Grid.Column="3" 
+				               Value="{Binding ServerPort}" 
+				               Minimum="1" 
+				               Maximum="65535"
+				               IsEnabled="{Binding !IsConnected}"/>
+				
+				<!-- 读取地址 -->
+				<TextBlock Grid.Row="0" Grid.Column="4" 
+				           Text="读取地址:" 
+				           VerticalAlignment="Center" 
+				           Margin="10,0,5,0"/>
+				<TextBox Grid.Row="0" Grid.Column="5" 
+				         Text="{Binding ReadAddress}" 
+				         Watermark="100"
+				         IsEnabled="{Binding IsConnected}"/>
+				
+				<!-- 数据类型 -->
+				<TextBlock Grid.Row="0" Grid.Column="6" 
+				           Text="数据类型:" 
+				           VerticalAlignment="Center" 
+				           Margin="10,0,5,0"/>
+				<ComboBox Grid.Row="0" Grid.Column="7" 
+				          SelectedItem="{Binding DataType}"
+				          ItemsSource="{Binding DataTypes}"
+				          IsEnabled="{Binding IsConnected}"/>
+				
+				<!-- 连接状态指示 -->
+				<TextBlock Grid.Row="0" Grid.Column="8" 
+				           Text="状态:" 
+				           VerticalAlignment="Center" 
+				           Margin="10,0,5,0"/>
+				<Border Grid.Row="0" Grid.Column="9" 
+				        Background="{Binding ConnectionStatusColor}" 
+				        CornerRadius="3" 
+				        Padding="8,4">
+					<TextBlock Text="{Binding ConnectionStatusText}" 
+					           Foreground="White" 
+					           FontWeight="Bold" 
+					           HorizontalAlignment="Center"/>
+				</Border>
+				
+				<!-- 第二行：按钮组 -->
+				<Button Grid.Row="1" Grid.Column="0" 
+				        Classes="Primary" 
+				        Command="{Binding ToggleConnectionCommand}" 
+				        Content="{Binding ConnectionButtonText}" 
+				        MinWidth="100"/>
+				<Button Grid.Row="1" Grid.Column="1" 
+				        Classes="Success" 
+				        Command="{Binding ReadDataCommand}" 
+				        Content="读取数据" 
+				        MinWidth="100"
+				        IsEnabled="{Binding IsConnected}"/>
+				<Button Grid.Row="1" Grid.Column="2" 
+				        Classes="Secondary" 
+				        Command="{Binding ClearLogCommand}" 
+				        Content="清空日志" 
+				        MinWidth="100"/>
+			</Grid>
+		</Border>
+		
+		<!-- 主要内容区域 -->
+		<Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="15">
+			<!-- 左侧：发送区域 -->
+			<Border Grid.Column="0" Theme="{DynamicResource Border-Card}" Padding="15">
+				<Grid RowDefinitions="Auto,*,Auto">
+					<Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10" Margin="0,0,0,10">
+						<TextBlock Grid.Column="0" 
+						           Text="发送数据" 
+						           FontSize="16" 
+						           FontWeight="Bold"/>
+					</Grid>
+					
+					<!-- 发送数据显示区域 -->
+					<ScrollViewer Grid.Row="1" 
+					              x:Name="SendDataScrollViewer"
+					              VerticalScrollBarVisibility="Auto" 
+					              HorizontalScrollBarVisibility="Auto"
+					              VerticalAlignment="Top">
+						<TextBox Text="{Binding SendDataDisplay}" 
+						         IsReadOnly="True" 
+						         AcceptsReturn="True" 
+						         TextWrapping="Wrap" 
+						         FontFamily="Consolas"
+						         Background="Transparent"
+						         BorderThickness="0"
+						         VerticalAlignment="Top"
+						         VerticalContentAlignment="Top"/>
+					</ScrollViewer>
+					
+					<!-- 底部：输入区域和选项 -->
+					<Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10" Margin="0,10,0,0">
+						<!-- 输入区域 -->
+						<Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+							<TextBox Grid.Column="0" 
+							         Text="{Binding SendDataText}" 
+							         AcceptsReturn="True" 
+							         TextWrapping="Wrap" 
+							         Watermark="请输入要发送的数据..."
+							         IsEnabled="{Binding IsConnected}"
+							         FontFamily="Consolas"/>
+							<Button Grid.Column="1" 
+							        Classes="Success" 
+							        Command="{Binding SendDataCommand}" 
+							        Content="发送" 
+							        MinWidth="100"
+							        IsEnabled="{Binding IsConnected}"/>
+						</Grid>
+						
+						<!-- 选项和清空按钮 -->
+						<Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+							<CheckBox Grid.Column="0" 
+							          Content="十六进制发送" 
+							          IsChecked="{Binding SendAsHex}"
+							          VerticalAlignment="Center"
+							          IsEnabled="{Binding IsConnected}"/>
+							<Button Grid.Column="1" 
+							        Classes="Secondary" 
+							        Command="{Binding ClearSendDisplayCommand}" 
+							        Content="清空发送" 
+							        MinWidth="100"/>
+						</Grid>
+					</Grid>
+				</Grid>
+			</Border>
+			
+			<!-- 右侧：接收区域 -->
+			<Border Grid.Column="1" Theme="{DynamicResource Border-Card}" Padding="15">
+				<Grid RowDefinitions="Auto,*,Auto">
+					<Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10" Margin="0,0,0,10">
+						<TextBlock Grid.Column="0" 
+						           Text="接收数据" 
+						           FontSize="16" 
+						           FontWeight="Bold"/>
+						<TextBlock Grid.Column="1" 
+						           Text="{Binding ReceivedCountText}" 
+						           FontSize="12" 
+						           Foreground="Gray" 
+						           VerticalAlignment="Center"/>
+					</Grid>
+					
+					<ScrollViewer Grid.Row="1" 
+					              x:Name="ReceivedDataScrollViewer"
+					              VerticalScrollBarVisibility="Auto" 
+					              HorizontalScrollBarVisibility="Auto"
+					              VerticalAlignment="Top">
+						<TextBox Text="{Binding ReceivedData}" 
+						         IsReadOnly="True" 
+						         AcceptsReturn="True" 
+						         TextWrapping="Wrap" 
+						         FontFamily="Consolas"
+						         Background="Transparent"
+						         BorderThickness="0"
+						         VerticalAlignment="Top"
+						         VerticalContentAlignment="Top"/>
+					</ScrollViewer>
+					
+					<Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10" Margin="0,10,0,0">
+						<CheckBox Grid.Column="0" 
+						          Content="十六进制显示" 
+						          IsChecked="{Binding DisplayAsHex}"
+						          VerticalAlignment="Center"/>
+						<Button Grid.Column="1" 
+						        Classes="Secondary" 
+						        Command="{Binding ClearReceivedCommand}" 
+						        Content="清空接收" 
+						        MinWidth="100"/>
+					</Grid>
+				</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+</UserControl>

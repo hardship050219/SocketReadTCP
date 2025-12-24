@@ -1,0 +1,34 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- 语义化填充色 -->
+	<Color x:Key="FillColor-Primary">#2563EB</Color>
+	<SolidColorBrush x:Key="FillColor-PrimaryBrush" Color="{StaticResource FillColor-Primary}" />
+
+	<Color x:Key="FillColor-Secondary">#E5E7EB</Color>
+	<SolidColorBrush x:Key="FillColor-SecondaryBrush" Color="{StaticResource FillColor-Secondary}" />
+
+	<Color x:Key="FillColor-Tertiary">#F3F4F6</Color>
+	<SolidColorBrush x:Key="FillColor-TertiaryBrush" Color="{StaticResource FillColor-Tertiary}" />
+
+	<Color x:Key="FillColor-Muted">#9CA3AF</Color>
+	<SolidColorBrush x:Key="FillColor-MutedBrush" Color="{StaticResource FillColor-Muted}" />
+
+	<Color x:Key="FillColor-Disabled">#D1D5DB</Color>
+	<SolidColorBrush x:Key="FillColor-DisabledBrush" Color="{StaticResource FillColor-Disabled}" />
+
+	<Color x:Key="FillColor-Highlight">#93C5FD</Color>
+	<SolidColorBrush x:Key="FillColor-HighlightBrush" Color="{StaticResource FillColor-Highlight}" />
+
+	<!-- 填充色阶梯（50~950） -->
+	<Color x:Key="FillColor-50">#EFF6FF</Color>
+	<Color x:Key="FillColor-100">#DBEAFE</Color>
+	<Color x:Key="FillColor-200">#BFDBFE</Color>
+	<Color x:Key="FillColor-300">#93C5FD</Color>
+	<Color x:Key="FillColor-400">#60A5FA</Color>
+	<Color x:Key="FillColor-500">#3B82F6</Color>
+	<Color x:Key="FillColor-600">#2563EB</Color>
+	<Color x:Key="FillColor-700">#1D4ED8</Color>
+	<Color x:Key="FillColor-800">#1E40AF</Color>
+	<Color x:Key="FillColor-900">#1E3A8A</Color>
+	<Color x:Key="FillColor-950">#172554</Color>
+</ResourceDictionary>

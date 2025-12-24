@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Menu.ScrollViewerUpButtonGlyph" ResourceKey="Icon-TriangleUp" />
+	<StaticResource x:Key="Menu.ScrollViewerDownButtonGlyph" ResourceKey="Icon-TriangleDown" />
+	<StaticResource x:Key="Menu.ItemExpandIconGlyph" ResourceKey="Icon-ChevronRight" />
+	<StaticResource x:Key="Menu.CheckGlyph" ResourceKey="Icon-Tick" />
+	<!--  MenuFlyout  -->
+	<StaticResource x:Key="Menu.FlyoutBorderThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="Menu.FlyoutPadding">0 4</Thickness>
+	<StaticResource x:Key="Menu.FlyoutCornerRadius" ResourceKey="Border-RadiusMedium" />
+	<x:Double x:Key="Menu.FlyoutMinHeight">16</x:Double>
+	<x:Double x:Key="Menu.FlyoutMinWidth">100</x:Double>
+	<x:Double x:Key="Menu.FlyoutMaxHeight">400</x:Double>
+	<x:Double x:Key="Menu.FlyoutMaxWidth">600</x:Double>
+	<StaticResource x:Key="Menu.FlyoutFontSize" ResourceKey="FontSize-Normal" />
+	<StaticResource x:Key="Menu.FlyoutFontWeight" ResourceKey="FontWeight-Normal" />
+	<!--  MenuItem  -->
+	<Thickness x:Key="Menu.TopLevelMenu.ItemPadding">16 0</Thickness>
+	<StaticResource x:Key="Menu.TopLevelMenuItemMinHeight" ResourceKey="Height-ControlDefault" />
+	<Thickness x:Key="Menu.ItemPadding">16 8</Thickness>
+	<StaticResource x:Key="Menu.ItemCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<x:Double x:Key="Menu.ItemSeparatorHeight">1</x:Double>
+	<StaticResource x:Key="Menu.ItemSeparatorMargin" ResourceKey="Thickness-SuperTight" />
+	<Thickness x:Key="Menu.ItemIconMargin">0 0 8 0</Thickness>
+	<Thickness x:Key="Menu.ItemInputGestureTextMargin">4 0</Thickness>
+	<Thickness x:Key="Menu.ItemExpandIconMargin">4 0</Thickness>
+</ResourceDictionary>

@@ -1,0 +1,25 @@
+<AppWindow
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:iconPacks="https://github.com/MahApps/IconPacks.Avalonia"
+	xmlns:ui="clr-namespace:AppZC.UI"
+	xmlns:models="clr-namespace:ZC.UI.Models;assembly=ZC.Core.UI"
+	xmlns:controlLibs="https://zit.com/ui"
+	x:Class="AppZC.UI.AppWindow"
+	Name="ApplicationWindow"
+	Title="AppZC"
+	WindowStartupLocation="CenterScreen"
+	WindowState="Normal"
+	Icon="/UI/Assets/logo.ico"
+	UseLayoutRounding="True"
+	RenderOptions.BitmapInterpolationMode="HighQuality"
+	TransparencyLevelHint="AcrylicBlur"
+	Width="1280" Height="720"
+	SystemDecorations="BorderOnly"
+	ExtendClientAreaChromeHints="NoChrome"
+	ExtendClientAreaToDecorationsHint="True"
+	ExtendClientAreaTitleBarHeightHint="30">
+	<Design.DataContext>
+		<ui:AppVM />
+	</Design.DataContext>
+</AppWindow>

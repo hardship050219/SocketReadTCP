@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- 默认正文字体（跨平台 UI 安全字体 + 常用中文字体） -->
+	<FontFamily x:Key="FontFamily-Default">
+		-apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif
+	</FontFamily>
+
+	<!-- 品牌/标题字体（更有设计感，可替换为你的品牌字体） -->
+	<FontFamily x:Key="FontFamily-Brand">
+		"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif
+	</FontFamily>
+
+	<!-- 等宽字体（代码、数据、表格） -->
+	<FontFamily x:Key="FontFamily-Mono">
+		Menlo, Monaco, Consolas, "Courier New", "Noto Sans Mono CJK SC", monospace
+	</FontFamily>
+
+	<!-- 衬线字体（正式文档、长篇阅读） -->
+	<FontFamily x:Key="FontFamily-Serif">
+		Georgia, "Times New Roman", "Songti SC", "Noto Serif CJK SC", serif
+	</FontFamily>
+
+	<!-- 手写/装饰字体（节日、活动、特殊标题） -->
+	<FontFamily x:Key="FontFamily-Handwriting">
+		"Comic Sans MS", "Bradley Hand", "Segoe Script", cursive
+	</FontFamily>
+
+	<!-- 数字专用字体（仪表盘、统计面板） -->
+	<FontFamily x:Key="FontFamily-Numeric">
+		"Roboto Mono", "Menlo", "Consolas", monospace
+	</FontFamily>
+
+	<!-- UI 控件字体（按钮、标签、表单） -->
+	<FontFamily x:Key="FontFamily-Ui">
+		"Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif
+	</FontFamily>
+
+	<!-- 英文标题专用字体 -->
+	<FontFamily x:Key="FontFamily-EnglishHeading">
+		"Montserrat", "Helvetica Neue", Arial, sans-serif
+	</FontFamily>
+
+	<!-- 中文标题专用字体 -->
+	<FontFamily x:Key="FontFamily-ChineseHeading">
+		"Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif
+	</FontFamily>
+
+	<FontFamily x:Key="FontFamily-Regular">
+		Inter, -apple-system, BlinkMacSystemFont, PingFang SC,
+		Microsoft YaHei, Segoe UI, Hiragino Sans GB, Helvetica Neue,
+		Helvetica, Arial, sans-serif
+	</FontFamily>
+</ResourceDictionary>

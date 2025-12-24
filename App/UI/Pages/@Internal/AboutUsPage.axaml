@@ -1,0 +1,241 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+				xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+				xmlns:collections="clr-namespace:Avalonia.Collections;assembly=Avalonia.Base"
+				xmlns:internal="clr-namespace:AppZC.UI"
+				xmlns:internal1="clr-namespace:AppZC.UI.Pages.Internal"
+				mc:Ignorable="d" d:DesignWidth="1280"
+				d:DesignHeight="720"
+				x:DataType="internal1:AboutUsVM"
+				x:Class="AppZC.UI.AboutUsPage">
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceDictionary x:Key="Light">
+					<collections:AvaloniaList x:Key="CanvasPalette" x:TypeArguments="Color">
+						<Color>#FFFDB7A5</Color>
+						<Color>#FFF6A0B5</Color>
+						<Color>#FFDD9BE0</Color>
+						<Color>#FFC4A7E9</Color>
+						<Color>#FFA7B3E1</Color>
+						<Color>#FF98CDFD</Color>
+						<Color>#FF95D8F8</Color>
+					</collections:AvaloniaList>
+					<LinearGradientBrush x:Key="TileTitleForeground">
+						<GradientStop Offset="0.0" Color="#FFA20B48" />
+						<GradientStop Offset="0.3" Color="#FF71168A" />
+						<GradientStop Offset="0.6" Color="#FF46259E" />
+						<GradientStop Offset="1.0" Color="#FF28348C" />
+					</LinearGradientBrush>
+				</ResourceDictionary>
+				<ResourceDictionary x:Key="Dark">
+					<collections:AvaloniaList x:Key="CanvasPalette" x:TypeArguments="Color">
+						<Color>#FFB42019</Color>
+						<Color>#FFA41751</Color>
+						<Color>#FF731F8A</Color>
+						<Color>#FF582EA0</Color>
+						<Color>#FF29368E</Color>
+						<Color>#FF135CB8</Color>
+						<Color>#FF0366A9</Color>
+					</collections:AvaloniaList>
+					<LinearGradientBrush x:Key="TileTitleForeground">
+						<GradientStop Offset="0.0" Color="#FFF7A8BC" />
+						<GradientStop Offset="0.3" Color="#FFDDA0E1" />
+						<GradientStop Offset="0.6" Color="#FFBEADE9" />
+						<GradientStop Offset="1.0" Color="#FFA7B4E2" />
+					</LinearGradientBrush>
+				</ResourceDictionary>
+			</ResourceDictionary.ThemeDictionaries>
+			<ControlTheme x:Key="TileButton" TargetType="Button">
+				<Setter Property="HorizontalContentAlignment" Value="Left" />
+				<Setter Property="Padding" Value="24" />
+				<Setter Property="VerticalContentAlignment" Value="Center" />
+				<Setter Property="Template">
+					<ControlTemplate>
+						<Border
+							Padding="0"
+							Classes="Hover"
+							Cursor="Hand"
+							Theme="{DynamicResource Border-Card}">
+							<Border.Transitions>
+								<Transitions>
+									<BrushTransition Property="BorderBrush" Duration="0.5" />
+								</Transitions>
+							</Border.Transitions>
+							<ContentPresenter
+								Padding="{TemplateBinding Padding}"
+								HorizontalAlignment="Stretch"
+								VerticalAlignment="Stretch"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}" />
+						</Border>
+					</ControlTemplate>
+				</Setter>
+				<Style Selector="^:pointerover /template/ Border">
+					<Setter Property="BorderBrush" Value="{DynamicResource TileTitleForeground}" />
+				</Style>
+			</ControlTheme>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<UserControl.Styles>
+		<Style Selector="TextBlock.TileTitle">
+			<Setter Property="FontWeight" Value="700" />
+			<Setter Property="FontSize" Value="24" />
+			<Setter Property="Margin" Value="0 0 0 8" />
+			<Setter Property="Foreground" Value="{DynamicResource TileTitleForeground}" />
+		</Style>
+	</UserControl.Styles>
+	<Grid RowDefinitions="*, Auto">
+		<ScrollViewer>
+			<StackPanel>
+				<Grid
+					Margin="0,50,0,30"
+					HorizontalAlignment="Center"
+					ColumnDefinitions="*, *"
+					RowDefinitions="*, *">
+					<Image
+						Grid.Row="0"
+						Grid.RowSpan="2"
+						Grid.Column="0"
+						Source="/UI/Assets/logo.ico"
+						Width="96"
+						Margin="0,0,24,0"
+						VerticalAlignment="Center" />
+					<TextBlock
+						Grid.Row="0"
+						Grid.Column="1"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Bottom"
+						Classes="Secondary"
+						FontSize="48"
+						FontWeight="700"
+						Text="苏州中昌智能科技" />
+					<TextBlock
+						Grid.Row="1"
+						Grid.Column="1"
+						Margin="12,0,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+						Classes="Secondary"
+						FontSize="16"
+						Text="Suzhou Zhongchang Intelligent Technology" />
+				</Grid>
+				<TextBlock
+					HorizontalAlignment="Center"
+					Classes="Tertiary"
+					FontSize="20"
+					FontWeight="700"
+					Text="帮 客 户 创 造 价 值" />
+				<TextBlock
+					HorizontalAlignment="Center"
+					Classes="Tertiary"
+					FontSize="20"
+					Text="Facilitate meaningful value generation for customers" />
+				<UniformGrid
+					MaxWidth="810"
+					Margin="24"
+					HorizontalAlignment="Center"
+					Columns="2">
+					<Button
+						Margin="8"
+						CommandParameter="semi"
+						Theme="{DynamicResource TileButton}">
+						<StackPanel HorizontalAlignment="Left">
+							<TextBlock Classes="TileTitle" Text="ZC.IOT" />
+							<StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+								<Label Theme="{DynamicResource TagLabel}"
+										Classes="Blue Ghost">
+									IOT平台
+								</Label>
+							</StackPanel>
+							<TextBlock Text="物联网接入平台" />
+							<TextBlock Text="IoT access platform" />
+						</StackPanel>
+					</Button>
+					<Button
+						Margin="8"
+						CommandParameter="ZC.MES"
+						Theme="{DynamicResource TileButton}">
+						<StackPanel HorizontalAlignment="Left">
+							<TextBlock Classes="TileTitle" Text="ZC.MES" />
+							<StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+								<Label Theme="{DynamicResource TagLabel}"
+										Classes="Blue Ghost">
+									线体级MES系统
+								</Label>
+							</StackPanel>
+							<TextBlock Text="高性能企业级MES系统" />
+							<TextBlock Text="High performance enterprise level MES system" />
+						</StackPanel>
+					</Button>
+					<Button
+						Margin="8"
+						CommandParameter="mantra"
+						Theme="{DynamicResource TileButton}">
+						<StackPanel HorizontalAlignment="Left">
+							<TextBlock Classes="TileTitle" Text="ZC.DCGT" />
+							<StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+								<Label Theme="{DynamicResource TagLabel}" Classes="Purple Ghost">
+									Data Collect Gateway
+								</Label>
+							</StackPanel>
+							<TextBlock Text="数据采集网关" />
+							<TextBlock Text="High performance operation control system" />
+						</StackPanel>
+					</Button>
+					<Button
+						Margin="8"
+						CommandParameter="huska"
+						Theme="{DynamicResource TileButton}">
+						<StackPanel HorizontalAlignment="Left">
+							<TextBlock Classes="TileTitle" Text="压机系统" />
+							<StackPanel Orientation="Horizontal" Margin="0 0 0 8">
+								<Label Theme="{DynamicResource TagLabel}"
+										Classes="Purple Ghost">
+									压机
+								</Label>
+							</StackPanel>
+							<TextBlock Text="高性能压机系统" />
+							<TextBlock Text="High performance press system" />
+						</StackPanel>
+					</Button>
+				</UniformGrid>
+			</StackPanel>
+		</ScrollViewer>
+		<StackPanel
+			Grid.Row="1"
+			Margin="0,16"
+			Spacing="32"
+			HorizontalAlignment="Center"
+			Orientation="Horizontal">
+			<StackPanel Orientation="Horizontal">
+				<HyperlinkButton
+					Classes="WithIcon"
+					VerticalAlignment="Center"
+					Content="Homepage"
+					NavigateUri="https://suzhou.zhongchang.tech">
+					<HyperlinkButton.Styles>
+						<Style Selector=".WithIcon /template/ PathIcon">
+							<Setter Property="Data" Value="{StaticResource Icon-Home}" />
+						</Style>
+					</HyperlinkButton.Styles>
+				</HyperlinkButton>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<HyperlinkButton
+					Classes="WithIcon"
+					Content="GitHub"
+					NavigateUri="https://github.com/zit">
+					<HyperlinkButton.Styles>
+						<Style Selector=".WithIcon /template/ PathIcon">
+							<Setter Property="Data" Value="{StaticResource Icon-GithubLogo}" />
+						</Style>
+					</HyperlinkButton.Styles>
+				</HyperlinkButton>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
+</UserControl>

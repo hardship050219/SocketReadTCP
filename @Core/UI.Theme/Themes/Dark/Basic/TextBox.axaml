@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TextBox.TextCaretBrush" ResourceKey="Color-White" />
+	<SolidColorBrush x:Key="TextBox.DefaultBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="TextBox.DefaultBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="TextBox.PointeroverBackground" ResourceKey="Brush-Fill1" />
+	<SolidColorBrush x:Key="TextBox.PointeroverBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="TextBox.PressedBackground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="TextBox.FocusBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="TextBox.Foreground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="TextBox.InnerForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="TextBox.DisabledBackground" ResourceKey="Brush-DisabledFill" />
+	<StaticResource x:Key="TextBox.DisabledForeground" ResourceKey="Brush-DisabledText" />
+	<SolidColorBrush x:Key="TextBox.DisabledBorderBrush" Color="Transparent" />
+	<SolidColorBrush x:Key="TextBox.BorderedDefaultBackground" Color="Transparent" />
+	<StaticResource x:Key="TextBox.BorderedDefaultBorderBrush" ResourceKey="Brush-Fill0" />
+	<SolidColorBrush x:Key="TextBox.BorderedPointeroverBackground" Color="Transparent" />
+	<StaticResource x:Key="TextBox.BorderedPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<SolidColorBrush x:Key="TextBox.SelectionBackground" Opacity="0.8" Color="#0041C5" />
+	<StaticResource x:Key="TextBox.SelectionForeground" ResourceKey="Color-White" />
+</ResourceDictionary>

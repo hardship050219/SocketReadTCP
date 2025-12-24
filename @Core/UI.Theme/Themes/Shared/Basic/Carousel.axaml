@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="CarouselButtonGlyph" ResourceKey="Icon-ChevronLeft" />
+	<x:Double x:Key="Carousel.IndicatorDotWidth">8</x:Double>
+	<x:Double x:Key="Carousel.IndicatorDotHeight">8</x:Double>
+	<x:Double x:Key="Carousel.IndicatorLineHeight">4</x:Double>
+	<x:Double x:Key="Carousel.IndicatorColumnarWidth">4</x:Double>
+	<x:Double x:Key="Carousel.IndicatorColumnarHeight">12</x:Double>
+	<x:Double x:Key="Carousel.IndicatorColumnarSelectedHeight">20</x:Double>
+	<Thickness x:Key="Carousel.ButtonMargin">20</Thickness>
+</ResourceDictionary>

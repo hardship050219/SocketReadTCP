@@ -1,0 +1,57 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True"
+	x:DataType="UiNotificationManager">
+	<ControlTheme x:Key="{x:Type UiNotificationManager}" TargetType="UiNotificationManager">
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ReversibleStackPanel Name="PART_Items" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:top-left /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+
+		<Style Selector="^:top-right /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+
+		<Style Selector="^:top-center /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+
+		<Style Selector="^:bottom-left /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="ReverseOrder" Value="True" />
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+
+		<Style Selector="^:bottom-right /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="ReverseOrder" Value="True" />
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+
+		<Style Selector="^:bottom-center /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="ReverseOrder" Value="True" />
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+		
+		<Style Selector="^:right-center /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+		
+		<Style Selector="^:left-center /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Center" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

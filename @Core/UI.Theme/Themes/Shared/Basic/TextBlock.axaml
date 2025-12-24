@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TextBlock.CodeFontSize" ResourceKey="FontSize-Small" />
+	<StaticResource x:Key="TextBlock.FontSize" ResourceKey="FontSize-Normal" />
+	<StaticResource x:Key="TextBlock.TitleH1FontSize" ResourceKey="FontSize-H1" />
+	<StaticResource x:Key="TextBlock.TitleH2FontSize" ResourceKey="FontSize-H2" />
+	<StaticResource x:Key="TextBlock.TitleH3FontSize" ResourceKey="FontSize-H3" />
+	<StaticResource x:Key="TextBlock.TitleH4FontSize" ResourceKey="FontSize-H4" />
+	<StaticResource x:Key="TextBlock.TitleH5FontSize" ResourceKey="FontSize-H5" />
+	<StaticResource x:Key="TextBlock.TitleH6FontSize" ResourceKey="FontSize-H6" />
+	<StaticResource x:Key="TextBlock.FontWeight" ResourceKey="FontWeight-Normal" />
+	<StaticResource x:Key="TextBlock.TitleFontWeight" ResourceKey="FontWeight-Bold" />
+	<CornerRadius x:Key="TextBlock.CodeCornerRadius">2</CornerRadius>
+	<FontFamily x:Key="TextBlock.CodeFontFamily">Cascadia Code, Consolas, Inconsolata, monospace</FontFamily>
+</ResourceDictionary>

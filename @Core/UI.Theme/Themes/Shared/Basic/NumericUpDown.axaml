@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="NumericUpDown.CornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="NumericUpDown.DefaultHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="NumericUpDown.SmallHeight" ResourceKey="Height-ControlSmall" />
+	<StaticResource x:Key="NumericUpDown.LargeHeight" ResourceKey="Height-ControlLarge" />
+</ResourceDictionary>

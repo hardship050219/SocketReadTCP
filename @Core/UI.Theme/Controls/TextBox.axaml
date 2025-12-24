@@ -1,0 +1,557 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<MenuFlyout x:Key="DefaultTextBoxContextFlyout" Placement="Bottom">
+		<MenuItem
+			Command="{Binding $parent[TextBox].Cut}"
+			Header="{DynamicResource STRING_MENU_CUT}"
+			InputGesture="{x:Static TextBox.CutGesture}"
+			IsEnabled="{Binding $parent[TextBox].CanCut}" />
+		<MenuItem
+			Command="{Binding $parent[TextBox].Copy}"
+			Header="{DynamicResource STRING_MENU_COPY}"
+			InputGesture="{x:Static TextBox.CopyGesture}"
+			IsEnabled="{Binding $parent[TextBox].CanCopy}" />
+		<MenuItem
+			Command="{Binding $parent[TextBox].Paste}"
+			Header="{DynamicResource STRING_MENU_PASTE}"
+			InputGesture="{x:Static TextBox.PasteGesture}"
+			IsEnabled="{Binding $parent[TextBox].CanPaste}" />
+	</MenuFlyout>
+
+	<ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
+		<Setter Property="Foreground" Value="{DynamicResource TextBox.Foreground}" />
+		<Setter Property="Background" Value="{DynamicResource TextBox.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DefaultBorderBrush}" />
+		<Setter Property="SelectionBrush" Value="{DynamicResource TextBox.SelectionBackground}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextBox.SelectionForeground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource TextBox.BorderThickness}" />
+		<Setter Property="BackgroundSizing" Value="OuterBorderEdge" />
+		<Setter Property="CornerRadius" Value="{DynamicResource TextBox.DefaultCornerRadius}" />
+		<Setter Property="Cursor" Value="Ibeam" />
+		<Setter Property="CaretBrush" Value="{DynamicResource TextBox.TextCaretBrush}" />
+		<Setter Property="Padding" Value="{DynamicResource TextBox.ContentPadding}" />
+		<Setter Property="MinHeight" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FocusAdorner" Value="{x:Null}" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="ContextFlyout" Value="{StaticResource DefaultTextBoxContextFlyout}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TextBox">
+				<DataValidationErrors>
+					<Border
+						Name="PART_ContentPresenterBorder"
+						MinHeight="{TemplateBinding MinHeight}"
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="{TemplateBinding BackgroundSizing}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid Margin="{TemplateBinding Padding}" ColumnDefinitions="Auto,*,Auto, Auto, Auto">
+							<ContentPresenter
+								Grid.Column="0"
+								Padding="{DynamicResource TextBox.InnerLeftContentPadding}"
+								VerticalAlignment="Center"
+								Content="{TemplateBinding InnerLeftContent}"
+								Foreground="{DynamicResource TextBox.InnerForeground}"
+								IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerLeftContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+							<ScrollViewer
+								Grid.Column="1"
+								AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+								HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+								IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+								VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+								<Panel>
+									<TextBlock
+										Name="PART_Watermark"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										Opacity="0.5"
+										Text="{TemplateBinding Watermark}"
+										TextAlignment="{TemplateBinding TextAlignment}"
+										TextWrapping="{TemplateBinding TextWrapping}">
+										<TextBlock.IsVisible>
+											<MultiBinding Converter="{x:Static BoolConverters.And}">
+												<Binding ElementName="PART_TextPresenter" Path="PreeditText"
+															Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+												<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text"
+															Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+											</MultiBinding>
+										</TextBlock.IsVisible>
+									</TextBlock>
+									<TextPresenter
+										Name="PART_TextPresenter"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										CaretBlinkInterval="{TemplateBinding CaretBlinkInterval}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										CaretBrush="{TemplateBinding CaretBrush}"
+										CaretIndex="{TemplateBinding CaretIndex}"
+										LineHeight="{TemplateBinding LineHeight}"
+										PasswordChar="{TemplateBinding PasswordChar}"
+										RevealPassword="{TemplateBinding RevealPassword}"
+										SelectionBrush="{TemplateBinding SelectionBrush}"
+										SelectionEnd="{TemplateBinding SelectionEnd}"
+										SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+										SelectionStart="{TemplateBinding SelectionStart}"
+										Text="{TemplateBinding Text, Mode=TwoWay}"
+										TextAlignment="{TemplateBinding TextAlignment}"
+										TextWrapping="{TemplateBinding TextWrapping}" />
+								</Panel>
+							</ScrollViewer>
+							<Button
+								Name="PART_ClearButton"
+								Grid.Column="2"
+								Command="{Binding $parent[TextBox].Clear}"
+								Content="{DynamicResource IconButton.ClearData}"
+								IsVisible="False"
+								Theme="{StaticResource Button-InnerIcon}" />
+							<ToggleButton
+								Name="PART_RevealButton"
+								Grid.Column="3"
+								Margin="4,0,0,0"
+								IsChecked="{TemplateBinding RevealPassword, Mode=TwoWay}"
+								IsVisible="False"
+								Theme="{StaticResource InputToggleButton}" />
+							<ContentPresenter
+								Grid.Column="4"
+								Padding="{DynamicResource TextBox.InnerRightContentPadding}"
+								VerticalAlignment="Center"
+								Content="{TemplateBinding InnerRightContent}"
+								Foreground="{DynamicResource TextBox.InnerForeground}"
+								IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerRightContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+						</Grid>
+					</Border>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.PointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PressedBackground}" />
+		</Style>
+		<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.FocusBorderBrush}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DisabledBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource TextBox.DisabledBackground}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource TextBox.DisabledForeground}" />
+		</Style>
+
+		<Style Selector="^:error">
+			<Style Selector="^ /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.clearButton, ^.ClearButton">
+			<Style Selector="^[AcceptsReturn=False][IsReadOnly=False]:focus:not(:empty) /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+			<Style
+				Selector="^[AcceptsReturn=False][IsReadOnly=False]:pointerover:not(:empty) /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+		<Style Selector="^.revealPasswordButton, ^.RevealPasswordButton">
+			<Setter Property="PasswordChar" Value="•" />
+			<Style Selector="^ /template/ ToggleButton#PART_RevealButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.SmallHeight}" />
+		</Style>
+
+		<Style Selector="^.Bordered">
+			<Setter Property="Background" Value="{DynamicResource TextBox.BorderedDefaultBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedDefaultBorderBrush}" />
+			<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource TextBox.BorderedPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:focus">
+				<Setter Property="Background" Value="{DynamicResource TextBox.BorderedPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:disabled /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource TextBox.DisabledBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DisabledBorderBrush}" />
+			</Style>
+
+			<Style Selector="^:error">
+				<Style Selector="^ /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsBorderBrush}" />
+				</Style>
+				<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsPointerOverBorderBrush}" />
+				</Style>
+				<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsPressedBorderBrush}" />
+				</Style>
+				<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^.TextArea">
+			<Setter Property="AcceptsReturn" Value="True" />
+			<Setter Property="VerticalContentAlignment" Value="Top" />
+			<Setter Property="Padding" Value="{DynamicResource TextBox.TextAreaContentPadding}" />
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.TextAreaHeight}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="TextBox-NonError" TargetType="TextBox">
+		<Setter Property="Foreground" Value="{DynamicResource TextBox.Foreground}" />
+		<Setter Property="Background" Value="{DynamicResource TextBox.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DefaultBorderBrush}" />
+		<Setter Property="SelectionBrush" Value="{DynamicResource TextBox.SelectionBackground}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextBox.SelectionForeground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource TextBox.BorderThickness}" />
+		<Setter Property="BackgroundSizing" Value="OuterBorderEdge" />
+		<Setter Property="CornerRadius" Value="{DynamicResource TextBox.DefaultCornerRadius}" />
+		<Setter Property="Cursor" Value="Ibeam" />
+		<Setter Property="CaretBrush" Value="{DynamicResource TextBox.TextCaretBrush}" />
+		<Setter Property="Padding" Value="{DynamicResource TextBox.ContentPadding}" />
+		<Setter Property="MinHeight" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FocusAdorner" Value="{x:Null}" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="ContextFlyout" Value="{StaticResource DefaultTextBoxContextFlyout}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TextBox">
+				<DataValidationErrors Theme="{DynamicResource SilentDataValidationErrors}">
+					<Border
+						Name="PART_ContentPresenterBorder"
+						MinHeight="{TemplateBinding MinHeight}"
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="{TemplateBinding BackgroundSizing}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid Margin="{TemplateBinding Padding}" ColumnDefinitions="Auto,*,Auto, Auto, Auto">
+							<ContentPresenter
+								Grid.Column="0"
+								Padding="{DynamicResource TextBox.InnerLeftContentPadding}"
+								VerticalAlignment="Center"
+								Content="{TemplateBinding InnerLeftContent}"
+								Foreground="{DynamicResource TextBox.InnerForeground}"
+								IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerLeftContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+							<ScrollViewer
+								Grid.Column="1"
+								AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+								HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+								IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+								VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+								<Panel>
+									<TextBlock
+										Name="PART_Watermark"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										Opacity="0.5"
+										Text="{TemplateBinding Watermark}"
+										TextAlignment="{TemplateBinding TextAlignment}"
+										TextWrapping="{TemplateBinding TextWrapping}">
+										<TextBlock.IsVisible>
+											<MultiBinding Converter="{x:Static BoolConverters.And}">
+												<Binding ElementName="PART_TextPresenter" Path="PreeditText"
+															Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+												<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text"
+															Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+											</MultiBinding>
+										</TextBlock.IsVisible>
+									</TextBlock>
+									<TextPresenter
+										Name="PART_TextPresenter"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										CaretBlinkInterval="{TemplateBinding CaretBlinkInterval}"
+										VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+										CaretBrush="{TemplateBinding CaretBrush}"
+										CaretIndex="{TemplateBinding CaretIndex}"
+										LineHeight="{TemplateBinding LineHeight}"
+										PasswordChar="{TemplateBinding PasswordChar}"
+										RevealPassword="{TemplateBinding RevealPassword}"
+										SelectionBrush="{TemplateBinding SelectionBrush}"
+										SelectionEnd="{TemplateBinding SelectionEnd}"
+										SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+										SelectionStart="{TemplateBinding SelectionStart}"
+										Text="{TemplateBinding Text, Mode=TwoWay}"
+										TextAlignment="{TemplateBinding TextAlignment}"
+										TextWrapping="{TemplateBinding TextWrapping}" />
+								</Panel>
+							</ScrollViewer>
+							<Button
+								Name="PART_ClearButton"
+								Grid.Column="2"
+								Command="{Binding $parent[TextBox].Clear}"
+								Content="{DynamicResource IconButton.ClearData}"
+								IsVisible="False"
+								Theme="{StaticResource Button-InnerIcon}" />
+							<ToggleButton
+								Name="PART_RevealButton"
+								Grid.Column="3"
+								Margin="4,0,0,0"
+								IsChecked="{TemplateBinding RevealPassword, Mode=TwoWay}"
+								IsVisible="False"
+								Theme="{StaticResource InputToggleButton}" />
+							<ContentPresenter
+								Grid.Column="4"
+								Padding="{DynamicResource TextBox.InnerRightContentPadding}"
+								VerticalAlignment="Center"
+								Content="{TemplateBinding InnerRightContent}"
+								Foreground="{DynamicResource TextBox.InnerForeground}"
+								IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerRightContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+						</Grid>
+					</Border>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.PointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PressedBackground}" />
+		</Style>
+		<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.FocusBorderBrush}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_ContentPresenterBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DisabledBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource TextBox.DisabledBackground}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource TextBox.DisabledForeground}" />
+		</Style>
+
+		<Style Selector="^:error">
+			<Style Selector="^ /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.clearButton, ^.ClearButton">
+			<Style Selector="^[AcceptsReturn=False][IsReadOnly=False]:focus:not(:empty) /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+			<Style
+				Selector="^[AcceptsReturn=False][IsReadOnly=False]:pointerover:not(:empty) /template/ Button#PART_ClearButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+		<Style Selector="^.revealPasswordButton, ^.RevealPasswordButton">
+			<Setter Property="PasswordChar" Value="•" />
+			<Style Selector="^ /template/ ToggleButton#PART_RevealButton">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.SmallHeight}" />
+		</Style>
+
+		<Style Selector="^.Bordered">
+			<Setter Property="Background" Value="{DynamicResource TextBox.BorderedDefaultBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedDefaultBorderBrush}" />
+			<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource TextBox.BorderedPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:focus">
+				<Setter Property="Background" Value="{DynamicResource TextBox.BorderedPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.BorderedPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:disabled /template/ Border#PART_ContentPresenterBorder">
+				<Setter Property="Background" Value="{DynamicResource TextBox.DisabledBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DisabledBorderBrush}" />
+			</Style>
+
+			<Style Selector="^:error">
+				<Style Selector="^ /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsBorderBrush}" />
+				</Style>
+				<Style Selector="^:pointerover /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsPointerOverBorderBrush}" />
+				</Style>
+				<Style Selector="^:pressed /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsPressedBorderBrush}" />
+				</Style>
+				<Style Selector="^:focus /template/ Border#PART_ContentPresenterBorder">
+					<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+					<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^.TextArea">
+			<Setter Property="AcceptsReturn" Value="True" />
+			<Setter Property="VerticalContentAlignment" Value="Top" />
+			<Setter Property="Padding" Value="{DynamicResource TextBox.TextAreaContentPadding}" />
+			<Setter Property="MinHeight" Value="{DynamicResource TextBox.TextAreaHeight}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="TextBox-Lookless" TargetType="TextBox">
+		<Setter Property="Foreground" Value="{DynamicResource TextBox.Foreground}" />
+		<Setter Property="SelectionBrush" Value="{DynamicResource TextBox.SelectionBackground}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextBox.SelectionForeground}" />
+		<Setter Property="Cursor" Value="Ibeam" />
+		<Setter Property="CaretBrush" Value="{DynamicResource TextBox.TextCaretBrush}" />
+		<Setter Property="Padding" Value="{DynamicResource TextBox.ContentPadding}" />
+		<Setter Property="MinHeight" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FocusAdorner" Value="{x:Null}" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TextBox">
+				<Border Name="PART_ContentPresenterBorder" MinHeight="{TemplateBinding MinHeight}">
+					<Grid Margin="{TemplateBinding Padding}" ColumnDefinitions="Auto, *, Auto">
+						<ContentPresenter
+							Grid.Column="0"
+							Padding="{DynamicResource TextBox.InnerLeftContentPadding}"
+							VerticalAlignment="Center"
+							Content="{TemplateBinding InnerLeftContent}"
+							Foreground="{DynamicResource TextBox.InnerForeground}"
+							IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerLeftContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+						<ScrollViewer
+							Grid.Column="1"
+							AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+							HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+							IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+							VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+							<Panel>
+								<TextBlock
+									Name="PART_Watermark"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									Opacity="0.5"
+									Text="{TemplateBinding Watermark}"
+									TextAlignment="{TemplateBinding TextAlignment}"
+									TextWrapping="{TemplateBinding TextWrapping}">
+									<TextBlock.IsVisible>
+										<MultiBinding Converter="{x:Static BoolConverters.And}">
+											<Binding ElementName="PART_TextPresenter" Path="PreeditText"
+														Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+											<Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text"
+														Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+										</MultiBinding>
+									</TextBlock.IsVisible>
+								</TextBlock>
+								<TextPresenter
+									Name="PART_TextPresenter"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									CaretBrush="{TemplateBinding CaretBrush}"
+									CaretIndex="{TemplateBinding CaretIndex}"
+									LineHeight="{TemplateBinding LineHeight}"
+									PasswordChar="{TemplateBinding PasswordChar}"
+									RevealPassword="{TemplateBinding RevealPassword}"
+									SelectionBrush="{TemplateBinding SelectionBrush}"
+									SelectionEnd="{TemplateBinding SelectionEnd}"
+									SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+									SelectionStart="{TemplateBinding SelectionStart}"
+									Text="{TemplateBinding Text, Mode=TwoWay}"
+									TextAlignment="{TemplateBinding TextAlignment}"
+									TextWrapping="{TemplateBinding TextWrapping}" />
+							</Panel>
+						</ScrollViewer>
+						<ContentPresenter
+							Grid.Column="2"
+							Padding="{DynamicResource TextBox.InnerRightContentPadding}"
+							VerticalAlignment="Center"
+							Content="{TemplateBinding InnerRightContent}"
+							Foreground="{DynamicResource TextBox.InnerForeground}"
+							IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=InnerRightContent, Converter={x:Static ObjectConverters.IsNotNull}}" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource TextBox.DisabledForeground}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="InputToggleButton" TargetType="ToggleButton">
+		<Setter Property="Width" Value="16" />
+		<Setter Property="Height" Value="16" />
+		<Setter Property="Foreground" Value="{DynamicResource Button.InputInnerForeground}" />
+		<!--  Background must be transparent or hit test will fail  -->
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<Panel
+					Width="{TemplateBinding Width}"
+					Height="{TemplateBinding Height}"
+					Background="{TemplateBinding Background}">
+					<PathIcon
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{DynamicResource TextBox.PasswordBoxRevealButtonData}"
+						IsVisible="{TemplateBinding IsChecked, Converter={x:Static BoolConverters.Not}}" />
+					<PathIcon
+						Theme="{DynamicResource PathIcon-Inner}"
+						Data="{DynamicResource TextBox.PasswordBoxHideButtonData}"
+						IsVisible="{TemplateBinding IsChecked}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource Button.InputInnerPointeroverForeground}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource Button.InputInnerPressedForeground}" />
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

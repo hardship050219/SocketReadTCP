@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ClosableTagBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ClosableTagForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ClosableTagBorder" ResourceKey="Brush-WindowText" />
+</ResourceDictionary>

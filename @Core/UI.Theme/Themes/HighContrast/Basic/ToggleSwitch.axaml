@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ToggleSwitch.DefaultBorderBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedDefaultBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedPointeroverBackground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedPressedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ToggleSwitch.ContainerUnCheckedDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedDefaultBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedPointeroverBackground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedPressedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ToggleSwitch.ContainerCheckedDisabledBackground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ToggleSwitch-Simple.ContainerUnCheckedForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="ToggleSwitch-Simple.ContainerCheckedForeground" ResourceKey="Brush-HighlightText" />
+</ResourceDictionary>

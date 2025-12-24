@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="PopConfirmBackground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="PopConfirmBorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="PopConfirmContentForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="PopConfirmBorderBoxShadows" ResourceKey="BoxShadow.Elevated" />
+</ResourceDictionary>

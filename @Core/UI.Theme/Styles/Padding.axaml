@@ -1,0 +1,24 @@
+<Styles xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<!-- Add Controls for Previewer Here -->
+		</Border>
+	</Design.PreviewWith>
+
+	<!-- <Style Selector=":is(ContentControl.p-1), :is(Border.p-1)"> -->
+	<!-- 	<Setter Property="Padding" Value="4" /> -->
+	<!-- </Style> -->
+	<!-- <Style Selector=":is(ContentControl.p-2), :is(Border.p-2)"> -->
+	<!-- 	<Setter Property="Padding" Value="8" /> -->
+	<!-- </Style> -->
+	<!-- <Style Selector="Button.p-3"> -->
+	<!-- 	<Setter Property="Padding" Value="12" /> -->
+	<!-- </Style> -->
+	<!-- <Style Selector="Button.p-4"> -->
+	<!-- 	<Setter Property="Padding" Value="16" /> -->
+	<!-- </Style> -->
+	<!-- <Style Selector="Button.p-5"> -->
+	<!-- 	<Setter Property="Padding" Value="20" /> -->
+	<!-- </Style> -->
+</Styles>

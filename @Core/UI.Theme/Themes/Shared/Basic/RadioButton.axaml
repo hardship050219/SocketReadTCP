@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- RadioButton -->
+	<x:Double x:Key="RadioButton.IconRadius">16</x:Double>
+	<x:Double x:Key="RadioButton.GlyphRadius">6</x:Double>
+	<StaticResource x:Key="RadioButton.FontSize" ResourceKey="FontSize-Normal" />
+	<Thickness x:Key="RadioButton.IconMargin">0 2 0 0</Thickness>
+	<StaticResource x:Key="RadioButton.UncheckIconDefaultThickness" ResourceKey="Border-SpacingControl" />
+	<Thickness x:Key="RadioButton.ContentMargin">8 0 0 0</Thickness>
+	<!-- RadioButton-Button -->
+	<StaticResource x:Key="RadioButton.BoxCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="RadioButton.GroupCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="RadioButton.ButtonCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="RadioButton.ButtonFontWeight" ResourceKey="FontWeight-Bold" />
+	<Thickness x:Key="RadioButton.ButtonSmallPadding">16 2</Thickness>
+	<Thickness x:Key="RadioButton.ButtonDefaultPadding">16 4</Thickness>
+	<Thickness x:Key="RadioButton.ButtonLargePadding">24 6</Thickness>
+	<StaticResource x:Key="RadioButton.ButtonSmallFontSize" ResourceKey="FontSize-Small" />
+	<StaticResource x:Key="RadioButton.ButtonDefault.FontSize" ResourceKey="FontSize-Small" />
+	<StaticResource x:Key="RadioButton.ButtonLargeFontSize" ResourceKey="FontSize-Normal" />
+	<!-- RadioButton-Card -->
+	<StaticResource x:Key="RadioButton.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="RadioButton.CardPadding">16 12</Thickness>
+	<StaticResource x:Key="RadioButton.CardCornerRadius" ResourceKey="Border-RadiusSmall" />
+</ResourceDictionary>

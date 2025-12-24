@@ -1,0 +1,117 @@
+﻿<AppView
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:ui="clr-namespace:AppZC.UI"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:iconPacks="https://github.com/MahApps/IconPacks.Avalonia"
+	xmlns:models="clr-namespace:ZC.UI.Models;assembly=ZC.Core.UI"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="AppZC.UI.AppView"
+	VerticalAlignment="Stretch"
+	x:DataType="AppVM"
+	ForegroundContent="{Binding LayoutView}">
+	<Design.DataContext>
+		<AppVM />
+	</Design.DataContext>
+	<AppView.TopLevelView>
+		<RelativePanel Name="TopLevelView">
+			<LinearPanel RelativePanel.AlignLeftWithPanel="True" Name="TopLevelAppBarLeftPanel" ZIndex="1000">
+				<Border Padding="5 5">
+					<Image Source="/UI/Assets/logo.ico" Width="20" Height="20" VerticalAlignment="Center"
+							HorizontalAlignment="Center" />
+				</Border>
+			</LinearPanel>
+			<LinearPanel
+				RelativePanel.AlignRightWithPanel="True"
+				Name="TopLevelAppBarRightPanel" ZIndex="1000"
+				Height="{Binding AppBarSettings.Height}" Orientation="Horizontal"
+				Width="{Binding Path=AppBarSettings.RightUseWidth, Mode=OneWayToSource}"
+				HorizontalAlignment="Right" Spacing="0"
+				VerticalAlignment="Center">
+				<LinearPanel.Styles>
+					<Style Selector="Button.FunctionButton">
+						<Setter Property="Margin" Value="0" />
+						<Setter Property="Padding" Value="5 5" />
+						<Setter Property="MinHeight" Value="0" />
+						<Setter Property="VerticalAlignment" Value="Center" />
+						<Setter Property="CornerRadius" Value="0" />
+						<Setter Property="Background" Value="Transparent" />
+					</Style>
+					<Style Selector="Button.FunctionButton> iconPacks|PackIconCodicons">
+						<Setter Property="Width" Value="12" />
+						<Setter Property="Height" Value="12" />
+						<Setter Property="VerticalAlignment" Value="Center" />
+					</Style>
+					<Style Selector="Button.WindowButton">
+						<Setter Property="Margin" Value="0" />
+						<Setter Property="Padding" Value="15 8" />
+						<Setter Property="MinHeight" Value="0" />
+						<Setter Property="VerticalAlignment" Value="Stretch" />
+						<Setter Property="CornerRadius" Value="0" />
+						<Setter Property="Background" Value="Transparent" />
+					</Style>
+					<Style Selector="Button.WindowButton> iconPacks|PackIconCodicons">
+						<Setter Property="Width" Value="12" />
+						<Setter Property="Height" Value="12" />
+						<Setter Property="VerticalAlignment" Value="Center" />
+					</Style>
+					<Style Selector="ToggleSwitch.WindowButton">
+						<Setter Property="Margin" Value="0" />
+						<Setter Property="Padding" Value="15 8" />
+						<Setter Property="MinHeight" Value="0" />
+						<Setter Property="VerticalAlignment" Value="Stretch" />
+						<Setter Property="VerticalContentAlignment" Value="Center" />
+						<Setter Property="CornerRadius" Value="0" />
+						<Setter Property="Background" Value="Transparent" />
+					</Style>
+					<Style Selector="ToggleSwitch.WindowButton  iconPacks|PackIconCodicons">
+						<Setter Property="Width" Value="12" />
+						<Setter Property="Height" Value="12" />
+						<Setter Property="VerticalAlignment" Value="Center" />
+					</Style>
+				</LinearPanel.Styles>
+				<Button Content="B/F" Command="{Binding ToggleGroundCommand}" />
+				<Button Name="ChangeThemeButton" Classes="FunctionButton">
+					<iconPacks:PackIconCodicons Kind="ColorMode" />
+					<Button.Flyout>
+						<MenuFlyout Placement="Bottom" ItemsSource="{Binding ThemeList}">
+							<MenuFlyout.ItemTemplate>
+								<DataTemplate x:DataType="models:IThemeInfo">
+									<MenuItem Header="{Binding Name}"
+												Command="{Binding #ChangeThemeButton.DataContext.ChangeColorThemeCommand}"
+												CommandParameter="{Binding .}" />
+								</DataTemplate>
+							</MenuFlyout.ItemTemplate>
+						</MenuFlyout>
+					</Button.Flyout>
+				</Button>
+				<Button Classes="WindowButton" Command="{Binding FullScreenWindowCommand}">
+					<iconPacks:PackIconCodicons Kind="ScreenFull" />
+				</Button>
+				<Button Classes="WindowButton" Command="{Binding MinimizeWindowCommand}">
+					<iconPacks:PackIconCodicons Kind="ChromeMinimize" />
+				</Button>
+				<ToggleSwitch
+					IsChecked="{Binding #ApplicationWindow.WindowState, Converter={StaticResource EnumEqualsConverter},
+						ConverterParameter=Maximized,Mode=OneWay}"
+					Classes="WindowButton"
+					Command="{Binding MaximizeOrRestoreWindowCommand}"
+					CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}"
+					Theme="{StaticResource ToggleSwitch-Button}">
+					<ToggleSwitch.OnContent>
+						<iconPacks:PackIconCodicons Kind="ChromeRestore" />
+					</ToggleSwitch.OnContent>
+					<ToggleSwitch.OffContent>
+						<iconPacks:PackIconCodicons Kind="ChromeMaximize" />
+					</ToggleSwitch.OffContent>
+				</ToggleSwitch>
+
+
+				<Button Classes="WindowButton" Command="{Binding CloseWindowCommand}">
+					<iconPacks:PackIconCodicons Kind="ChromeClose" />
+				</Button>
+			</LinearPanel>
+		</RelativePanel>
+	</AppView.TopLevelView>
+</AppView>

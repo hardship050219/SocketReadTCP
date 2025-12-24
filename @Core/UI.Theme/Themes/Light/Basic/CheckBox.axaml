@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="CheckBox.Foreground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="CheckBox.DisabledForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="CheckBox.GlyphFill" ResourceKey="Color-White" />
+	<SolidColorBrush x:Key="CheckBox.DefaultBackground" Color="Transparent" />
+	<StaticResource x:Key="CheckBox.DefaultBorderBrush" ResourceKey="Brush-Text3" />
+	<StaticResource x:Key="CheckBox.PointeroverBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="CheckBox.PointeroverBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="CheckBox.PressedBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="CheckBox.PressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="CheckBox.CheckedDefaultBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="CheckBox.CheckedDefaultBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="CheckBox.CheckedPointeroverBackground" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="CheckBox.CheckedPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="CheckBox.CheckedPressedBackground" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="CheckBox.CheckedPressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="CheckBox.DefaultDisabledBackground" ResourceKey="Brush-DisabledFill" />
+	<StaticResource x:Key="CheckBox.DefaultDisabledBorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="CheckBox.CheckedDisabledBackground" ResourceKey="Brush-PrimaryDisabled" />
+	<StaticResource x:Key="CheckBox.CheckedDisabledBorderBrush" ResourceKey="Brush-PrimaryDisabled" />
+	<StaticResource x:Key="CheckBox.CardCheckedBackground" ResourceKey="Brush-PrimaryLight" />
+	<StaticResource x:Key="CheckBox.CardCheckedBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="CheckBox.CardCheckedDisabledBorderBrush" ResourceKey="Brush-PrimaryDisabled" />
+	<StaticResource x:Key="CheckBox.CardPointeroverBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="CheckBox.CardPressedBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="CheckBox.CardCheckedPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="CheckBox.CardCheckedPressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+
+	<!-- Obsolete -->
+	<StaticResource x:Key="CheckBoxGlyphDisabledFill" ResourceKey="Color-White" />
+</ResourceDictionary>

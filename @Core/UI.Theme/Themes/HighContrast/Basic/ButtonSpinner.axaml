@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonBackground" ResourceKey="Brush-ButtonFace" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonPointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonPressedBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonDisabledBackground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ButtonSpinner.RepeatButtonBorderBrush" ResourceKey="Brush-ButtonText" />
+</ResourceDictionary>

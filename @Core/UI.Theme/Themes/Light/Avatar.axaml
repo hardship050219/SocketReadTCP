@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="AvatarForeground" ResourceKey="Color-White" />
+	<StaticResource x:Key="AvatarRedBackground" ResourceKey="Brush-Red3" />
+	<StaticResource x:Key="AvatarPinkBackground" ResourceKey="Brush-Pink3" />
+	<StaticResource x:Key="AvatarPurpleBackground" ResourceKey="Brush-Purple3" />
+	<StaticResource x:Key="AvatarVioletBackground" ResourceKey="Brush-Violet3" />
+	<StaticResource x:Key="AvatarIndigoBackground" ResourceKey="Brush-Indigo3" />
+	<StaticResource x:Key="AvatarBlueBackground" ResourceKey="Brush-Blue3" />
+	<StaticResource x:Key="AvatarLightBlueBackground" ResourceKey="Brush-LightBlue3" />
+	<StaticResource x:Key="AvatarCyanBackground" ResourceKey="Brush-Cyan3" />
+	<StaticResource x:Key="AvatarTealBackground" ResourceKey="Brush-Teal3" />
+	<StaticResource x:Key="AvatarGreenBackground" ResourceKey="Brush-Green3" />
+	<StaticResource x:Key="AvatarLightGreenBackground" ResourceKey="Brush-LightGreen3" />
+	<StaticResource x:Key="AvatarLimeBackground" ResourceKey="Brush-Lime3" />
+	<StaticResource x:Key="AvatarYellowBackground" ResourceKey="Brush-Yellow3" />
+	<StaticResource x:Key="AvatarAmberBackground" ResourceKey="Brush-Amber3" />
+	<StaticResource x:Key="AvatarOrangeBackground" ResourceKey="Brush-Orange3" />
+	<StaticResource x:Key="AvatarGreyBackground" ResourceKey="Brush-Grey3" />
+</ResourceDictionary>

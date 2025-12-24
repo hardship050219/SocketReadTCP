@@ -1,0 +1,101 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<CaptionButtons />
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="CaptionButton" TargetType="Button">
+		<Setter Property="Foreground" Value="{DynamicResource CaptionButton.Foreground}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="CornerRadius" Value="{StaticResource CaptionButton.CornerRadius}" />
+		<Setter Property="Padding" Value="{StaticResource CaptionButton.Padding}" />
+		<Setter Property="Width" Value="{StaticResource CaptionButton.Width}" />
+		<Setter Property="Height" Value="{StaticResource CaptionButton.Height}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<ContentPresenter
+					Name="PART_ContentPresenter"
+					Padding="{TemplateBinding Padding}"
+					Foreground="{TemplateBinding Foreground}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					Content="{TemplateBinding Content}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					CornerRadius="{TemplateBinding CornerRadius}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.PointeroverBackground}" />
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.PressedBackground}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type CaptionButtons}" TargetType="CaptionButtons">
+		<Setter Property="Foreground" Value="{DynamicResource CaptionButton.Foreground}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="CaptionButtons">
+				<StackPanel Orientation="Horizontal">
+					<Button Name="PART_FullScreenButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_FullScreenButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowExpandGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_MinimizeButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_MinimizeButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowMinimizeGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_RestoreButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_RestoreButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowMaximizeGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+					<Button Name="PART_CloseButton" Theme="{StaticResource CaptionButton}">
+						<PathIcon
+							Name="PART_CloseButtonIcon"
+							Theme="{StaticResource PathIcon-Inner}"
+							Data="{StaticResource WindowCloseIconGlyph}"
+							Foreground="{Binding $parent[Button].Foreground}" />
+					</Button>
+				</StackPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ Button#PART_CloseButton:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource CaptionButton.CloseForeground}" />
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePointeroverBackground}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_CloseButton:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource CaptionButton.CloseForeground}" />
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePressedBackground}" />
+		</Style>
+
+		<Style Selector="^:maximized /template/ PathIcon#PART_RestoreButtonIcon">
+			<Setter Property="Data" Value="{StaticResource WindowRestoreGlyph}" />
+		</Style>
+		<Style Selector="^:fullscreen /template/ PathIcon#PART_FullScreenButtonIcon">
+			<Setter Property="Data" Value="{StaticResource WindowCollapseGlyph}" />
+		</Style>
+		<Style Selector="^:fullscreen /template/ Button#PART_RestoreButton">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+		<Style Selector="^:fullscreen /template/ Button#PART_MinimizeButton">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

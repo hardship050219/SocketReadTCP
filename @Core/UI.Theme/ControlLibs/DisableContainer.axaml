@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zit.com/ui"
+							xmlns:shapes="clr-namespace:ZC.UI.Shapes;assembly=ZC.Core.UI">
+	<ControlTheme TargetType="u:DisableContainer" x:Key="{x:Type u:DisableContainer}">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:DisableContainer">
+				<Panel>
+					<ContentPresenter Content="{TemplateBinding Content}" />
+					<shapes:PureRectangle Background="Transparent"
+												IsVisible="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content.IsEnabled, Converter={x:Static BoolConverters.Not}}"
+												Cursor="No" ToolTip.Tip="{TemplateBinding DisabledTip}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

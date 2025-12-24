@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="CalendarDatePicker.IconForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="CalendarDatePicker.Foreground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="CalendarDatePicker.IconPointeroverForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="CalendarDatePicker.Background" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="CalendarDatePicker.PointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="CalendarDatePicker.PointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="CalendarDatePicker.FocusBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="CalendarDatePicker.DisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="CalendarDatePicker.DisabledIconForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="CalendarDatePicker.BorderBrush" ResourceKey="Brush-ButtonText" />
+</ResourceDictionary>

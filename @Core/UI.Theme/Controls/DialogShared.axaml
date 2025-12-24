@@ -1,0 +1,57 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<StackPanel Orientation="Horizontal" Margin="20">
+			<Button Theme="{DynamicResource CloseButton}" />
+			<Button Theme="{DynamicResource OverlayCloseButton}" />
+			<Button Theme="{DynamicResource NotificationCloseButton}" />
+			<Button Theme="{DynamicResource ToastCloseButton}" />
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="OverlayCloseButton" TargetType="Button">
+		<Setter Property="CornerRadius" Value="3" />
+		<Setter Property="Height" Value="24" />
+		<Setter Property="Width" Value="24" />
+		<Setter Property="Padding" Value="4" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<Border
+					Padding="{TemplateBinding Padding}"
+					Background="Transparent"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<PathIcon
+						Foreground="{DynamicResource Brush-Text1}"
+						Theme="{StaticResource PathIcon-Inner}"
+						Data="{DynamicResource Icon-Close}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:pointerover /template/ Border">
+			<Setter Property="Background" Value="{DynamicResource Brush-Fill1}" />
+		</Style>
+		<Style Selector="^:pressed /template/ Border">
+			<Setter Property="Background" Value="{DynamicResource Brush-Fill2}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="CloseButton"
+		BasedOn="{StaticResource OverlayCloseButton}"
+		TargetType="Button">
+		<Style Selector="^:pointerover /template/ Border">
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePointeroverBackground}" />
+		</Style>
+		<Style Selector="^:pointerover /template/ PathIcon">
+			<Setter Property="Foreground" Value="White" />
+		</Style>
+
+		<Style Selector="^:pressed /template/ Border">
+			<Setter Property="Background" Value="{DynamicResource CaptionButton.ClosePressedBackground}" />
+		</Style>
+		<Style Selector="^:pressed /template/ PathIcon">
+			<Setter Property="Foreground" Value="White" />
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,70 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+	<!-- 基准正文字号 -->
+	<!-- <x:Double x:Key="FontSize-Body">16</x:Double> -->
+	<!-- 标准正文 -->
+
+	<!-- 在标准上增大（Plus） -->
+	<!-- <x:Double x:Key="FontSize-BodyP1">18</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP2">20</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP3">24</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP4">28</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP5">32</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP6">40</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyP7">48</x:Double> -->
+
+	<!-- 在标准上减小（Negative） -->
+	<!-- <x:Double x:Key="FontSize-BodyN1">14</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyN2">12</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyN3">10</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-BodyN4">8</x:Double> -->
+
+	<!-- ~1~ 标题字号 @1@ -->
+	<!-- <x:Double x:Key="FontSize-Hero">48</x:Double>        -->
+	<!-- ~1~ 超大展示标题 @1@ -->
+	<!-- <x:Double x:Key="FontSize-Display">40</x:Double>     -->
+	<!-- ~1~ 展示标题 @1@ -->
+	<!-- <x:Double x:Key="FontSize-TitleP2">32</x:Double>    -->
+	<!-- ~1~ 特大标题 @1@ -->
+	<!-- <x:Double x:Key="FontSize-TitleP1">28</x:Double>    -->
+	<!-- ~1~ 大标题 @1@ -->
+	<!-- <x:Double x:Key="FontSize-Title">24</x:Double>     -->
+	<!-- ~1~ 标题 @1@ -->
+	<!-- <x:Double x:Key="FontSize-TitleN1">20</x:Double>    -->
+	<!-- ~1~ 比标题略小 @1@ -->
+
+	<!-- ~1~ 其他语义化字号 @1@ -->
+	<!-- <x:Double x:Key="FontSize-Caption">12</x:Double>     -->
+	<!-- ~1~ 注释/说明 @1@ -->
+	<!-- <x:Double x:Key="FontSize-Overline">10</x:Double>    -->
+	<!-- ~1~ 标签/极小文字 @1@ -->
+
+	<!-- 分级化字体大小（P1~P11） -->
+	<!-- <x:Double x:Key="FontSize-P1">10</x:Double> -->
+	<!-- <x:Double x:Key="FontSize-P2">12</x:Double> -->
+
+	<x:Double x:Key="FontSize-S1">12</x:Double>
+	<x:Double x:Key="FontSize-S2">10</x:Double>
+	<x:Double x:Key="FontSize-S3">8</x:Double>
+
+	<x:Double x:Key="FontSize-B1">14</x:Double>
+	<x:Double x:Key="FontSize-B2">16</x:Double>
+	<x:Double x:Key="FontSize-B3">18</x:Double>
+	<x:Double x:Key="FontSize-B4">22</x:Double>
+	<x:Double x:Key="FontSize-B5">26</x:Double>
+	<x:Double x:Key="FontSize-B6">30</x:Double>
+
+
+	<x:Double x:Key="FontSize-Small">12</x:Double> <!-- 小文本字号 -->
+	<x:Double x:Key="FontSize-Normal">14</x:Double> <!-- 常规文本字号 -->
+	<x:Double x:Key="FontSize-H6">16</x:Double> <!-- 六级标题字号 -->
+	<x:Double x:Key="FontSize-H5">18</x:Double> <!-- 五级标题字号 -->
+	<x:Double x:Key="FontSize-H4">20</x:Double> <!-- 四级标题字号 -->
+	<x:Double x:Key="FontSize-H3">24</x:Double> <!-- 三级标题字号 -->
+	<x:Double x:Key="FontSize-H2">28</x:Double> <!-- 二级标题字号 -->
+	<x:Double x:Key="FontSize-H1">32</x:Double> <!-- 一级标题字号 -->
+
+
+</ResourceDictionary>

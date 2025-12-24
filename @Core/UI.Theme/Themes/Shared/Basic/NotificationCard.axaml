@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<x:Double x:Key="Notification.CardMinWidth">320</x:Double>
+	<StaticResource x:Key="Notification.BorderCardThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="NotificationCardCornerRadius" ResourceKey="Border-RadiusMedium" />
+	<StaticResource x:Key="NotificationCard.Margin" ResourceKey="Thickness-Tight" />
+	<Thickness x:Key="NotificationCardPadding">20 16 12 16</Thickness>
+	<StaticResource x:Key="NotificationCard.IconWidth" ResourceKey="FontSize-H4" />
+	<StaticResource x:Key="NotificationCard.IconHeight" ResourceKey="FontSize-H4" />
+	<Thickness x:Key="NotificationCard.IconMargin">0 0 12 0</Thickness>
+	<StaticResource x:Key="NotificationCard.InformationIconPathData" ResourceKey="Icon-InfoCircle" />
+	<StaticResource x:Key="NotificationCard.SuccessIconPathData" ResourceKey="Icon-TickCircle" />
+	<StaticResource x:Key="NotificationCard.WarningIconPathData" ResourceKey="Icon-AlertTriangle" />
+	<StaticResource x:Key="NotificationCard.ErrorIconPathData" ResourceKey="Icon-AlertCircle" />
+	<StaticResource x:Key="NotificationCard.TitleSpacing" ResourceKey="Spacing-ExtraTight" />
+	<StaticResource x:Key="NotificationCard.TitleFontSize" ResourceKey="FontSize-H6" />
+	<StaticResource x:Key="NotificationCard.TitleFontWeight" ResourceKey="FontWeight-Bold" />
+	<StaticResource x:Key="NotificationCard.MessageFontSize" ResourceKey="FontSize-Normal" />
+	<StaticResource x:Key="NotificationCard.MessageFontWeight" ResourceKey="FontWeight-Normal" />
+</ResourceDictionary>

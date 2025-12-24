@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Button.Default.FontSize" ResourceKey="FontSize-Normal" />
+	<StaticResource x:Key="Button.Default.FontWeight" ResourceKey="FontWeight-Bold" />
+	<Thickness x:Key="Button.DefaultPadding">12 0</Thickness>
+	<Thickness x:Key="Button.LargePadding">16 0</Thickness>
+	<Thickness x:Key="Button.SmallPadding">6 0</Thickness>
+	<StaticResource x:Key="Button.DefaultHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="Button.SmallHeight" ResourceKey="Height-ControlSmall" />
+	<StaticResource x:Key="Button.LargeHeight" ResourceKey="Height-ControlLarge" />
+	<StaticResource x:Key="Button.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="Button.CornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="IconButton.ClearData" ResourceKey="Icon-Clear" />
+</ResourceDictionary>

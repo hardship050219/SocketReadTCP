@@ -1,0 +1,37 @@
+﻿<ApplicationLayoutView
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:ui="clr-namespace:AppZC.UI"
+	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	x:Class="AppZC.UI.Layouts.TopAppBarLayout"
+	x:DataType="ui:AppVM" RowDefinitions="Auto,Auto,*">
+	<Design.DataContext>
+		<ui:AppVM />
+	</Design.DataContext>
+	<LinearPanel Name="AppBarPanel" Grid.Row="0" Orientation="Horizontal">
+		<Border Width="{Binding AppBarSettings.LeftUsedWidth, Mode=OneWay}" />
+		<TabStrip LinearPanel.Weight="1" Name="TabStrip1"
+					Theme="{StaticResource TabStrip-Button}"
+					Height="{Binding  Path =AppBarSettings.Height,Mode=OneWayToSource}"
+					ItemsSource="{Binding NavManager.NavInfos}"
+					SelectedItem="{Binding SelectedNavData}">
+			<TabStrip.Styles>
+				<Style Selector="TabStripItem">
+					<Setter Property="Padding" Value="4" />
+					<Setter Property="Margin" Value="4" />
+					<Setter Property="MinHeight" Value="0" />
+					<Setter Property="FontSize" Value="{StaticResource FontSize-Small}"></Setter>
+				</Style>
+			</TabStrip.Styles>
+			<TabStrip.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Header}" />
+				</DataTemplate>
+			</TabStrip.ItemTemplate>
+		</TabStrip>
+		<Border Width="{Binding AppBarSettings.RightUseWidth, Mode=OneWay}" />
+	</LinearPanel>
+	<Border Grid.Row="1" BorderThickness="0 0 0 0.5" BorderBrush="#BDCCD9" />
+</ApplicationLayoutView>

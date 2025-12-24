@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="SliderTrackForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="SliderTrackBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="SliderTickForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="SliderThumbBackground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="SliderThumbBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="SliderThumbPointeroverBorderBrush" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="SliderThumbPressedBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="SliderTrackDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="SliderThumbDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="SliderTrackDisabledBackground" ResourceKey="Brush-Window" />
+</ResourceDictionary>

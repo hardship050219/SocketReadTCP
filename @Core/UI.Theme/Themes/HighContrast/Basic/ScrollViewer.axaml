@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ScrollBar.Button.DefaultForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ScrollBar.ButtonPointeroverForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ScrollBar.ThumbForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ScrollBar.ThumbPointeroverForeground" ResourceKey="Brush-Highlight" />
+	<SolidColorBrush x:Key="ScrollBar.Background" Color="Transparent" />
+</ResourceDictionary>

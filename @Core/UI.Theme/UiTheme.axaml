@@ -1,0 +1,29 @@
+<Styles
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="ZC.UI.UiTheme">
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="/UiThemeResource.axaml" />
+				<ResourceInclude Source="/Themes/LightTheme.axaml" />
+			</ResourceDictionary.MergedDictionaries>
+
+			<!-- 注册主题资源字典 -->
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceInclude x:Key="Default" Source="/Themes/LightTheme.axaml" />
+				<ResourceInclude x:Key="Dark" Source="/Themes/DarkTheme.axaml" />
+				<ResourceInclude x:Key="{x:Static UiTheme.Aquatic}" Source="/Themes/AquaticTheme.axaml" />
+				<ResourceInclude x:Key="{x:Static UiTheme.Desert}" Source="/Themes/DesertTheme.axaml" />
+				<ResourceInclude x:Key="{x:Static UiTheme.Dusk}" Source="/Themes/DuskTheme.axaml" />
+				<ResourceInclude x:Key="{x:Static UiTheme.NightSky}" Source="/Themes/NightSkyTheme.axaml" />
+			</ResourceDictionary.ThemeDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+
+	<StyleInclude Source="/Controls/DataGrid/DataGridTheme.axaml" />
+	<StyleInclude Source="/Controls/ColorPicker/ColorPickerTheme.axaml" />
+	<StyleInclude Source="/Controls/TreeDataGrid/TreeDataGridTheme.axaml" />
+	<StyleInclude Source="/Controls/WebView/WebViewTheme.axaml" />
+	<StyleInclude Source="/Styles/_index.axaml" />
+</Styles>

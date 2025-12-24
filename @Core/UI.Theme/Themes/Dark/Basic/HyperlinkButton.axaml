@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="HyperlinkButton.Foreground" ResourceKey="Brush-Link" />
+	<StaticResource x:Key="HyperlinkButton.PointeroverForeground" ResourceKey="Brush-LinkPointerover" />
+	<StaticResource x:Key="HyperlinkButton.PressedForeground" ResourceKey="Brush-LinkActive" />
+	<StaticResource x:Key="HyperlinkButton.DisabledForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="HyperlinkButton.VisitedForeground" ResourceKey="Brush-LinkVisited" />
+</ResourceDictionary>

@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="HeaderedContentControl.CornerRadius" ResourceKey="Border-RadiusMedium" />
+	<StaticResource x:Key="HeaderedContentControl.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="HeaderedContentControl.HeaderFontWeight" ResourceKey="FontWeight-Bold" />
+	<StaticResource x:Key="HeaderedContentControl.HeaderPadding" ResourceKey="Thickness-ExtraTight" />
+	<StaticResource x:Key="HeaderedContentControl.ContentPadding" ResourceKey="Thickness-ExtraTight" />
+</ResourceDictionary>

@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Border.CardBoxShadow" ResourceKey="BoxShadow.Elevated" />
+	<StaticResource x:Key="Border.CardBackground" ResourceKey="Brush-Background1" />
+	<StaticResource x:Key="Border.CardBorderBrush" ResourceKey="Brush-Border" />
+</ResourceDictionary>

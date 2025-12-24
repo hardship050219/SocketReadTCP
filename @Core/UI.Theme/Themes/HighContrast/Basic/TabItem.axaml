@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--  Line  -->
+	<SolidColorBrush x:Key="TabItem.LinePipeBackground" Color="Transparent" />
+	<StaticResource x:Key="TabItem.LinePipeSelectedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TabItem.LinePipePointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TabItem.LinePipePressedBorderBrush" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="TabItem.LineHeaderForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TabItem.LineHeaderPointeroverForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TabItem.LineHeaderSelectedForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TabItem.LineHeaderSelectedBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="TabItem.LineHeaderPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TabItem.LineHeaderPressedBackground" ResourceKey="Brush-HighlightText" />
+	<!--  Card  -->
+	<StaticResource x:Key="TabItem.CardHeaderSelectedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TabItem.CardHeaderPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TabItem.CardHeaderPressedBackground" ResourceKey="Brush-HighlightText" />
+	<!--  Button  -->
+	<StaticResource x:Key="TabItem.ButtonHeaderSelectedForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TabItem.ButtonHeaderSelectedBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TabItem.ButtonHeaderPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TabItem.ButtonHeaderPressedBackground" ResourceKey="Brush-HighlightText" />
+</ResourceDictionary>

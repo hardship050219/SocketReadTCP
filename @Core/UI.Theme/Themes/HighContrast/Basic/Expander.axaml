@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Expander.SeparatorBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Expander.HeaderForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Expander.HeaderDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="Expander.HeaderDefaultBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="Expander.HeaderHoverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Expander.HeaderPressedBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="Expander.ContentForeground" ResourceKey="Brush-WindowText" />
+</ResourceDictionary>

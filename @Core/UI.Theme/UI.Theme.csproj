@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<AssemblyName>ZC.Core.UI.Theme</AssemblyName>
+		<RootNamespace>ZC.UI</RootNamespace>
+		<ResourceGroupName>CORE</ResourceGroupName>
+		<CoreLibPath>../../-/libs/Core</CoreLibPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles Include=".\**\*.axaml"/>
+	</ItemGroup>
+
+	<!-- 依赖引用 -->
+	<ItemGroup Condition="'$(CoreLibPath)' ==''">
+		<ProjectReference Include="..\Core\Core.csproj"/>
+		<ProjectReference Include="..\UI\UI.csproj"/>
+		<ProjectReference Include="..\RoslynGen\RoslynGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+	</ItemGroup>
+	<ItemGroup Condition="'$(CoreLibPath)' !=''">
+		<Reference Include="$(CoreLibPath)/ZC.Core.dll"/>
+		<Reference Include="$(CoreLibPath)/ZC.Core.UI.dll"/>
+		<Reference Include="$(CoreLibPath)/ZC.Core.RoslynGen.dll"/>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.ColorPicker" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="$(AvaloniaVersion)"/>
+		<PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.1.1"/>
+		<PackageReference Include="ReactiveUI.Avalonia" Version="$(AvaloniaVersion)"/>
+	</ItemGroup>
+
+
+	<!-- 文件折叠 -->
+	<ItemGroup>
+		<Compile Update="Themes\LightTheme.axaml.cs" DependentUpon="LightTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DarkTheme.axaml.cs" DependentUpon="DarkTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\AquaticTheme.axaml.cs" DependentUpon="AquaticTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DesertTheme.axaml.cs" DependentUpon="DesertTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\DuskTheme.axaml.cs" DependentUpon="DuskTheme.axaml" SubType="Code"/>
+		<Compile Update="Themes\NightSkyTheme.axaml.cs" DependentUpon="NightSkyTheme.axaml" SubType="Code"/>
+		<Compile Update="RES\Values\_index.axam.cs" DependentUpon="_index.axaml"/>
+		<Compile Update="Controls\ColorPicker\ColorPickerTheme.axaml.cs" DependentUpon="ColorPickerSemiTheme.axaml" SubType="Code"/>
+		<Compile Update="Controls\TreeDataGrid\TreeDataGridTheme.axaml.cs" DependentUpon="TreeDataGridSemiTheme.axaml" SubType="Code"/>
+		<Compile Update="Controls\WebView\WebViewTheme.axaml.cs" DependentUpon="DataGridTheme.axaml" SubType="Code"/>
+		<Compile Update="UiThemeResource.cs" DependentUpon="UiThemeResource.axaml" SubType="Code"/>
+	</ItemGroup>
+
+
+	<!-- Attributes -->
+	<ItemGroup>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI</_Parameter2>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="Avalonia.Metadata.XmlnsDefinition">
+			<_Parameter1>https://github.com/avaloniaui</_Parameter1>
+			<_Parameter2>ZC.UI.Controls</_Parameter2>
+		</AssemblyAttribute>
+	</ItemGroup>
+</Project>

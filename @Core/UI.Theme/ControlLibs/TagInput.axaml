@@ -1,0 +1,145 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+	<ControlTheme x:Key="{x:Type u:TagInput}" TargetType="u:TagInput">
+		<Setter Property="InputTheme" Value="{DynamicResource TagInputTextBoxTheme}" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="MinHeight" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="ItemTemplate">
+			<DataTemplate>
+				<u:ClosableTag Command="{Binding $parent[u:TagInput].Close}" Content="{ReflectionBinding}" />
+			</DataTemplate>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:TagInput">
+				<Border
+					Name="PART_RootBorder"
+					MinHeight="30"
+					Padding="8,4"
+					VerticalAlignment="Stretch"
+					Background="{DynamicResource TextBox.DefaultBackground}"
+					BorderBrush="{DynamicResource TextBox.DefaultBorderBrush}"
+					BorderThickness="{DynamicResource TextBox.BorderThickness}"
+					CornerRadius="{DynamicResource TextBox.DefaultCornerRadius}">
+					<Panel HorizontalAlignment="Stretch">
+						<TextBlock
+							Name="{x:Static u:TagInput.PART_Watermark}"
+							Opacity="0.5"
+							IsVisible="False"
+							VerticalAlignment="Center"
+							Text="{TemplateBinding Watermark}" />
+						<ItemsControl
+							Name="PART_ItemsControl"
+							HorizontalAlignment="Stretch"
+							VerticalAlignment="Top"
+							ItemTemplate="{TemplateBinding ItemTemplate}"
+							ItemsSource="{TemplateBinding Items}">
+
+							<ItemsControl.ItemsPanel>
+								<ItemsPanelTemplate>
+									<u:TagInputPanel VerticalAlignment="Top" />
+								</ItemsPanelTemplate>
+							</ItemsControl.ItemsPanel>
+						</ItemsControl>
+					</Panel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:empty /template/ TextBlock#PART_Watermark">
+			<Setter Property="IsVisible" Value="True" />
+		</Style>
+		<Style Selector="^:pointerover /template/ Border#PART_BackgroundBorder">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.PointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:focus-within /template/ Border#PART_BackgroundBorder">
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.FocusBorderBrush}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="TagInputTextBoxTheme" TargetType="TextBox">
+		<Setter Property="Foreground" Value="{DynamicResource TextBox.InnerForeground}" />
+		<Setter Property="Background" Value="{DynamicResource TextBox.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DefaultBorderBrush}" />
+		<Setter Property="SelectionBrush" Value="{DynamicResource TextBox.SelectionBackground}" />
+		<Setter Property="SelectionForegroundBrush" Value="{DynamicResource TextBox.SelectionForeground}" />
+		<Setter Property="Cursor" Value="Ibeam" />
+		<Setter Property="CaretBrush" Value="{DynamicResource TextBox.TextCaretBrush}" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="TextBox">
+				<Border Padding="0,4">
+					<ScrollViewer
+						Width="{Binding $parent[TextBox].Bounds.Width}"
+						AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+						HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+						IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+						VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+						<TextPresenter
+							Name="PART_TextPresenter"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							CaretBrush="{TemplateBinding CaretBrush}"
+							CaretIndex="{TemplateBinding CaretIndex}"
+							LineHeight="{TemplateBinding LineHeight}"
+							PasswordChar="{TemplateBinding PasswordChar}"
+							RevealPassword="{TemplateBinding RevealPassword}"
+							SelectionBrush="{TemplateBinding SelectionBrush}"
+							SelectionEnd="{TemplateBinding SelectionEnd}"
+							SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+							SelectionStart="{TemplateBinding SelectionStart}"
+							Text="{TemplateBinding Text,
+                                                   Mode=TwoWay}"
+							TextAlignment="{TemplateBinding TextAlignment}"
+							TextWrapping="{TemplateBinding TextWrapping}" />
+					</ScrollViewer>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:ClosableTag}" TargetType="u:ClosableTag">
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Foreground" Value="{DynamicResource ClosableTagForeground}" />
+		<Setter Property="Background" Value="{DynamicResource ClosableTagBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ClosableTagBorder}" />
+		<Setter Property="BorderThickness" Value="1" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:ClosableTag">
+				<Border
+					Margin="1"
+					Padding="4,2"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="3">
+					<DockPanel LastChildFill="True">
+						<PathIcon
+							Name="{x:Static u:ClosableTag.PART_CloseButton}"
+							Theme="{StaticResource PathIcon-Inner}"
+							Classes="Small"
+							Margin="4,0"
+							Background="Transparent"
+							Data="{DynamicResource ClosableTagCloseIconGlyph}"
+							DockPanel.Dock="Right"
+							Foreground="{TemplateBinding Foreground}" />
+						<ContentPresenter
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							FontSize="12"
+							Foreground="{TemplateBinding Foreground}"
+							TextTrimming="CharacterEllipsis" />
+					</DockPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

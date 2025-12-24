@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="Colors.Background.axaml" />
+		<ResourceInclude Source="Colors.Basic.axaml" />
+		<ResourceInclude Source="Colors.Fill.axaml" />
+		<ResourceInclude Source="Colors.Forground.axaml" />
+		<ResourceInclude Source="Colors.Status.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

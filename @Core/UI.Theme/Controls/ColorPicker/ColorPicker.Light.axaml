@@ -1,0 +1,20 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ColorViewRadioButtonForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="ColorViewRadioButtonBackground" ResourceKey="Brush-Background0" />
+	<StaticResource x:Key="ColorViewRadioButtonPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="ColorViewRadioButtonPressedBackground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="ColorViewRadioButtonCheckedForeground" ResourceKey="Brush-White" />
+	<StaticResource x:Key="ColorViewRadioButtonCheckedBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="ColorViewRadioButtonCheckedPointeroverBackground" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="ColorViewRadioButtonCheckedPressedBackground" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="ColorViewTabItemSelectedForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="ColorSliderDefaultBorderBrush" ResourceKey="Brush-Black" />
+	<StaticResource x:Key="ColorSliderLightBorderBrush" ResourceKey="Brush-White" />
+	<StaticResource x:Key="ColorSliderDarkBorderBrush" ResourceKey="Brush-Black" />
+	<StaticResource x:Key="ColorSpectrumBorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="ColorPreviewerMainBoxShadow" ResourceKey="BoxShadow.Elevated" />
+	<BoxShadows x:Key="ColorSliderBoxShadow">0 0 2 1 #FFFFFF</BoxShadows>
+	<ColorPickerLightPalette x:Key="Color-Palette" />
+</ResourceDictionary>

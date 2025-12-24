@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<x:Double x:Key="Spacing-None">0</x:Double> <!-- 间距 - 零 -->
+	<x:Double x:Key="Spacing-SuperTight">2</x:Double> <!-- 间距 - 极紧凑 -->
+	<x:Double x:Key="Spacing-ExtraTight">4</x:Double> <!-- 间距 - 超紧凑 -->
+	<x:Double x:Key="Spacing-Tight">8</x:Double> <!-- 间距 - 紧凑 -->
+	<x:Double x:Key="Spacing-BaseTight">12</x:Double> <!-- 间距 - 偏紧凑 -->
+	<x:Double x:Key="Spacing-Base">16</x:Double> <!-- 间距 - 默认 -->
+	<x:Double x:Key="Spacing-BaseLoose">20</x:Double> <!-- 间距 - 偏宽松 -->
+	<x:Double x:Key="Spacing-Loose">24</x:Double> <!-- 间距 - 宽松 -->
+	<x:Double x:Key="Spacing-ExtraLoose">32</x:Double> <!-- 间距 - 超宽松 -->
+	<x:Double x:Key="Spacing-SuperLoose">40</x:Double> <!-- 间距 - 极宽松 -->
+</ResourceDictionary>

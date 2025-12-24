@@ -1,0 +1,797 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<ListBox Margin="30">
+			<ListBoxItem>Item 1</ListBoxItem>
+			<ListBoxItem>Item 2</ListBoxItem>
+			<ListBoxItem>Item 3</ListBoxItem>
+			<ListBoxItem IsEnabled="False" IsSelected="True">Item 3</ListBoxItem>
+			<ListBoxItem>Item 4</ListBoxItem>
+		</ListBox>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox">
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBox">
+				<Border
+					Name="border"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					ClipToBounds="{TemplateBinding ClipToBounds}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<ScrollViewer
+						Name="PART_ScrollViewer"
+						AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+						HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+						IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+						IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}"
+						IsScrollInertiaEnabled="{TemplateBinding (ScrollViewer.IsScrollInertiaEnabled)}"
+						VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}">
+						<ItemsPresenter
+							Name="PART_ItemsPresenter"
+							Margin="{TemplateBinding Padding}"
+							ItemsPanel="{TemplateBinding ItemsPanel}" />
+					</ScrollViewer>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	<ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
+		<Setter Property="Background" Value="{DynamicResource ListBox.ItemDefaultBackground}" />
+		<Setter Property="Padding" Value="{DynamicResource ListBox.ItemDefaultPadding}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource ListBox.ItemCornerRadius}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+					Name="PART_ContentPresenter"
+					Padding="{TemplateBinding Padding}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					Content="{TemplateBinding Content}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					Foreground="{TemplateBinding Foreground}" />
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource ListBox.ItemDisabledForeground}" />
+			<Setter Property="Background" Value="{DynamicResource ListBox.ItemDisabledBackground}" />
+			<Style Selector="^:selected">
+				<Setter Property="Background" Value="{DynamicResource ListBox.ItemSelectedDisabledBackground}" />
+			</Style>
+		</Style>
+
+		<!--  Pointerover State  -->
+		<Style Selector="^:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource ListBox.ItemPointeroverForeground}" />
+			<Setter Property="Background" Value="{DynamicResource ListBox.ItemPointeroverBackground}" />
+		</Style>
+
+		<!--  Pressed State  -->
+		<Style Selector="^:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource ListBox.ItemPressedForeground}" />
+			<Setter Property="Background" Value="{DynamicResource ListBox.ItemPressedBackground}" />
+		</Style>
+
+		<!--  Selected State  -->
+		<Style Selector="^:selected">
+			<Setter Property="Foreground" Value="{DynamicResource ListBox.ItemSelectedForeground}" />
+			<Setter Property="Background" Value="{DynamicResource ListBox.ItemSelectedBackground}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource ListBox.ItemSelectedPointeroverBackground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+	<!-- RadioGroup -->
+	<ControlTheme x:Key="RadioGroupListBox" TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource RadioGroupListBoxItem}" />
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Horizontal" />
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBox">
+				<Border
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					ClipToBounds="{TemplateBinding ClipToBounds}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<ItemsPresenter
+						Theme="{DynamicResource RadioGroupListBoxItem}"
+						ItemsPanel="{TemplateBinding ItemsPanel}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+	<ControlTheme x:Key="RadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="{DynamicResource RadioButton.FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource RadioButton.Foreground}" />
+		<Setter Property="Background" Value="{DynamicResource RadioButton.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.DefaultBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource RadioButton.BoxCornerRadius}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+					Name="RootBorder"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid ColumnDefinitions="Auto,*">
+						<Panel
+							Name="PART_GlyphPanel"
+							Grid.Column="0"
+							TemplatedControl.IsTemplateFocusTarget="True"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<Ellipse
+								Name="OuterEllipse"
+								Width="{DynamicResource RadioButton.IconRadius}"
+								Height="{DynamicResource RadioButton.IconRadius}"
+								Fill="{DynamicResource RadioButton.UncheckIconDefaultBackground}"
+								Stroke="{DynamicResource RadioButton.UncheckIconDefaultBorderBrush}"
+								StrokeThickness="{DynamicResource RadioButton.UncheckIconDefaultThickness}"
+								UseLayoutRounding="False" />
+
+							<Ellipse
+								Name="CheckGlyph"
+								Width="{DynamicResource RadioButton.GlyphRadius}"
+								Height="{DynamicResource RadioButton.GlyphRadius}"
+								Fill="{DynamicResource RadioButton.CheckGlyphFill}"
+								Stroke="{DynamicResource RadioButton.CheckGlyphFill}"
+								UseLayoutRounding="False" />
+						</Panel>
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							Grid.Column="1"
+							Margin="{DynamicResource RadioButton.ContentMargin}"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Foreground="{TemplateBinding Foreground}"
+							IsVisible="{TemplateBinding Content,Converter={x:Static ObjectConverters.IsNotNull}}"
+							FontSize="{TemplateBinding FontSize}"
+							RecognizesAccessKey="True"
+							TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconDefaultBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconDefaultBackground}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconPointeroverBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconPointeroverBackground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconPressedBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconPressedBackground}" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconDisabledBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconDefaultBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconDefaultBackground}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconPointeroverBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconPointeroverBackground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconPressedBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconPressedBackground}" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconDisabledBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Panel#PART_GlyphPanel">
+				<Setter Property="Opacity" Value="0.75" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="ButtonRadioGroupListBox"
+						BasedOn="{StaticResource RadioGroupListBox}"
+						TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource ButtonRadioGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="ButtonRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource RadioButton.ButtonDefaultPadding}" />
+		<Setter Property="Margin" Value="2" />
+		<Setter Property="FontWeight" Value="{DynamicResource RadioButton.ButtonFontWeight}" />
+		<Setter Property="FontSize" Value="{DynamicResource RadioButton.ButtonDefault.FontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource RadioButton.ButtonUncheckedForeground}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource RadioButton.ButtonCornerRadius}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+					Name="PART_ContentPresenter"
+					Margin="{TemplateBinding Margin}"
+					Padding="{TemplateBinding Padding}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					Content="{TemplateBinding Content}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					RecognizesAccessKey="True"
+					TextElement.FontSize="{TemplateBinding FontSize}"
+					TextElement.FontWeight="{TemplateBinding FontWeight}"
+					UseLayoutRounding="False" />
+			</ControlTemplate>
+		</Setter>
+		<Setter Property="Background" Value="Transparent" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource RadioButton.ButtonUncheckedPointeroverBackground}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource RadioButton.ButtonUncheckedDisabledForeground}" />
+		</Style>
+		<Style Selector="^:selected">
+			<Setter Property="Background" Value="{DynamicResource RadioButton.ButtonCheckedBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource RadioButton.ButtonCheckedForeground}" />
+			<Style Selector="^:disabled">
+				<Setter Property="Foreground" Value="{DynamicResource RadioButton.ButtonCheckedDisabledForeground}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="FontSize" Value="{DynamicResource RadioButton.ButtonSmallFontSize}" />
+			<Setter Property="Padding" Value="{DynamicResource RadioButton.ButtonSmallPadding}" />
+		</Style>
+		<Style Selector="^.Large">
+			<Setter Property="FontSize" Value="{DynamicResource RadioButton.ButtonLargeFontSize}" />
+			<Setter Property="Padding" Value="{DynamicResource RadioButton.ButtonLargePadding}" />
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="CardRadioGroupListBox"
+						BasedOn="{StaticResource RadioGroupListBox}"
+						TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource CardRadioGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CardRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource RadioButton.CardPadding}" />
+		<Setter Property="FontSize" Value="{DynamicResource RadioButton.FontSize}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource RadioButton.CardCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource RadioButton.CardDefaultBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource RadioButton.BorderThickness}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+					Name="RootBorder"
+					Padding="{TemplateBinding Padding}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						ColumnDefinitions="Auto,*">
+						<Panel
+							Name="PART_GlyphPanel"
+							Grid.Column="0"
+							VerticalAlignment="Top"
+							Margin="{DynamicResource RadioButton.IconMargin}">
+							<Ellipse
+								Name="OuterEllipse"
+								Width="{DynamicResource RadioButton.IconRadius}"
+								Height="{DynamicResource RadioButton.IconRadius}"
+								Fill="{DynamicResource RadioButton.UncheckIconDefaultBackground}"
+								Stroke="{DynamicResource RadioButton.UncheckIconDefaultBorderBrush}"
+								StrokeThickness="1"
+								UseLayoutRounding="False" />
+
+							<Ellipse
+								Name="CheckGlyph"
+								Width="{DynamicResource RadioButton.GlyphRadius}"
+								Height="{DynamicResource RadioButton.GlyphRadius}"
+								Fill="{DynamicResource RadioButton.CheckGlyphFill}"
+								Stroke="{DynamicResource RadioButton.CheckGlyphFill}"
+								UseLayoutRounding="False" />
+						</Panel>
+
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							Grid.Column="1"
+							Margin="{DynamicResource RadioButton.ContentMargin}"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Foreground="{TemplateBinding Foreground}"
+							IsVisible="{TemplateBinding Content,Converter={x:Static ObjectConverters.IsNotNull}}"
+							RecognizesAccessKey="True"
+							FontSize="{TemplateBinding FontSize}"
+							TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconDefaultBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconDefaultBackground}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconPointeroverBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="Background" Value="{DynamicResource RadioButton.CardUncheckPointeroverBackground}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconPressedBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="Background" Value="{DynamicResource RadioButton.CardUncheckPressedBackground}" />
+				</Style>
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.UncheckIconDisabledBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.UncheckIconDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Ellipse#CheckGlyph">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+
+			<Style Selector="^ /template/ Ellipse#OuterEllipse">
+				<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconDefaultBorderBrush}" />
+				<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconDefaultBackground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="Background" Value="{DynamicResource RadioButton.CardCheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckDefaultBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconPointeroverBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconPointeroverBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckPointeroverBorderBrush}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconPressedBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconPressedBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckPressedBorderBrush}" />
+				</Style>
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Ellipse#OuterEllipse">
+					<Setter Property="Stroke" Value="{DynamicResource RadioButton.CheckIconDisabledBorderBrush}" />
+					<Setter Property="Fill" Value="{DynamicResource RadioButton.CheckIconDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CheckIconDisabledBackground}" />
+					<Setter Property="Background" Value="{DynamicResource RadioButton.CardCheckedBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Panel#PART_GlyphPanel">
+				<Setter Property="Opacity" Value="0.75" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="PureCardRadioGroupListBox"
+						BasedOn="{StaticResource RadioGroupListBox}"
+						TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource PureCardRadioGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="PureCardRadioGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource RadioButton.CardPadding}" />
+		<Setter Property="FontSize" Value="{DynamicResource RadioButton.FontSize}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource RadioButton.CardCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource RadioButton.CardDefaultBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource RadioButton.BorderThickness}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<ContentPresenter
+					Name="PART_ContentPresenter"
+					Padding="{TemplateBinding Padding}"
+					HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					Foreground="{TemplateBinding Foreground}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					Content="{TemplateBinding Content}"
+					ContentTemplate="{TemplateBinding ContentTemplate}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					RecognizesAccessKey="True"
+					UseLayoutRounding="False"
+					TextWrapping="Wrap" />
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardDefaultBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="{DynamicResource RadioButton.CardUncheckPointeroverBackground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="{DynamicResource RadioButton.CardUncheckPressedBackground}" />
+			</Style>
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+			</Style>
+		</Style>
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="{DynamicResource RadioButton.CardCheckedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckDefaultBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CardCheckPressedBorderBrush}" />
+			</Style>
+			<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="BorderBrush" Value="{DynamicResource RadioButton.CheckIconDisabledBackground}" />
+				<Setter Property="Background" Value="{DynamicResource RadioButton.CardCheckedBackground}" />
+				<Setter Property="Foreground" Value="{DynamicResource RadioButtonDisabledForeground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<!-- CheckGroup -->
+	<ControlTheme x:Key="CheckGroupListBox"
+						BasedOn="{StaticResource RadioGroupListBox}"
+						TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource CheckGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CheckGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="{DynamicResource CheckBoxFontSize}" />
+		<Setter Property="Foreground" Value="{DynamicResource CheckBox.Foreground}" />
+		<Setter Property="Background" Value="{DynamicResource CheckBox.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.DefaultBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CheckBox.BoxCornerRadius}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+					Name="RootBorder"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid ColumnDefinitions="Auto,*">
+						<Panel
+							Name="PART_GlyphPanel"
+							Grid.Column="0"
+							TemplatedControl.IsTemplateFocusTarget="True"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+							<Border
+								Name="NormalRectangle"
+								Width="{DynamicResource CheckBox.BoxWidth}"
+								Height="{DynamicResource CheckBox.BoxHeight}"
+								Background="{DynamicResource CheckBox.DefaultBackground}"
+								BorderBrush="{DynamicResource CheckBox.DefaultBorderBrush}"
+								BorderThickness="{DynamicResource CheckBox.BoxBorderThickness}"
+								CornerRadius="{TemplateBinding CornerRadius}"
+								UseLayoutRounding="False" />
+							<PathIcon
+								Name="CheckGlyph"
+								Theme="{DynamicResource PathIcon-Inner}"
+								Width="{DynamicResource CheckBox.BoxGlyphWidth}"
+								Height="{DynamicResource CheckBox.BoxGlyphHeight}"
+								Foreground="{DynamicResource CheckBox.GlyphFill}" />
+						</Panel>
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							Grid.Column="1"
+							Margin="{DynamicResource CheckBox.ContentMargin}"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							IsVisible="{TemplateBinding Content,Converter={x:Static ObjectConverters.IsNotNull}}"
+							FontSize="{TemplateBinding FontSize}"
+							RecognizesAccessKey="True"
+							TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^:pointerover /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.PointeroverBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.PointeroverBackground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.PressedBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.PressedBackground}" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.DefaultDisabledBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.DefaultDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource CheckBox.DisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedDefaultBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedDefaultBackground}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedPointeroverBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedPointeroverBackground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedPressedBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedPressedBackground}" />
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedDisabledBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource CheckBox.DisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected /template/ PathIcon#CheckGlyph">
+			<Setter Property="Data" Value="{DynamicResource CheckBox.CheckGlyph}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Style Selector="^ /template/ Panel#PART_GlyphPanel">
+				<Setter Property="Opacity" Value="0.75" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+
+	<ControlTheme x:Key="CardCheckGroupListBox"
+						BasedOn="{StaticResource RadioGroupListBox}"
+						TargetType="ListBox">
+		<Setter Property="ItemContainerTheme" Value="{DynamicResource CardCheckGroupListBoxItem}" />
+	</ControlTheme>
+	<ControlTheme x:Key="CardCheckGroupListBoxItem" TargetType="ListBoxItem">
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="{DynamicResource CheckBox.CardPadding}" />
+		<Setter Property="FontSize" Value="{DynamicResource CheckBoxFontSize}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource CheckBox.CardCornerRadius}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="BorderThickness" Value="{DynamicResource CheckBox.BorderCardThickness}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ListBoxItem">
+				<Border
+					Name="RootBorder"
+					Padding="{TemplateBinding Padding}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<Grid
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						ColumnDefinitions="Auto,*">
+						<Panel
+							Name="PART_GlyphPanel"
+							Grid.Column="0"
+							VerticalAlignment="Top"
+							Margin="{DynamicResource CheckBox.BoxMargin}">
+							<Border
+								Name="NormalRectangle"
+								Width="{DynamicResource CheckBox.BoxWidth}"
+								Height="{DynamicResource CheckBox.BoxHeight}"
+								Background="{DynamicResource CheckBox.DefaultBackground}"
+								BorderBrush="{DynamicResource CheckBox.DefaultBorderBrush}"
+								BorderThickness="{DynamicResource CheckBox.BoxBorderThickness}"
+								CornerRadius="{DynamicResource CheckBox.BoxCornerRadius}"
+								UseLayoutRounding="False" />
+							<PathIcon
+								Name="CheckGlyph"
+								Theme="{DynamicResource PathIcon-Inner}"
+								Width="{DynamicResource CheckBox.BoxGlyphWidth}"
+								Height="{DynamicResource CheckBox.BoxGlyphHeight}"
+								Foreground="{DynamicResource CheckBox.GlyphFill}" />
+						</Panel>
+
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							Grid.Column="1"
+							Margin="{DynamicResource CheckBox.ContentMargin}"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Foreground="{TemplateBinding Foreground}"
+							IsVisible="{TemplateBinding Content,Converter={x:Static ObjectConverters.IsNotNull}}"
+							FontSize="{TemplateBinding FontSize}"
+							RecognizesAccessKey="True"
+							TextWrapping="Wrap" />
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.PointeroverBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CardPointeroverBackground}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.PressedBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CardPressedBackground}" />
+				</Style>
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.DefaultDisabledBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.DefaultDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource CheckBox.DisabledForeground}" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ Border#NormalRectangle">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedDefaultBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedDefaultBackground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CardCheckedBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedPointeroverBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedPointeroverBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CardCheckedPointeroverBorderBrush}" />
+				</Style>
+			</Style>
+			<Style Selector="^:pressed">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedPressedBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedPressedBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CardCheckedPressedBorderBrush}" />
+				</Style>
+			</Style>
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Border#NormalRectangle">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CheckedDisabledBorderBrush}" />
+					<Setter Property="Background" Value="{DynamicResource CheckBox.CheckedDisabledBackground}" />
+				</Style>
+				<Style Selector="^ /template/ Border#RootBorder">
+					<Setter Property="BorderBrush" Value="{DynamicResource CheckBox.CardCheckedDisabledBorderBrush}" />
+				</Style>
+				<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+					<Setter Property="Foreground" Value="{DynamicResource CheckBox.DisabledForeground}" />
+				</Style>
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Style Selector="^ /template/ Panel#PART_GlyphPanel">
+					<Setter Property="Opacity" Value="0.75" />
+				</Style>
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ PathIcon#CheckGlyph">
+				<Setter Property="Data" Value="{DynamicResource CheckBox.CheckGlyph}" />
+			</Style>
+			<Style Selector="^ /template/ Border#RootBorder">
+				<Setter Property="Background" Value="{DynamicResource CheckBox.CardCheckedBackground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,145 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="DualBadgeDefaultIconForeground" ResourceKey="Color-White" />
+	<StaticResource x:Key="DualBadgeDefaultHeaderForeground" ResourceKey="Color-White" />
+	<StaticResource x:Key="DualBadgeDefaultForeground" ResourceKey="Color-White" />
+	<LinearGradientBrush x:Key="DualBadgeDefaultHeaderBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#555B61" Offset="0" />
+		<GradientStop Color="#41464C" Offset="1" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="DualBadgeFlatRedBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FA664C" Offset="0" />
+		<GradientStop Color="#F93920" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatPinkBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#ED487B" Offset="0" />
+		<GradientStop Color="#E91E63" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatPurpleBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#B449C2" Offset="0" />
+		<GradientStop Color="#9E28B3" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatVioletBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#885BD2" Offset="0" />
+		<GradientStop Color="#6A3AC7" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatIndigoBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#5E6FC4" Offset="0" />
+		<GradientStop Color="#3F51B5" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatBlueBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#3295FB" Offset="0" />
+		<GradientStop Color="#0077FA" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatLightBlueBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#30ACF1" Offset="0" />
+		<GradientStop Color="#0095EE" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatCyanBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#2CB8C5" Offset="0" />
+		<GradientStop Color="#2CB8C5" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatTealBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#27C2B0" Offset="0" />
+		<GradientStop Color="#00B3A1" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatGreenBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#5AC262" Offset="0" />
+		<GradientStop Color="#3BB346" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatLightGreenBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#93C55B" Offset="0" />
+		<GradientStop Color="#7BB63C" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatLimeBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#A7DA2C" Offset="0" />
+		<GradientStop Color="#9BD100" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatYellowBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FBDA32" Offset="0" />
+		<GradientStop Color="#FAC800" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatAmberBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#F3C641" Offset="0" />
+		<GradientStop Color="#F0B114" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatOrangeBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FDA633" Offset="0" />
+		<GradientStop Color="#FC8800" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgeFlatGreyBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#888D92" Offset="0" />
+		<GradientStop Color="#6B7075" Offset="1" />
+	</LinearGradientBrush>
+
+
+	<LinearGradientBrush x:Key="DualBadgePlasticHeaderBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#555B61" Offset="0" />
+		<GradientStop Color="#2E3238" Offset="1" />
+	</LinearGradientBrush>
+
+	<LinearGradientBrush x:Key="DualBadgePlasticRedBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FA664C" Offset="0" />
+		<GradientStop Color="#D52515" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticPinkBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#ED487B" Offset="0" />
+		<GradientStop Color="#C51356" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticPurpleBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#B449C2" Offset="0" />
+		<GradientStop Color="#871E9E" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticVioletBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#885BD2" Offset="0" />
+		<GradientStop Color="#572FB3" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticIndigoBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#5E6FC4" Offset="0" />
+		<GradientStop Color="#3342A1" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticBlueBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#3295FB" Offset="0" />
+		<GradientStop Color="#0077FA" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticLightBlueBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#30ACF1" Offset="0" />
+		<GradientStop Color="#007BCA" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticCyanBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#2CB8C5" Offset="0" />
+		<GradientStop Color="#038698" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticTealBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#27C2B0" Offset="0" />
+		<GradientStop Color="#009589" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticGreenBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#5AC262" Offset="0" />
+		<GradientStop Color="#30953B" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticLightGreenBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#93C55B" Offset="0" />
+		<GradientStop Color="#649830" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticLimeBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#A7DA2C" Offset="0" />
+		<GradientStop Color="#7EAE00" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticYellowBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FBDA32" Offset="0" />
+		<GradientStop Color="#D0AA00" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticAmberBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#F3C641" Offset="0" />
+		<GradientStop Color="#C88A0F" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticOrangeBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#FDA633" Offset="0" />
+		<GradientStop Color="#D26700" Offset="1" />
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="DualBadgePlasticGreyBackground" StartPoint="0%,0%" EndPoint="0%,100%">
+		<GradientStop Color="#888D92" Offset="0" />
+		<GradientStop Color="#555B61" Offset="1" />
+	</LinearGradientBrush>
+</ResourceDictionary>

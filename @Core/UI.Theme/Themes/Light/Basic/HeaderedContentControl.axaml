@@ -1,0 +1,4 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="HeaderedContentControl.Background" ResourceKey="Brush-Background0" />
+	<StaticResource x:Key="HeaderedContentControl.BorderBrush" ResourceKey="Brush-Border" />
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ScrollBar.Thickness" ResourceKey="Spacing-Tight" />
+	<x:Double x:Key="ScrollBar.MinLength">24</x:Double>
+	<StaticResource x:Key="ScrollBar.ThumbThickness" ResourceKey="Spacing-Tight" />
+	<StaticResource x:Key="ScrollBar.ThumbCornerRadius" ResourceKey="Border-RadiusMedium" />
+	<StaticResource x:Key="ScrollBar.UpGlyph" ResourceKey="Icon-SmallTriangleTop" />
+	<StaticResource x:Key="ScrollBar.DownGlyph" ResourceKey="Icon-SmallTriangleDown" />
+	<StaticResource x:Key="ScrollBar.LeftGlyph" ResourceKey="Icon-SmallTriangleLeft" />
+	<StaticResource x:Key="ScrollBar.RightGlyph" ResourceKey="Icon-SmallTriangleRight" />
+</ResourceDictionary>

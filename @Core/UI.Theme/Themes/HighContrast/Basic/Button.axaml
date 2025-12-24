@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--  Light  -->
+	<StaticResource x:Key="Button.DefaultPrimaryForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Button.DefaultDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="Button.DefaultBackground" ResourceKey="Brush-ButtonFace" />
+	<StaticResource x:Key="Button.DefaultPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Button.DefaultPressedBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Button.DefaultBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Button.DefaultPointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<SolidColorBrush x:Key="Button.DefaultPressedBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="Button.DefaultDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<!--  end Light  -->
+	<!--  Solid  -->
+	<StaticResource x:Key="Button.SolidForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Button.SolidPrimaryBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Button.SolidPrimaryPointeroverBackground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Button.SolidPrimaryPressedForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Button.SolidPrimaryPressedBackground" ResourceKey="Brush-ButtonFace" />
+	<StaticResource x:Key="Button.SolidPrimaryBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Button.SolidPrimaryPointeroverBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Button.SolidPrimaryPressedBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Button.SolidDisabledBackground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="Button.SolidDisabledForeground" ResourceKey="Brush-ButtonFace" />
+	<SolidColorBrush x:Key="Button.SolidDisabledBorderBrush" Color="Transparent" />
+	<!--  end Solid  -->
+	<!--  Borderless -->
+	<SolidColorBrush x:Key="Button.BorderlessBackground" Color="Transparent" />
+	<SolidColorBrush x:Key="Button.BorderlessBorderBrush" Color="Transparent" />
+	<!--  end Borderless  -->
+	<!--  Outline -->
+	<SolidColorBrush x:Key="Button.OutlineBackground" Color="Transparent" />
+	<StaticResource x:Key="Button.OutlineBorderBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="Button.OutlinePointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="Button.OutlinePressedBackground" ResourceKey="Brush-Window" />
+	<!--  end Outline  -->
+	<StaticResource x:Key="Button.InputInnerForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="Button.InputInnerPointeroverForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="Button.InputInnerPressedForeground" ResourceKey="Brush-Highlight" />
+</ResourceDictionary>

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>$(DotnetTargetFrameworkVersion)</TargetFramework>
+		<LangVersion>$(DotnetLangVersion)</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>ENV</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\CMakeLists.txt">
+		  <Link>CMakeLists.txt</Link>
+		</Content>
+		<Content Link="ProjManger.cs" Include="..\ProjManger.cs"/>
+
+
+		<Folder Include="build\"/>
+		<Folder Include="doc\"/>
+		
+		<Compile Remove=".\**\*.cs"/>
+		<None Include=".\**\*.cs"/>
+		<None Include=".\**\*.nupkg"/>
+
+		<!-- 链接文件 -->
+		<None Link=".gitignore" Include="..\.gitignore"/>
+		<None Link="Directory.Build.props" Include="..\Directory.Build.props"/>
+		<None Link="Directory.Packages.props" Include="..\Directory.Packages.props"/>
+		<None Link="NuGet.config" Include="..\NuGet.config"/>
+		<None Link="README.md" Include="..\README.md"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="assets\logo.ico"/>
+	</ItemGroup>
+</Project>

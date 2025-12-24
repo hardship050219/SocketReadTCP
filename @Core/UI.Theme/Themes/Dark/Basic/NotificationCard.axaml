@@ -1,0 +1,20 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="NotificationCard.BorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="NotificationCard.Background" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="NotificationCard.InformationIconForeground" ResourceKey="Brush-Information" />
+	<StaticResource x:Key="NotificationCard.SuccessIconForeground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="NotificationCard.WarningIconForeground" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="NotificationCard.ErrorIconForeground" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="NotificationCard.BoxShadows" ResourceKey="BoxShadow.Elevated" />
+	<StaticResource x:Key="NotificationCard.TitleForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="NotificationCard.MessageForeground" ResourceKey="Brush-Text1" />
+	<StaticResource x:Key="NotificationCard.LightBackground" ResourceKey="Brush-Background0" />
+	<StaticResource x:Key="NotificationCard.LightInformationBorderBrush" ResourceKey="Brush-Information" />
+	<StaticResource x:Key="NotificationCard.LightInformationBackground" ResourceKey="Brush-InformationLight" />
+	<StaticResource x:Key="NotificationCard.LightSuccessBorderBrush" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="NotificationCard.LightSuccessBackground" ResourceKey="Brush-SuccessLight" />
+	<StaticResource x:Key="NotificationCard.LightWarningBorderBrush" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="NotificationCard.LightWarningBackground" ResourceKey="Brush-WarningLight" />
+	<StaticResource x:Key="NotificationCard.LightErrorBorderBrush" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="NotificationCard.LightErrorBackground" ResourceKey="Brush-DangerLight" />
+</ResourceDictionary>

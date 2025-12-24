@@ -1,0 +1,31 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- 主背景色 -->
+	<Color x:Key="BgColor-Primary">#FFFFFF</Color>
+	<SolidColorBrush x:Key="Background.PrimaryBrush" Color="{StaticResource BgColor-Primary}" />
+	<!-- 次背景色（卡片、面板） -->
+	<Color x:Key="BgColor-Secondary">#F9FAFB</Color>
+	<SolidColorBrush x:Key="Background.SecondaryBrush" Color="{StaticResource BgColor-Secondary}" />
+	<!-- 三级背景色（分隔区、列表行交替） -->
+	<Color x:Key="BgColor-Tertiary">#F3F4F6</Color>
+	<SolidColorBrush x:Key="Background.TertiaryBrush" Color="{StaticResource BgColor-Tertiary}" />
+	<!-- 高亮背景（选中、悬停） -->
+	<Color x:Key="BgColor-Highlight">#E0F2FE</Color>
+	<SolidColorBrush x:Key="Background.HighlightBrush" Color="{StaticResource BgColor-Highlight}" />
+	<!-- 禁用背景 -->
+	<Color x:Key="BgColor-Disabled">#E5E7EB</Color>
+	<SolidColorBrush x:Key="Background.DisabledBrush" Color="{StaticResource BgColor-Disabled}" />
+
+	<!-- 背景色阶梯（50~950） -->
+	<Color x:Key="BgColor-50">#FFFFFF</Color>
+	<Color x:Key="BgColor-100">#F9FAFB</Color>
+	<Color x:Key="BgColor-200">#F3F4F6</Color>
+	<Color x:Key="BgColor-300">#E5E7EB</Color>
+	<Color x:Key="BgColor-400">#D1D5DB</Color>
+	<Color x:Key="BgColor-500">#9CA3AF</Color>
+	<Color x:Key="BgColor-600">#6B7280</Color>
+	<Color x:Key="BgColor-700">#4B5563</Color>
+	<Color x:Key="BgColor-800">#374151</Color>
+	<Color x:Key="BgColor-900">#1F2937</Color>
+	<Color x:Key="BgColor-950">#111827</Color>
+</ResourceDictionary>

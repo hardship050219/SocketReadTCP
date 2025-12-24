@@ -1,0 +1,304 @@
+﻿<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+	xmlns:u="https://zit.com/ui">
+	<Design.PreviewWith>
+		<StackPanel Margin="20">
+			<u:IconButton Icon="{StaticResource Icon-GithubLogo}" />
+			<u:IconButton
+				Theme="{StaticResource SolidIconButton}"
+				Icon="{StaticResource Icon-GithubLogo}"
+				Classes="Warning"
+				Content="GitHub" />
+		</StackPanel>
+	</Design.PreviewWith>
+	<BooleansToOpacityConverter x:Key="OpacityConverter" />
+	<ControlTheme x:Key="{x:Type u:IconButton}" TargetType="u:IconButton">
+		<Setter Property="Background" Value="{DynamicResource Button.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Button.DefaultPrimaryForeground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource Button.CornerRadius}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource Button.BorderThickness}" />
+		<Setter Property="Padding" Value="{DynamicResource Button.DefaultPadding}" />
+		<Setter Property="RenderTransform" Value="none" />
+		<Setter Property="FontSize" Value="{DynamicResource Button.Default.FontSize}" />
+		<Setter Property="FontWeight" Value="{DynamicResource Button.Default.FontWeight}" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="MinHeight" Value="{DynamicResource Button.DefaultHeight}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:IconButton">
+				<Border
+					Padding="{TemplateBinding Padding}"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					TextElement.FontSize="{TemplateBinding FontSize}"
+					TextElement.FontWeight="{TemplateBinding FontWeight}"
+					UseLayoutRounding="False">
+					<ReversibleStackPanel
+						Name="{x:Static u:IconButton.PART_RootPanel}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+						Orientation="Horizontal"
+						Spacing="{StaticResource IconButtonInnerSpacing}">
+						<Panel Name="PART_IconRoot">
+							<Panel.IsVisible>
+								<MultiBinding Converter="{x:Static BoolConverters.Or}">
+									<Binding Path="IsLoading" RelativeSource="{RelativeSource TemplatedParent}" />
+									<Binding
+										Converter="{x:Static ObjectConverters.IsNotNull}"
+										Path="Icon"
+										RelativeSource="{RelativeSource TemplatedParent}" />
+								</MultiBinding>
+							</Panel.IsVisible>
+							<ContentPresenter
+								Content="{TemplateBinding Icon}"
+								ContentTemplate="{TemplateBinding IconTemplate}"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								Opacity="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=!IsLoading, Converter={StaticResource OpacityConverter}}">
+								<ContentPresenter.DataTemplates>
+									<DataTemplate DataType="Geometry">
+										<PathIcon
+											Theme="{StaticResource PathIcon-Inner}"
+											Data="{Binding }" />
+									</DataTemplate>
+								</ContentPresenter.DataTemplates>
+							</ContentPresenter>
+							<u:LoadingIcon
+								Classes="Small"
+								Foreground="{TemplateBinding Foreground}"
+								IsLoading="{TemplateBinding IsLoading}"
+								IsVisible="{TemplateBinding IsLoading}" />
+						</Panel>
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							IsVisible="{TemplateBinding Content, Converter={x:Static ObjectConverters.IsNotNull}}"
+							Content="{TemplateBinding Content}" />
+					</ReversibleStackPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^.Primary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultPrimaryForeground}" />
+		</Style>
+		<Style Selector="^.Secondary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultSecondaryForeground}" />
+		</Style>
+		<Style Selector="^.Tertiary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultTertiaryForeground}" />
+		</Style>
+		<Style Selector="^.Success">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultSuccessForeground}" />
+		</Style>
+		<Style Selector="^.Warning">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultWarningForeground}" />
+		</Style>
+		<Style Selector="^.Danger">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDangerForeground}" />
+		</Style>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultPointeroverBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource Button.DefaultPointeroverBackground}" />
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultPressedBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource Button.DefaultPressedBackground}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultDisabledBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+
+		<Style Selector="^:right /template/ ReversibleStackPanel#PART_RootPanel">
+			<Setter Property="Orientation" Value="Horizontal" />
+			<Setter Property="ReverseOrder" Value="True" />
+		</Style>
+
+		<Style Selector="^:left /template/ ReversibleStackPanel#PART_RootPanel">
+			<Setter Property="Orientation" Value="Horizontal" />
+			<Setter Property="ReverseOrder" Value="False" />
+		</Style>
+
+		<Style Selector="^:top /template/ ReversibleStackPanel#PART_RootPanel">
+			<Setter Property="Orientation" Value="Vertical" />
+			<Setter Property="ReverseOrder" Value="False" />
+		</Style>
+
+		<Style Selector="^:bottom /template/ ReversibleStackPanel#PART_RootPanel">
+			<Setter Property="Orientation" Value="Vertical" />
+			<Setter Property="ReverseOrder" Value="True" />
+		</Style>
+
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource Button.LargeHeight}" />
+			<Setter Property="Padding" Value="{DynamicResource Button.LargePadding}" />
+		</Style>
+
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource Button.SmallHeight}" />
+			<Setter Property="Padding" Value="{DynamicResource Button.SmallPadding}" />
+		</Style>
+
+		<Style Selector="^:empty-content">
+			<Setter Property="MinWidth" Value="{Binding $self.MinHeight}" />
+			<Setter Property="Padding" Value="0" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="SolidIconButton"
+		BasedOn="{StaticResource {x:Type u:IconButton}}"
+		TargetType="u:IconButton">
+		<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+		<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryBorderBrush}" />
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPressedBorderBrush}" />
+		</Style>
+
+		<Style Selector="^.Primary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Secondary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Tertiary">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Success">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Warning">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidWarningBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidWarningPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidWarningPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Danger">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidDangerBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerBorderBrush}" />
+			<Style Selector="^:pointerover">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidDangerPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidDangerPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerPressedBorderBrush}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultDisabledBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource Button.SolidDisabledBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="BorderlessIconButton"
+		BasedOn="{StaticResource {x:Type u:IconButton}}"
+		TargetType="u:IconButton">
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.BorderlessBorderBrush}" />
+		<Setter Property="Background" Value="{DynamicResource Button.BorderlessBackground}" />
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.BorderlessBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource Button.BorderlessBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="OutlineIconButton"
+		BasedOn="{StaticResource {x:Type u:IconButton}}"
+		TargetType="u:IconButton">
+		<Setter Property="Background" Value="{DynamicResource Button.OutlineBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineBorderBrush}" />
+		<Style Selector="^:pointerover">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlinePointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlinePressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineBorderBrush}" />
+		</Style>
+		<Style Selector="^.Success">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineSuccessBorderBrush}" />
+		</Style>
+		<Style Selector="^.Warning">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineWarningBorderBrush}" />
+		</Style>
+		<Style Selector="^.Danger">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineDangerBorderBrush}" />
+		</Style>
+		<Style Selector="^:disabled">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineBorderBrush}" />
+			<Setter Property="Background" Value="{DynamicResource Button.OutlineBackground}" />
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

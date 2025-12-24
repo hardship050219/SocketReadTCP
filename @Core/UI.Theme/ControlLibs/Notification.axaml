@@ -1,0 +1,436 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+							xmlns:u="https://zit.com/ui"
+							xmlns:ui="clr-namespace:ZC.UI">
+	<Design.PreviewWith>
+		<ThemeVariantScope RequestedThemeVariant="Dark">
+			<ReversibleStackPanel Orientation="Vertical" ReverseOrder="True">
+				<UiNotificationCard ShowIcon="False" ShowClose="False" />
+				<UiNotificationCard ShowIcon="False" />
+				<UiNotificationCard UiMessageType="Information">
+					Hello, Ursa!
+				</UiNotificationCard>
+				<UiNotificationCard UiMessageType="Success">
+					<UiNotification Title="Welcome" />
+				</UiNotificationCard>
+				<UiNotificationCard UiMessageType="Warning">
+					<UiNotification Content="Hello, Ursa!" />
+				</UiNotificationCard>
+				<UiNotificationCard UiMessageType="Error" Classes="Light">
+					<UiNotification Title="Welcome">
+						Hello, Ursa!
+					</UiNotification>
+				</UiNotificationCard>
+			</ReversibleStackPanel>
+		</ThemeVariantScope>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="{x:Type UiNotificationManager}" TargetType="UiNotificationManager">
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ReversibleStackPanel Name="PART_Items" ReverseOrder="True" />
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:topleft /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+
+		<Style Selector="^:topright /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+
+		<Style Selector="^:topcenter /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Top" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+
+		<Style Selector="^:bottomleft /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Left" />
+		</Style>
+
+		<Style Selector="^:bottomright /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Right" />
+		</Style>
+
+		<Style Selector="^:bottomcenter /template/ ReversibleStackPanel#PART_Items">
+			<Setter Property="VerticalAlignment" Value="Bottom" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type UiNotificationCard}" TargetType="UiNotificationCard">
+		<Setter Property="UseLayoutRounding" Value="True" />
+		<Setter Property="BorderThickness" Value="{DynamicResource Notification.BorderCardThickness}" />
+		<Setter Property="Background" Value="{DynamicResource NotificationCard.Background}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource NotificationCardCornerRadius}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="UiNotificationCard">
+				<LayoutTransformControl x:Name="PART_LayoutTransformControl" UseRenderTransform="True">
+					<Border
+						Margin="{DynamicResource NotificationCard.Margin}"
+						Background="{TemplateBinding Background}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+						<Border
+							x:Name="PART_RootBorder"
+							Padding="{DynamicResource NotificationCardPadding}"
+							BoxShadow="{DynamicResource NotificationCard.BoxShadows}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="{TemplateBinding CornerRadius}">
+							<DockPanel MinWidth="{DynamicResource Notification.CardMinWidth}">
+								<PathIcon
+									x:Name="NotificationIcon"
+									Theme="{StaticResource PathIcon-Inner}"
+									Classes="Large"
+									Margin="{DynamicResource NotificationCard.IconMargin}"
+									VerticalAlignment="Top"
+									IsVisible="{TemplateBinding ShowIcon}"
+									Data="{DynamicResource NotificationCard.InformationIconPathData}" />
+								<ContentControl
+									x:Name="PART_Content"
+									VerticalContentAlignment="Center"
+									Content="{TemplateBinding Content}">
+									<ContentControl.DataTemplates>
+										<DataTemplate DataType="IUiNotification">
+											<StackPanel Spacing="{DynamicResource NotificationCard.TitleSpacing}">
+												<SelectableTextBlock
+													Foreground="{DynamicResource NotificationCard.TitleForeground}"
+													FontSize="{DynamicResource NotificationCard.TitleFontSize}"
+													FontWeight="{DynamicResource NotificationCard.TitleFontWeight}"
+													IsVisible="{Binding Title, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+													Text="{Binding Title}" />
+												<SelectableTextBlock
+													Foreground="{DynamicResource NotificationCard.MessageForeground}"
+													FontSize="{DynamicResource NotificationCard.MessageFontSize}"
+													FontWeight="{DynamicResource NotificationCard.MessageFontWeight}"
+													IsVisible="{Binding Content, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+													Text="{Binding Content}"
+													TextWrapping="Wrap" />
+											</StackPanel>
+										</DataTemplate>
+										<DataTemplate DataType="x:String">
+											<SelectableTextBlock
+												Foreground="{DynamicResource NotificationCard.MessageForeground}"
+												FontSize="{DynamicResource NotificationCard.MessageFontSize}"
+												FontWeight="{DynamicResource NotificationCard.MessageFontWeight}"
+												Text="{Binding}"
+												TextWrapping="Wrap" />
+										</DataTemplate>
+									</ContentControl.DataTemplates>
+								</ContentControl>
+								<Button
+									x:Name="PART_CloseButton"
+									VerticalAlignment="Top"
+									HorizontalAlignment="Right"
+									Theme="{StaticResource OverlayCloseButton}"
+									IsVisible="{TemplateBinding ShowClose}"
+									UiMessageCard.CloseOnClick="True" />
+							</DockPanel>
+						</Border>
+					</Border>
+				</LayoutTransformControl>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^">
+			<Style Selector="^ /template/ LayoutTransformControl#PART_LayoutTransformControl">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame Cue="0%">
+							<Setter Property="Opacity" Value="0" />
+						</KeyFrame>
+						<KeyFrame Cue="100%">
+							<Setter Property="Opacity" Value="1" />
+						</KeyFrame>
+					</Animation>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.15">
+						<KeyFrame Cue="0%">
+							<Setter Property="ScaleTransform.ScaleY" Value="0" />
+						</KeyFrame>
+						<KeyFrame Cue="70%">
+							<Setter Property="ScaleTransform.ScaleY" Value="0" />
+						</KeyFrame>
+						<KeyFrame Cue="100%">
+							<Setter Property="ScaleTransform.ScaleY" Value="1" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+
+			<Style Selector="^:topleft">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="-500" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:topright">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="500" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomleft">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="-500" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomright">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="500" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:topcenter">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.Y" Value="-100" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.Y" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomcenter">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseIn"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.Y" Value="100" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.Y" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+		</Style>
+
+		<Style Selector="^[IsClosing=true]">
+			<Style Selector="^ /template/ LayoutTransformControl#PART_LayoutTransformControl">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame Cue="0%">
+							<Setter Property="Opacity" Value="1" />
+						</KeyFrame>
+						<KeyFrame Cue="100%">
+							<Setter Property="Opacity" Value="0" />
+						</KeyFrame>
+					</Animation>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.15">
+						<KeyFrame Cue="0%">
+							<Setter Property="ScaleTransform.ScaleY" Value="1" />
+						</KeyFrame>
+						<KeyFrame Cue="70%">
+							<Setter Property="ScaleTransform.ScaleY" Value="1" />
+						</KeyFrame>
+						<KeyFrame Cue="100%">
+							<Setter Property="ScaleTransform.ScaleY" Value="0" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+
+			<Style Selector="^:topleft">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="-500" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:topright">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="500" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomleft">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="-500" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomright">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.X" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.X" Value="500" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:topcenter">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.Y" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.Y" Value="-100" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+			<Style Selector="^:bottomcenter">
+				<Style.Animations>
+					<Animation
+						Easing="QuadraticEaseOut"
+						FillMode="Forward"
+						Duration="0:0:0.3">
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="0%">
+							<Setter Property="TranslateTransform.Y" Value="0" />
+						</KeyFrame>
+						<KeyFrame KeySpline="0.62,0.63,0,1.13" Cue="100%">
+							<Setter Property="TranslateTransform.Y" Value="100" />
+						</KeyFrame>
+					</Animation>
+				</Style.Animations>
+			</Style>
+		</Style>
+
+		<Style Selector="^[IsClosing=true]">
+			<Style.Animations>
+				<Animation
+					Easing="QuadraticEaseOut"
+					FillMode="Forward"
+					Duration="0:0:0.3">
+					<KeyFrame Cue="100%">
+						<Setter Property="IsClosed" Value="True" />
+					</KeyFrame>
+				</Animation>
+			</Style.Animations>
+		</Style>
+
+		<Style Selector="^:information /template/ PathIcon#NotificationIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.InformationIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.InformationIconPathData}" />
+		</Style>
+		<Style Selector="^:success /template/ PathIcon#NotificationIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.SuccessIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.SuccessIconPathData}" />
+		</Style>
+		<Style Selector="^:warning /template/ PathIcon#NotificationIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.WarningIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.WarningIconPathData}" />
+		</Style>
+		<Style Selector="^:error /template/ PathIcon#NotificationIcon">
+			<Setter Property="Foreground" Value="{DynamicResource NotificationCard.ErrorIconForeground}" />
+			<Setter Property="Data" Value="{DynamicResource NotificationCard.ErrorIconPathData}" />
+		</Style>
+
+		<Style Selector="^.Light">
+			<Setter Property="Background" Value="{DynamicResource NotificationCard.LightBackground}" />
+			<Style Selector="^:information /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightInformationBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightInformationBackground}" />
+			</Style>
+			<Style Selector="^:success /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightSuccessBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightSuccessBackground}" />
+			</Style>
+			<Style Selector="^:warning /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightWarningBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightWarningBackground}" />
+			</Style>
+			<Style Selector="^:error /template/ Border#PART_RootBorder">
+				<Setter Property="BorderBrush" Value="{DynamicResource NotificationCard.LightErrorBorderBrush}" />
+				<Setter Property="Background" Value="{DynamicResource NotificationCard.LightErrorBackground}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

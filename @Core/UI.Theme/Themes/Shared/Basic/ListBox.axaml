@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- ListBox -->
+	<Thickness x:Key="ListBox.ItemDefaultPadding">12 8</Thickness>
+	<CornerRadius x:Key="ListBox.ItemCornerRadius">0</CornerRadius>
+</ResourceDictionary>

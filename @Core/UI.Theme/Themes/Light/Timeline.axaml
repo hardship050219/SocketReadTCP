@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TimelineHeaderForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="DefaultTimelineIconForeground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="OngoingTimelineIconForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="SuccessTimelineIconForeground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="WarningTimelineIconForeground" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="ErrorTimelineIconForeground" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="TimelineLineBrush" ResourceKey="Brush-Fill2" />
+</ResourceDictionary>

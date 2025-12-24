@@ -1,0 +1,33 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="BadgeBorderBrush" Color="White" />
+	<SolidColorBrush x:Key="BadgeForeground" Color="White" />
+	<SolidColorBrush x:Key="BadgeContentForeground" Color="#1C1F23" />
+	<!-- Solid -->
+	<StaticResource x:Key="BadgePrimaryBadgeBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="BadgeSecondaryBadgeBackground" ResourceKey="Brush-Secondary" />
+	<StaticResource x:Key="BadgeTertiaryBadgeBackground" ResourceKey="Brush-Tertiary" />
+	<StaticResource x:Key="BadgeSuccessBadgeBackground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="BadgeWarningBadgeBackground" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="BadgeDangerBadgeBackground" ResourceKey="Brush-Danger" />
+	<!-- Light -->
+	<StaticResource x:Key="BadgeLightPrimaryBadgeForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="BadgeLightPrimaryBadgeBackground" ResourceKey="Brush-PrimaryLight" />
+	<StaticResource x:Key="BadgeLightSecondaryBadgeForeground" ResourceKey="Brush-Secondary" />
+	<StaticResource x:Key="BadgeLightSecondaryBadgeBackground" ResourceKey="Brush-SecondaryLight" />
+	<StaticResource x:Key="BadgeLightTertiaryBadgeForeground" ResourceKey="Brush-Tertiary" />
+	<StaticResource x:Key="BadgeLightTertiaryBadgeBackground" ResourceKey="Brush-TertiaryLight" />
+	<StaticResource x:Key="BadgeLightSuccessBadgeForeground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="BadgeLightSuccessBadgeBackground" ResourceKey="Brush-SuccessLight" />
+	<StaticResource x:Key="BadgeLightWarningBadgeForeground" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="BadgeLightWarningBadgeBackground" ResourceKey="Brush-WarningLight" />
+	<StaticResource x:Key="BadgeLightDangerBadgeForeground" ResourceKey="Brush-Danger" />
+	<StaticResource x:Key="BadgeLightDangerBadgeBackground" ResourceKey="Brush-DangerLight" />
+	<!-- Inverted -->
+	<SolidColorBrush x:Key="BadgeInvertedBadgeBackground" Color="White" />
+	<StaticResource x:Key="BadgeInvertedPrimaryBadgeForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="BadgeInvertedSecondaryBadgeForeground" ResourceKey="Brush-Secondary" />
+	<StaticResource x:Key="BadgeInvertedTertiaryBadgeForeground" ResourceKey="Brush-Tertiary" />
+	<StaticResource x:Key="BadgeInvertedSuccessBadgeForeground" ResourceKey="Brush-Success" />
+	<StaticResource x:Key="BadgeInvertedWarningBadgeForeground" ResourceKey="Brush-Warning" />
+	<StaticResource x:Key="BadgeInvertedDangerBadgeForeground" ResourceKey="Brush-Danger" />
+</ResourceDictionary>

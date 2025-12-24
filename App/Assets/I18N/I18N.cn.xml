@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Resources Namespace="R.AppRes" V-Tags="CN,EN,JA,#CN,#EN,#JA">
+	<!-- Button Content="Binding {x:Static R.AppRes.AppName}" Background="{Binding {x:Static R.AppRes.Image}}">
+namespace R;
+	public class AppRes {
+		public string AppName { get; set; } //  CN="应用程序" EN="Program" JA="App"\
+		public Image OpenImage {get; set;}
+	}
+	-->
+	<!-- I18nTags 必定生效不论是属性还是标签内容，TypeTag & ValueTag 只在属性生效！2个以上值属性则为对象 多语言必读是嵌套对象-->
+	<AppName Type="string" CN="应用程序" EN="Program" JA="App" />
+	<AppId Type="i32" Value="25" />
+	<OpenImage Type="Image">Assets/test.png</OpenImage>
+	<Version>10.1.1</Version>
+	<Comment Type="System.String">
+		<CN>这是测试消息</CN>
+		<EN>This is Test Message</EN>
+	</Comment>
+</Resources>

@@ -1,0 +1,29 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<!-- <WebView/> -->
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type WebView}" TargetType="WebView">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="WebView">
+				<ContentPresenter
+					Name="PART_ContentPresenter"
+					Padding="{TemplateBinding Padding}"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Width="{TemplateBinding Width}"
+					Height="{TemplateBinding Height}"
+					BackgroundSizing="{TemplateBinding BackgroundSizing}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}"
+					Content="{TemplateBinding View}"
+					RecognizesAccessKey="True"
+					TextElement.FontSize="{TemplateBinding FontSize}"
+					TextElement.FontWeight="{TemplateBinding FontWeight}"
+					UseLayoutRounding="False" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,547 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Color x:Key="Color-Red">#FF0000</Color><SolidColorBrush x:Key="Brush-Red" Color="{StaticResource Color-Red}" />
+	<Color x:Key="Color-Green">#008000</Color><SolidColorBrush x:Key="Brush-Green" Color="{StaticResource Color-Green}" />
+	<Color x:Key="Color-Blue">#0000FF</Color><SolidColorBrush x:Key="Brush-Blue" Color="{StaticResource Color-Blue}" />
+	<Color x:Key="Color-Cyan">#00FFFF</Color><SolidColorBrush x:Key="Brush-Cyan" Color="{StaticResource Color-Cyan}" />
+	<Color x:Key="Color-Magenta">#FF00FF</Color>
+	<SolidColorBrush x:Key="Brush-Magenta" Color="{StaticResource Color-Magenta}" />
+	<Color x:Key="Color-Yellow">#FFFF00</Color>
+	<SolidColorBrush x:Key="Brush-Yellow" Color="{StaticResource Color-Yellow}" />
+	<Color x:Key="Color-Black">#000000</Color><SolidColorBrush x:Key="Brush-Black" Color="{StaticResource Color-Black}" />
+	<Color x:Key="Color-White">#FFFFFF</Color><SolidColorBrush x:Key="Brush-White" Color="{StaticResource Color-White}" />
+	<Color x:Key="Color-Gray">#808080</Color><SolidColorBrush x:Key="Brush-Gray" Color="{StaticResource Color-Gray}" />
+	<Color x:Key="Color-Silver">#C0C0C0</Color>
+	<SolidColorBrush x:Key="Brush-Silver" Color="{StaticResource Color-Silver}" />
+	<Color x:Key="Color-Maroon">#800000</Color>
+	<SolidColorBrush x:Key="Brush-Maroon" Color="{StaticResource Color-Maroon}" />
+	<Color x:Key="Color-Olive">#808000</Color><SolidColorBrush x:Key="Brush-Olive" Color="{StaticResource Color-Olive}" />
+	<Color x:Key="Color-Navy">#000080</Color><SolidColorBrush x:Key="Brush-Navy" Color="{StaticResource Color-Navy}" />
+	<Color x:Key="Color-Teal">#008080</Color><SolidColorBrush x:Key="Brush-Teal" Color="{StaticResource Color-Teal}" />
+	<Color x:Key="Color-Purple">#800080</Color>
+	<SolidColorBrush x:Key="Brush-Purple" Color="{StaticResource Color-Purple}" />
+
+	<Color x:Key="Color-Slate50">#F8FAFC</Color>
+	<Color x:Key="Color-Slate100">#F1F5F9</Color>
+	<Color x:Key="Color-Slate200">#E2E8F0</Color>
+	<Color x:Key="Color-Slate300">#CBD5E1</Color>
+	<Color x:Key="Color-Slate400">#94A3B8</Color>
+	<Color x:Key="Color-Slate500">#64748B</Color>
+	<Color x:Key="Color-Slate600">#475569</Color>
+	<Color x:Key="Color-Slate700">#334155</Color>
+	<Color x:Key="Color-Slate800">#1E293B</Color>
+	<Color x:Key="Color-Slate900">#0F172A</Color>
+	<Color x:Key="Color-Slate950">#020617</Color>
+
+	<SolidColorBrush x:Key="Brush-Slate50" Color="{StaticResource Color-Slate50}" />
+	<SolidColorBrush x:Key="Brush-Slate100" Color="{StaticResource Color-Slate100}" />
+	<SolidColorBrush x:Key="Brush-Slate200" Color="{StaticResource Color-Slate200}" />
+	<SolidColorBrush x:Key="Brush-Slate300" Color="{StaticResource Color-Slate300}" />
+	<SolidColorBrush x:Key="Brush-Slate400" Color="{StaticResource Color-Slate400}" />
+	<SolidColorBrush x:Key="Brush-Slate500" Color="{StaticResource Color-Slate500}" />
+	<SolidColorBrush x:Key="Brush-Slate600" Color="{StaticResource Color-Slate600}" />
+	<SolidColorBrush x:Key="Brush-Slate700" Color="{StaticResource Color-Slate700}" />
+	<SolidColorBrush x:Key="Brush-Slate800" Color="{StaticResource Color-Slate800}" />
+	<SolidColorBrush x:Key="Brush-Slate900" Color="{StaticResource Color-Slate900}" />
+	<SolidColorBrush x:Key="Brush-Slate950" Color="{StaticResource Color-Slate950}" />
+
+
+	<Color x:Key="Color-Gray50">#F9FAFB</Color>
+	<Color x:Key="Color-Gray100">#F3F4F6</Color>
+	<Color x:Key="Color-Gray200">#E5E7EB</Color>
+	<Color x:Key="Color-Gray300">#D1D5DB</Color>
+	<Color x:Key="Color-Gray400">#9CA3AF</Color>
+	<Color x:Key="Color-Gray500">#6B7280</Color>
+	<Color x:Key="Color-Gray600">#4B5563</Color>
+	<Color x:Key="Color-Gray700">#374151</Color>
+	<Color x:Key="Color-Gray800">#1F2937</Color>
+	<Color x:Key="Color-Gray900">#111827</Color>
+	<Color x:Key="Color-Gray950">#030712</Color>
+
+	<SolidColorBrush x:Key="Brush-Gray50" Color="{StaticResource Color-Gray50}" />
+	<SolidColorBrush x:Key="Brush-Gray100" Color="{StaticResource Color-Gray100}" />
+	<SolidColorBrush x:Key="Brush-Gray200" Color="{StaticResource Color-Gray200}" />
+	<SolidColorBrush x:Key="Brush-Gray300" Color="{StaticResource Color-Gray300}" />
+	<SolidColorBrush x:Key="Brush-Gray400" Color="{StaticResource Color-Gray400}" />
+	<SolidColorBrush x:Key="Brush-Gray500" Color="{StaticResource Color-Gray500}" />
+	<SolidColorBrush x:Key="Brush-Gray600" Color="{StaticResource Color-Gray600}" />
+	<SolidColorBrush x:Key="Brush-Gray700" Color="{StaticResource Color-Gray700}" />
+	<SolidColorBrush x:Key="Brush-Gray800" Color="{StaticResource Color-Gray800}" />
+	<SolidColorBrush x:Key="Brush-Gray900" Color="{StaticResource Color-Gray900}" />
+	<SolidColorBrush x:Key="Brush-Gray950" Color="{StaticResource Color-Gray950}" />
+
+
+	<Color x:Key="Color-Zinc50">#FAFAFA</Color>
+	<Color x:Key="Color-Zinc100">#F4F4F5</Color>
+	<Color x:Key="Color-Zinc200">#E4E4E7</Color>
+	<Color x:Key="Color-Zinc300">#D4D4D8</Color>
+	<Color x:Key="Color-Zinc400">#A1A1AA</Color>
+	<Color x:Key="Color-Zinc500">#71717A</Color>
+	<Color x:Key="Color-Zinc600">#52525B</Color>
+	<Color x:Key="Color-Zinc700">#3F3F46</Color>
+	<Color x:Key="Color-Zinc800">#27272A</Color>
+	<Color x:Key="Color-Zinc900">#18181B</Color>
+	<Color x:Key="Color-Zinc950">#09090B</Color>
+
+	<SolidColorBrush x:Key="Brush-Zinc50" Color="{StaticResource Color-Zinc50}" />
+	<SolidColorBrush x:Key="Brush-Zinc100" Color="{StaticResource Color-Zinc100}" />
+	<SolidColorBrush x:Key="Brush-Zinc200" Color="{StaticResource Color-Zinc200}" />
+	<SolidColorBrush x:Key="Brush-Zinc300" Color="{StaticResource Color-Zinc300}" />
+	<SolidColorBrush x:Key="Brush-Zinc400" Color="{StaticResource Color-Zinc400}" />
+	<SolidColorBrush x:Key="Brush-Zinc500" Color="{StaticResource Color-Zinc500}" />
+	<SolidColorBrush x:Key="Brush-Zinc600" Color="{StaticResource Color-Zinc600}" />
+	<SolidColorBrush x:Key="Brush-Zinc700" Color="{StaticResource Color-Zinc700}" />
+	<SolidColorBrush x:Key="Brush-Zinc800" Color="{StaticResource Color-Zinc800}" />
+	<SolidColorBrush x:Key="Brush-Zinc900" Color="{StaticResource Color-Zinc900}" />
+	<SolidColorBrush x:Key="Brush-Zinc950" Color="{StaticResource Color-Zinc950}" />
+
+
+	<Color x:Key="Color-Stone50">#FAFAF9</Color>
+	<Color x:Key="Color-Stone100">#F5F5F4</Color>
+	<Color x:Key="Color-Stone200">#E7E5E4</Color>
+	<Color x:Key="Color-Stone300">#D6D3D1</Color>
+	<Color x:Key="Color-Stone400">#A8A29E</Color>
+	<Color x:Key="Color-Stone500">#78716C</Color>
+	<Color x:Key="Color-Stone600">#57534E</Color>
+	<Color x:Key="Color-Stone700">#44403C</Color>
+	<Color x:Key="Color-Stone800">#292524</Color>
+	<Color x:Key="Color-Stone900">#1C1917</Color>
+	<Color x:Key="Color-Stone950">#0C0A09</Color>
+
+	<SolidColorBrush x:Key="Brush-Stone50" Color="{StaticResource Color-Stone50}" />
+	<SolidColorBrush x:Key="Brush-Stone100" Color="{StaticResource Color-Stone100}" />
+	<SolidColorBrush x:Key="Brush-Stone200" Color="{StaticResource Color-Stone200}" />
+	<SolidColorBrush x:Key="Brush-Stone300" Color="{StaticResource Color-Stone300}" />
+	<SolidColorBrush x:Key="Brush-Stone400" Color="{StaticResource Color-Stone400}" />
+	<SolidColorBrush x:Key="Brush-Stone500" Color="{StaticResource Color-Stone500}" />
+	<SolidColorBrush x:Key="Brush-Stone600" Color="{StaticResource Color-Stone600}" />
+	<SolidColorBrush x:Key="Brush-Stone700" Color="{StaticResource Color-Stone700}" />
+	<SolidColorBrush x:Key="Brush-Stone800" Color="{StaticResource Color-Stone800}" />
+	<SolidColorBrush x:Key="Brush-Stone900" Color="{StaticResource Color-Stone900}" />
+	<SolidColorBrush x:Key="Brush-Stone950" Color="{StaticResource Color-Stone950}" />
+
+
+	<Color x:Key="Color-Red50">#FEF2F2</Color>
+	<Color x:Key="Color-Red100">#FEE2E2</Color>
+	<Color x:Key="Color-Red200">#FECACA</Color>
+	<Color x:Key="Color-Red300">#FCA5A5</Color>
+	<Color x:Key="Color-Red400">#F87171</Color>
+	<Color x:Key="Color-Red500">#EF4444</Color>
+	<Color x:Key="Color-Red600">#DC2626</Color>
+	<Color x:Key="Color-Red700">#B91C1C</Color>
+	<Color x:Key="Color-Red800">#991B1B</Color>
+	<Color x:Key="Color-Red900">#7F1D1D</Color>
+	<Color x:Key="Color-Red950">#450A0A</Color>
+
+	<SolidColorBrush x:Key="Brush-Red50" Color="{StaticResource Color-Red50}" />
+	<SolidColorBrush x:Key="Brush-Red100" Color="{StaticResource Color-Red100}" />
+	<SolidColorBrush x:Key="Brush-Red200" Color="{StaticResource Color-Red200}" />
+	<SolidColorBrush x:Key="Brush-Red300" Color="{StaticResource Color-Red300}" />
+	<SolidColorBrush x:Key="Brush-Red400" Color="{StaticResource Color-Red400}" />
+	<SolidColorBrush x:Key="Brush-Red500" Color="{StaticResource Color-Red500}" />
+	<SolidColorBrush x:Key="Brush-Red600" Color="{StaticResource Color-Red600}" />
+	<SolidColorBrush x:Key="Brush-Red700" Color="{StaticResource Color-Red700}" />
+	<SolidColorBrush x:Key="Brush-Red800" Color="{StaticResource Color-Red800}" />
+	<SolidColorBrush x:Key="Brush-Red900" Color="{StaticResource Color-Red900}" />
+	<SolidColorBrush x:Key="Brush-Red950" Color="{StaticResource Color-Red950}" />
+
+
+	<Color x:Key="Color-Orange50">#FFF7ED</Color>
+	<Color x:Key="Color-Orange100">#FFEDD5</Color>
+	<Color x:Key="Color-Orange200">#FED7AA</Color>
+	<Color x:Key="Color-Orange300">#FDBA74</Color>
+	<Color x:Key="Color-Orange400">#FB923C</Color>
+	<Color x:Key="Color-Orange500">#F97316</Color>
+	<Color x:Key="Color-Orange600">#EA580C</Color>
+	<Color x:Key="Color-Orange700">#C2410C</Color>
+	<Color x:Key="Color-Orange800">#9A3412</Color>
+	<Color x:Key="Color-Orange900">#7C2D12</Color>
+	<Color x:Key="Color-Orange950">#431407</Color>
+
+	<SolidColorBrush x:Key="Brush-Orange50" Color="{StaticResource Color-Orange50}" />
+	<SolidColorBrush x:Key="Brush-Orange100" Color="{StaticResource Color-Orange100}" />
+	<SolidColorBrush x:Key="Brush-Orange200" Color="{StaticResource Color-Orange200}" />
+	<SolidColorBrush x:Key="Brush-Orange300" Color="{StaticResource Color-Orange300}" />
+	<SolidColorBrush x:Key="Brush-Orange400" Color="{StaticResource Color-Orange400}" />
+	<SolidColorBrush x:Key="Brush-Orange500" Color="{StaticResource Color-Orange500}" />
+	<SolidColorBrush x:Key="Brush-Orange600" Color="{StaticResource Color-Orange600}" />
+	<SolidColorBrush x:Key="Brush-Orange700" Color="{StaticResource Color-Orange700}" />
+	<SolidColorBrush x:Key="Brush-Orange800" Color="{StaticResource Color-Orange800}" />
+	<SolidColorBrush x:Key="Brush-Orange900" Color="{StaticResource Color-Orange900}" />
+	<SolidColorBrush x:Key="Brush-Orange950" Color="{StaticResource Color-Orange950}" />
+
+	<Color x:Key="Color-Amber50">#FFFBEB</Color>
+	<Color x:Key="Color-Amber100">#FEF3C7</Color>
+	<Color x:Key="Color-Amber200">#FDE68A</Color>
+	<Color x:Key="Color-Amber300">#FCD34D</Color>
+	<Color x:Key="Color-Amber400">#FBBF24</Color>
+	<Color x:Key="Color-Amber500">#F59E0B</Color>
+	<Color x:Key="Color-Amber600">#D97706</Color>
+	<Color x:Key="Color-Amber700">#B45309</Color>
+	<Color x:Key="Color-Amber800">#92400E</Color>
+	<Color x:Key="Color-Amber900">#78350F</Color>
+	<Color x:Key="Color-Amber950">#451A03</Color>
+
+	<SolidColorBrush x:Key="Brush-Amber50" Color="{StaticResource Color-Amber50}" />
+	<SolidColorBrush x:Key="Brush-Amber100" Color="{StaticResource Color-Amber100}" />
+	<SolidColorBrush x:Key="Brush-Amber200" Color="{StaticResource Color-Amber200}" />
+	<SolidColorBrush x:Key="Brush-Amber300" Color="{StaticResource Color-Amber300}" />
+	<SolidColorBrush x:Key="Brush-Amber400" Color="{StaticResource Color-Amber400}" />
+	<SolidColorBrush x:Key="Brush-Amber500" Color="{StaticResource Color-Amber500}" />
+	<SolidColorBrush x:Key="Brush-Amber600" Color="{StaticResource Color-Amber600}" />
+	<SolidColorBrush x:Key="Brush-Amber700" Color="{StaticResource Color-Amber700}" />
+	<SolidColorBrush x:Key="Brush-Amber800" Color="{StaticResource Color-Amber800}" />
+	<SolidColorBrush x:Key="Brush-Amber900" Color="{StaticResource Color-Amber900}" />
+	<SolidColorBrush x:Key="Brush-Amber950" Color="{StaticResource Color-Amber950}" />
+
+
+	<Color x:Key="Color-Yellow50">#FEFCE8</Color>
+	<Color x:Key="Color-Yellow100">#FEF9C3</Color>
+	<Color x:Key="Color-Yellow200">#FEF08A</Color>
+	<Color x:Key="Color-Yellow300">#FDE047</Color>
+	<Color x:Key="Color-Yellow400">#FACC15</Color>
+	<Color x:Key="Color-Yellow500">#EAB308</Color>
+	<Color x:Key="Color-Yellow600">#CA8A04</Color>
+	<Color x:Key="Color-Yellow700">#A16207</Color>
+	<Color x:Key="Color-Yellow800">#854D0E</Color>
+	<Color x:Key="Color-Yellow900">#713F12</Color>
+	<Color x:Key="Color-Yellow950">#422006</Color>
+
+	<SolidColorBrush x:Key="Brush-Yellow50" Color="{StaticResource Color-Yellow50}" />
+	<SolidColorBrush x:Key="Brush-Yellow100" Color="{StaticResource Color-Yellow100}" />
+	<SolidColorBrush x:Key="Brush-Yellow200" Color="{StaticResource Color-Yellow200}" />
+	<SolidColorBrush x:Key="Brush-Yellow300" Color="{StaticResource Color-Yellow300}" />
+	<SolidColorBrush x:Key="Brush-Yellow400" Color="{StaticResource Color-Yellow400}" />
+	<SolidColorBrush x:Key="Brush-Yellow500" Color="{StaticResource Color-Yellow500}" />
+	<SolidColorBrush x:Key="Brush-Yellow600" Color="{StaticResource Color-Yellow600}" />
+	<SolidColorBrush x:Key="Brush-Yellow700" Color="{StaticResource Color-Yellow700}" />
+	<SolidColorBrush x:Key="Brush-Yellow800" Color="{StaticResource Color-Yellow800}" />
+	<SolidColorBrush x:Key="Brush-Yellow900" Color="{StaticResource Color-Yellow900}" />
+	<SolidColorBrush x:Key="Brush-Yellow950" Color="{StaticResource Color-Yellow950}" />
+
+
+	<Color x:Key="Color-Lime50">#F7FEE7</Color>
+	<Color x:Key="Color-Lime100">#ECFCCB</Color>
+	<Color x:Key="Color-Lime200">#D9F99D</Color>
+	<Color x:Key="Color-Lime300">#BEF264</Color>
+	<Color x:Key="Color-Lime400">#A3E635</Color>
+	<Color x:Key="Color-Lime500">#84CC16</Color>
+	<Color x:Key="Color-Lime600">#65A30D</Color>
+	<Color x:Key="Color-Lime700">#4D7C0F</Color>
+	<Color x:Key="Color-Lime800">#3F6212</Color>
+	<Color x:Key="Color-Lime900">#365314</Color>
+	<Color x:Key="Color-Lime950">#1A2E05</Color>
+
+	<SolidColorBrush x:Key="Brush-Lime50" Color="{StaticResource Color-Lime50}" />
+	<SolidColorBrush x:Key="Brush-Lime100" Color="{StaticResource Color-Lime100}" />
+	<SolidColorBrush x:Key="Brush-Lime200" Color="{StaticResource Color-Lime200}" />
+	<SolidColorBrush x:Key="Brush-Lime300" Color="{StaticResource Color-Lime300}" />
+	<SolidColorBrush x:Key="Brush-Lime400" Color="{StaticResource Color-Lime400}" />
+	<SolidColorBrush x:Key="Brush-Lime500" Color="{StaticResource Color-Lime500}" />
+	<SolidColorBrush x:Key="Brush-Lime600" Color="{StaticResource Color-Lime600}" />
+	<SolidColorBrush x:Key="Brush-Lime700" Color="{StaticResource Color-Lime700}" />
+	<SolidColorBrush x:Key="Brush-Lime800" Color="{StaticResource Color-Lime800}" />
+	<SolidColorBrush x:Key="Brush-Lime900" Color="{StaticResource Color-Lime900}" />
+	<SolidColorBrush x:Key="Brush-Lime950" Color="{StaticResource Color-Lime950}" />
+
+
+	<Color x:Key="Color-Green50">#F0FDF4</Color>
+	<Color x:Key="Color-Green100">#DCFCE7</Color>
+	<Color x:Key="Color-Green200">#BBF7D0</Color>
+	<Color x:Key="Color-Green300">#86EFAC</Color>
+	<Color x:Key="Color-Green400">#4ADE80</Color>
+	<Color x:Key="Color-Green500">#22C55E</Color>
+	<Color x:Key="Color-Green600">#16A34A</Color>
+	<Color x:Key="Color-Green700">#15803D</Color>
+	<Color x:Key="Color-Green800">#166534</Color>
+	<Color x:Key="Color-Green900">#14532D</Color>
+	<Color x:Key="Color-Green950">#052E16</Color>
+
+	<SolidColorBrush x:Key="Brush-Green50" Color="{StaticResource Color-Green50}" />
+	<SolidColorBrush x:Key="Brush-Green100" Color="{StaticResource Color-Green100}" />
+	<SolidColorBrush x:Key="Brush-Green200" Color="{StaticResource Color-Green200}" />
+	<SolidColorBrush x:Key="Brush-Green300" Color="{StaticResource Color-Green300}" />
+	<SolidColorBrush x:Key="Brush-Green400" Color="{StaticResource Color-Green400}" />
+	<SolidColorBrush x:Key="Brush-Green500" Color="{StaticResource Color-Green500}" />
+	<SolidColorBrush x:Key="Brush-Green600" Color="{StaticResource Color-Green600}" />
+	<SolidColorBrush x:Key="Brush-Green700" Color="{StaticResource Color-Green700}" />
+	<SolidColorBrush x:Key="Brush-Green800" Color="{StaticResource Color-Green800}" />
+	<SolidColorBrush x:Key="Brush-Green900" Color="{StaticResource Color-Green900}" />
+	<SolidColorBrush x:Key="Brush-Green950" Color="{StaticResource Color-Green950}" />
+
+
+	<Color x:Key="Color-Emerald50">#ECFDF5</Color>
+	<Color x:Key="Color-Emerald100">#D1FAE5</Color>
+	<Color x:Key="Color-Emerald200">#A7F3D0</Color>
+	<Color x:Key="Color-Emerald300">#6EE7B7</Color>
+	<Color x:Key="Color-Emerald400">#34D399</Color>
+	<Color x:Key="Color-Emerald500">#10B981</Color>
+	<Color x:Key="Color-Emerald600">#059669</Color>
+	<Color x:Key="Color-Emerald700">#047857</Color>
+	<Color x:Key="Color-Emerald800">#065F46</Color>
+	<Color x:Key="Color-Emerald900">#064E3B</Color>
+	<Color x:Key="Color-Emerald950">#022C22</Color>
+
+	<SolidColorBrush x:Key="Brush-Emerald50" Color="{StaticResource Color-Emerald50}" />
+	<SolidColorBrush x:Key="Brush-Emerald100" Color="{StaticResource Color-Emerald100}" />
+	<SolidColorBrush x:Key="Brush-Emerald200" Color="{StaticResource Color-Emerald200}" />
+	<SolidColorBrush x:Key="Brush-Emerald300" Color="{StaticResource Color-Emerald300}" />
+	<SolidColorBrush x:Key="Brush-Emerald400" Color="{StaticResource Color-Emerald400}" />
+	<SolidColorBrush x:Key="Brush-Emerald500" Color="{StaticResource Color-Emerald500}" />
+	<SolidColorBrush x:Key="Brush-Emerald600" Color="{StaticResource Color-Emerald600}" />
+	<SolidColorBrush x:Key="Brush-Emerald700" Color="{StaticResource Color-Emerald700}" />
+	<SolidColorBrush x:Key="Brush-Emerald800" Color="{StaticResource Color-Emerald800}" />
+	<SolidColorBrush x:Key="Brush-Emerald900" Color="{StaticResource Color-Emerald900}" />
+	<SolidColorBrush x:Key="Brush-Emerald950" Color="{StaticResource Color-Emerald950}" />
+
+
+	<Color x:Key="Color-Teal50">#F0FDFA</Color>
+	<Color x:Key="Color-Teal100">#CCFBF1</Color>
+	<Color x:Key="Color-Teal200">#99F6E4</Color>
+	<Color x:Key="Color-Teal300">#5EEAD4</Color>
+	<Color x:Key="Color-Teal400">#2DD4BF</Color>
+	<Color x:Key="Color-Teal500">#14B8A6</Color>
+	<Color x:Key="Color-Teal600">#0D9488</Color>
+	<Color x:Key="Color-Teal700">#0F766E</Color>
+	<Color x:Key="Color-Teal800">#115E59</Color>
+	<Color x:Key="Color-Teal900">#134E4A</Color>
+	<Color x:Key="Color-Teal950">#042F2E</Color>
+
+	<SolidColorBrush x:Key="Brush-Teal50" Color="{StaticResource Color-Teal50}" />
+	<SolidColorBrush x:Key="Brush-Teal100" Color="{StaticResource Color-Teal100}" />
+	<SolidColorBrush x:Key="Brush-Teal200" Color="{StaticResource Color-Teal200}" />
+	<SolidColorBrush x:Key="Brush-Teal300" Color="{StaticResource Color-Teal300}" />
+	<SolidColorBrush x:Key="Brush-Teal400" Color="{StaticResource Color-Teal400}" />
+	<SolidColorBrush x:Key="Brush-Teal500" Color="{StaticResource Color-Teal500}" />
+	<SolidColorBrush x:Key="Brush-Teal600" Color="{StaticResource Color-Teal600}" />
+	<SolidColorBrush x:Key="Brush-Teal700" Color="{StaticResource Color-Teal700}" />
+	<SolidColorBrush x:Key="Brush-Teal800" Color="{StaticResource Color-Teal800}" />
+	<SolidColorBrush x:Key="Brush-Teal900" Color="{StaticResource Color-Teal900}" />
+	<SolidColorBrush x:Key="Brush-Teal950" Color="{StaticResource Color-Teal950}" />
+
+
+	<Color x:Key="Color-Cyan50">#ECFEFF</Color>
+	<Color x:Key="Color-Cyan100">#CFFAFE</Color>
+	<Color x:Key="Color-Cyan200">#A5F3FC</Color>
+	<Color x:Key="Color-Cyan300">#67E8F9</Color>
+	<Color x:Key="Color-Cyan400">#22D3EE</Color>
+	<Color x:Key="Color-Cyan500">#06B6D4</Color>
+	<Color x:Key="Color-Cyan600">#0891B2</Color>
+	<Color x:Key="Color-Cyan700">#0E7490</Color>
+	<Color x:Key="Color-Cyan800">#155E75</Color>
+	<Color x:Key="Color-Cyan900">#164E63</Color>
+	<Color x:Key="Color-Cyan950">#083344</Color>
+
+	<SolidColorBrush x:Key="Brush-Cyan50" Color="{StaticResource Color-Cyan50}" />
+	<SolidColorBrush x:Key="Brush-Cyan100" Color="{StaticResource Color-Cyan100}" />
+	<SolidColorBrush x:Key="Brush-Cyan200" Color="{StaticResource Color-Cyan200}" />
+	<SolidColorBrush x:Key="Brush-Cyan300" Color="{StaticResource Color-Cyan300}" />
+	<SolidColorBrush x:Key="Brush-Cyan400" Color="{StaticResource Color-Cyan400}" />
+	<SolidColorBrush x:Key="Brush-Cyan500" Color="{StaticResource Color-Cyan500}" />
+	<SolidColorBrush x:Key="Brush-Cyan600" Color="{StaticResource Color-Cyan600}" />
+	<SolidColorBrush x:Key="Brush-Cyan700" Color="{StaticResource Color-Cyan700}" />
+	<SolidColorBrush x:Key="Brush-Cyan800" Color="{StaticResource Color-Cyan800}" />
+	<SolidColorBrush x:Key="Brush-Cyan900" Color="{StaticResource Color-Cyan900}" />
+	<SolidColorBrush x:Key="Brush-Cyan950" Color="{StaticResource Color-Cyan950}" />
+
+
+	<Color x:Key="Color-Sky50">#F0F9FF</Color>
+	<Color x:Key="Color-Sky100">#E0F2FE</Color>
+	<Color x:Key="Color-Sky200">#BAE6FD</Color>
+	<Color x:Key="Color-Sky300">#7DD3FC</Color>
+	<Color x:Key="Color-Sky400">#38BDF8</Color>
+	<Color x:Key="Color-Sky500">#0EA5E9</Color>
+	<Color x:Key="Color-Sky600">#0284C7</Color>
+	<Color x:Key="Color-Sky700">#0369A1</Color>
+	<Color x:Key="Color-Sky800">#075985</Color>
+	<Color x:Key="Color-Sky900">#0C4A6E</Color>
+	<Color x:Key="Color-Sky950">#082F49</Color>
+
+	<SolidColorBrush x:Key="Brush-Sky50" Color="{StaticResource Color-Sky50}" />
+	<SolidColorBrush x:Key="Brush-Sky100" Color="{StaticResource Color-Sky100}" />
+	<SolidColorBrush x:Key="Brush-Sky200" Color="{StaticResource Color-Sky200}" />
+	<SolidColorBrush x:Key="Brush-Sky300" Color="{StaticResource Color-Sky300}" />
+	<SolidColorBrush x:Key="Brush-Sky400" Color="{StaticResource Color-Sky400}" />
+	<SolidColorBrush x:Key="Brush-Sky500" Color="{StaticResource Color-Sky500}" />
+	<SolidColorBrush x:Key="Brush-Sky600" Color="{StaticResource Color-Sky600}" />
+	<SolidColorBrush x:Key="Brush-Sky700" Color="{StaticResource Color-Sky700}" />
+	<SolidColorBrush x:Key="Brush-Sky800" Color="{StaticResource Color-Sky800}" />
+	<SolidColorBrush x:Key="Brush-Sky900" Color="{StaticResource Color-Sky900}" />
+	<SolidColorBrush x:Key="Brush-Sky950" Color="{StaticResource Color-Sky950}" />
+
+
+	<Color x:Key="Color-Blue50">#EFF6FF</Color>
+	<Color x:Key="Color-Blue100">#DBEAFE</Color>
+	<Color x:Key="Color-Blue200">#BFDBFE</Color>
+	<Color x:Key="Color-Blue300">#93C5FD</Color>
+	<Color x:Key="Color-Blue400">#60A5FA</Color>
+	<Color x:Key="Color-Blue500">#3B82F6</Color>
+	<Color x:Key="Color-Blue600">#2563EB</Color>
+	<Color x:Key="Color-Blue700">#1D4ED8</Color>
+	<Color x:Key="Color-Blue800">#1E40AF</Color>
+	<Color x:Key="Color-Blue900">#1E3A8A</Color>
+	<Color x:Key="Color-Blue950">#172554</Color>
+
+	<SolidColorBrush x:Key="Brush-Blue50" Color="{StaticResource Color-Blue50}" />
+	<SolidColorBrush x:Key="Brush-Blue100" Color="{StaticResource Color-Blue100}" />
+	<SolidColorBrush x:Key="Brush-Blue200" Color="{StaticResource Color-Blue200}" />
+	<SolidColorBrush x:Key="Brush-Blue300" Color="{StaticResource Color-Blue300}" />
+	<SolidColorBrush x:Key="Brush-Blue400" Color="{StaticResource Color-Blue400}" />
+	<SolidColorBrush x:Key="Brush-Blue500" Color="{StaticResource Color-Blue500}" />
+	<SolidColorBrush x:Key="Brush-Blue600" Color="{StaticResource Color-Blue600}" />
+	<SolidColorBrush x:Key="Brush-Blue700" Color="{StaticResource Color-Blue700}" />
+	<SolidColorBrush x:Key="Brush-Blue800" Color="{StaticResource Color-Blue800}" />
+	<SolidColorBrush x:Key="Brush-Blue900" Color="{StaticResource Color-Blue900}" />
+	<SolidColorBrush x:Key="Brush-Blue950" Color="{StaticResource Color-Blue950}" />
+
+
+	<Color x:Key="Color-Indigo50">#EEF2FF</Color>
+	<Color x:Key="Color-Indigo100">#E0E7FF</Color>
+	<Color x:Key="Color-Indigo200">#C7D2FE</Color>
+	<Color x:Key="Color-Indigo300">#A5B4FC</Color>
+	<Color x:Key="Color-Indigo400">#818CF8</Color>
+	<Color x:Key="Color-Indigo500">#6366F1</Color>
+	<Color x:Key="Color-Indigo600">#4F46E5</Color>
+	<Color x:Key="Color-Indigo700">#4338CA</Color>
+	<Color x:Key="Color-Indigo800">#3730A3</Color>
+	<Color x:Key="Color-Indigo900">#312E81</Color>
+	<Color x:Key="Color-Indigo950">#1E1B4B</Color>
+
+	<SolidColorBrush x:Key="Brush-Indigo50" Color="{StaticResource Color-Indigo50}" />
+	<SolidColorBrush x:Key="Brush-Indigo100" Color="{StaticResource Color-Indigo100}" />
+	<SolidColorBrush x:Key="Brush-Indigo200" Color="{StaticResource Color-Indigo200}" />
+	<SolidColorBrush x:Key="Brush-Indigo300" Color="{StaticResource Color-Indigo300}" />
+	<SolidColorBrush x:Key="Brush-Indigo400" Color="{StaticResource Color-Indigo400}" />
+	<SolidColorBrush x:Key="Brush-Indigo500" Color="{StaticResource Color-Indigo500}" />
+	<SolidColorBrush x:Key="Brush-Indigo600" Color="{StaticResource Color-Indigo600}" />
+	<SolidColorBrush x:Key="Brush-Indigo700" Color="{StaticResource Color-Indigo700}" />
+	<SolidColorBrush x:Key="Brush-Indigo800" Color="{StaticResource Color-Indigo800}" />
+	<SolidColorBrush x:Key="Brush-Indigo900" Color="{StaticResource Color-Indigo900}" />
+	<SolidColorBrush x:Key="Brush-Indigo950" Color="{StaticResource Color-Indigo950}" />
+
+
+	<Color x:Key="Color-Violet50">#F5F3FF</Color>
+	<Color x:Key="Color-Violet100">#EDE9FE</Color>
+	<Color x:Key="Color-Violet200">#DDD6FE</Color>
+	<Color x:Key="Color-Violet300">#C4B5FD</Color>
+	<Color x:Key="Color-Violet400">#A78BFA</Color>
+	<Color x:Key="Color-Violet500">#8B5CF6</Color>
+	<Color x:Key="Color-Violet600">#7C3AED</Color>
+	<Color x:Key="Color-Violet700">#6D28D9</Color>
+	<Color x:Key="Color-Violet800">#5B21B6</Color>
+	<Color x:Key="Color-Violet900">#4C1D95</Color>
+	<Color x:Key="Color-Violet950">#2E1065</Color>
+
+	<SolidColorBrush x:Key="Brush-Violet50" Color="{StaticResource Color-Violet50}" />
+	<SolidColorBrush x:Key="Brush-Violet100" Color="{StaticResource Color-Violet100}" />
+	<SolidColorBrush x:Key="Brush-Violet200" Color="{StaticResource Color-Violet200}" />
+	<SolidColorBrush x:Key="Brush-Violet300" Color="{StaticResource Color-Violet300}" />
+	<SolidColorBrush x:Key="Brush-Violet400" Color="{StaticResource Color-Violet400}" />
+	<SolidColorBrush x:Key="Brush-Violet500" Color="{StaticResource Color-Violet500}" />
+	<SolidColorBrush x:Key="Brush-Violet600" Color="{StaticResource Color-Violet600}" />
+	<SolidColorBrush x:Key="Brush-Violet700" Color="{StaticResource Color-Violet700}" />
+	<SolidColorBrush x:Key="Brush-Violet800" Color="{StaticResource Color-Violet800}" />
+	<SolidColorBrush x:Key="Brush-Violet900" Color="{StaticResource Color-Violet900}" />
+	<SolidColorBrush x:Key="Brush-Violet950" Color="{StaticResource Color-Violet950}" />
+
+
+	<Color x:Key="Color-Purple50">#FAF5FF</Color>
+	<Color x:Key="Color-Purple100">#F3E8FF</Color>
+	<Color x:Key="Color-Purple200">#E9D5FF</Color>
+	<Color x:Key="Color-Purple300">#D8B4FE</Color>
+	<Color x:Key="Color-Purple400">#C084FC</Color>
+	<Color x:Key="Color-Purple500">#A855F7</Color>
+	<Color x:Key="Color-Purple600">#9333EA</Color>
+	<Color x:Key="Color-Purple700">#7E22CE</Color>
+	<Color x:Key="Color-Purple800">#6B21A8</Color>
+	<Color x:Key="Color-Purple900">#581C87</Color>
+	<Color x:Key="Color-Purple950">#3B0764</Color>
+
+	<SolidColorBrush x:Key="Brush-Purple50" Color="{StaticResource Color-Purple50}" />
+	<SolidColorBrush x:Key="Brush-Purple100" Color="{StaticResource Color-Purple100}" />
+	<SolidColorBrush x:Key="Brush-Purple200" Color="{StaticResource Color-Purple200}" />
+	<SolidColorBrush x:Key="Brush-Purple300" Color="{StaticResource Color-Purple300}" />
+	<SolidColorBrush x:Key="Brush-Purple400" Color="{StaticResource Color-Purple400}" />
+	<SolidColorBrush x:Key="Brush-Purple500" Color="{StaticResource Color-Purple500}" />
+	<SolidColorBrush x:Key="Brush-Purple600" Color="{StaticResource Color-Purple600}" />
+	<SolidColorBrush x:Key="Brush-Purple700" Color="{StaticResource Color-Purple700}" />
+	<SolidColorBrush x:Key="Brush-Purple800" Color="{StaticResource Color-Purple800}" />
+	<SolidColorBrush x:Key="Brush-Purple900" Color="{StaticResource Color-Purple900}" />
+	<SolidColorBrush x:Key="Brush-Purple950" Color="{StaticResource Color-Purple950}" />
+
+
+	<Color x:Key="Color-Fuchsia50">#FDF4FF</Color>
+	<Color x:Key="Color-Fuchsia100">#FAE8FF</Color>
+	<Color x:Key="Color-Fuchsia200">#F5D0FE</Color>
+	<Color x:Key="Color-Fuchsia300">#F0ABFC</Color>
+	<Color x:Key="Color-Fuchsia400">#E879F9</Color>
+	<Color x:Key="Color-Fuchsia500">#D946EF</Color>
+	<Color x:Key="Color-Fuchsia600">#C026D3</Color>
+	<Color x:Key="Color-Fuchsia700">#A21CAF</Color>
+	<Color x:Key="Color-Fuchsia800">#86198F</Color>
+	<Color x:Key="Color-Fuchsia900">#701A75</Color>
+	<Color x:Key="Color-Fuchsia950">#4A044E</Color>
+
+	<SolidColorBrush x:Key="Brush-Fuchsia50" Color="{StaticResource Color-Fuchsia50}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia100" Color="{StaticResource Color-Fuchsia100}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia200" Color="{StaticResource Color-Fuchsia200}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia300" Color="{StaticResource Color-Fuchsia300}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia400" Color="{StaticResource Color-Fuchsia400}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia500" Color="{StaticResource Color-Fuchsia500}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia600" Color="{StaticResource Color-Fuchsia600}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia700" Color="{StaticResource Color-Fuchsia700}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia800" Color="{StaticResource Color-Fuchsia800}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia900" Color="{StaticResource Color-Fuchsia900}" />
+	<SolidColorBrush x:Key="Brush-Fuchsia950" Color="{StaticResource Color-Fuchsia950}" />
+
+
+	<Color x:Key="Color-Pink50">#FDF2F8</Color>
+	<Color x:Key="Color-Pink100">#FCE7F3</Color>
+	<Color x:Key="Color-Pink200">#FBCFE8</Color>
+	<Color x:Key="Color-Pink300">#F9A8D4</Color>
+	<Color x:Key="Color-Pink400">#F472B6</Color>
+	<Color x:Key="Color-Pink500">#EC4899</Color>
+	<Color x:Key="Color-Pink600">#DB2777</Color>
+	<Color x:Key="Color-Pink700">#BE185D</Color>
+	<Color x:Key="Color-Pink800">#9D174D</Color>
+	<Color x:Key="Color-Pink900">#831843</Color>
+	<Color x:Key="Color-Pink950">#500724</Color>
+
+	<SolidColorBrush x:Key="Brush-Pink50" Color="{StaticResource Color-Pink50}" />
+	<SolidColorBrush x:Key="Brush-Pink100" Color="{StaticResource Color-Pink100}" />
+	<SolidColorBrush x:Key="Brush-Pink200" Color="{StaticResource Color-Pink200}" />
+	<SolidColorBrush x:Key="Brush-Pink300" Color="{StaticResource Color-Pink300}" />
+	<SolidColorBrush x:Key="Brush-Pink400" Color="{StaticResource Color-Pink400}" />
+	<SolidColorBrush x:Key="Brush-Pink500" Color="{StaticResource Color-Pink500}" />
+	<SolidColorBrush x:Key="Brush-Pink600" Color="{StaticResource Color-Pink600}" />
+	<SolidColorBrush x:Key="Brush-Pink700" Color="{StaticResource Color-Pink700}" />
+	<SolidColorBrush x:Key="Brush-Pink800" Color="{StaticResource Color-Pink800}" />
+	<SolidColorBrush x:Key="Brush-Pink900" Color="{StaticResource Color-Pink900}" />
+	<SolidColorBrush x:Key="Brush-Pink950" Color="{StaticResource Color-Pink950}" />
+
+	<Color x:Key="Color-Rose50">#FFF1F2</Color>
+	<Color x:Key="Color-Rose100">#FFE4E6</Color>
+	<Color x:Key="Color-Rose200">#FECDD3</Color>
+	<Color x:Key="Color-Rose300">#FDA4AF</Color>
+	<Color x:Key="Color-Rose400">#FB7185</Color>
+	<Color x:Key="Color-Rose500">#F43F5E</Color>
+	<Color x:Key="Color-Rose600">#E11D48</Color>
+	<Color x:Key="Color-Rose700">#BE123C</Color>
+	<Color x:Key="Color-Rose800">#9F1239</Color>
+	<Color x:Key="Color-Rose900">#881337</Color>
+	<Color x:Key="Color-Rose950">#4C0519</Color>
+
+	<SolidColorBrush x:Key="Brush-Rose50" Color="{StaticResource Color-Rose50}" />
+	<SolidColorBrush x:Key="Brush-Rose100" Color="{StaticResource Color-Rose100}" />
+	<SolidColorBrush x:Key="Brush-Rose200" Color="{StaticResource Color-Rose200}" />
+	<SolidColorBrush x:Key="Brush-Rose300" Color="{StaticResource Color-Rose300}" />
+	<SolidColorBrush x:Key="Brush-Rose400" Color="{StaticResource Color-Rose400}" />
+	<SolidColorBrush x:Key="Brush-Rose500" Color="{StaticResource Color-Rose500}" />
+	<SolidColorBrush x:Key="Brush-Rose600" Color="{StaticResource Color-Rose600}" />
+	<SolidColorBrush x:Key="Brush-Rose700" Color="{StaticResource Color-Rose700}" />
+	<SolidColorBrush x:Key="Brush-Rose800" Color="{StaticResource Color-Rose800}" />
+	<SolidColorBrush x:Key="Brush-Rose900" Color="{StaticResource Color-Rose900}" />
+	<SolidColorBrush x:Key="Brush-Rose950" Color="{StaticResource Color-Rose950}" />
+
+</ResourceDictionary>

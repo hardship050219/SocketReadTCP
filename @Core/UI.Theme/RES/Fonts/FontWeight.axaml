@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- 数值化等级（100~950，每 50 或 100 为一档） -->
+	<FontWeight x:Key="FontWeight-W100">100</FontWeight> <!-- Thin 极细 -->
+	<FontWeight x:Key="FontWeight-W150">150</FontWeight> <!-- Thin+ -->
+	<FontWeight x:Key="FontWeight-W200">200</FontWeight> <!-- ExtraLight 特细 -->
+	<FontWeight x:Key="FontWeight-W250">250</FontWeight> <!-- ExtraLight+ -->
+	<FontWeight x:Key="FontWeight-W300">300</FontWeight> <!-- Light 细体 -->
+	<FontWeight x:Key="FontWeight-W350">350</FontWeight> <!-- Light+ -->
+	<FontWeight x:Key="FontWeight-W400">400</FontWeight> <!-- Regular 常规 -->
+	<FontWeight x:Key="FontWeight-W450">450</FontWeight> <!-- Regular+ -->
+	<FontWeight x:Key="FontWeight-W500">500</FontWeight> <!-- Medium 中等 -->
+	<FontWeight x:Key="FontWeight-W550">550</FontWeight> <!-- Medium+ -->
+	<FontWeight x:Key="FontWeight-W600">600</FontWeight> <!-- SemiBold 半粗 -->
+	<FontWeight x:Key="FontWeight-W650">650</FontWeight> <!-- SemiBold+ -->
+	<FontWeight x:Key="FontWeight-W700">700</FontWeight> <!-- Bold 粗体 -->
+	<FontWeight x:Key="FontWeight-W750">750</FontWeight> <!-- Bold+ -->
+	<FontWeight x:Key="FontWeight-W800">800</FontWeight> <!-- ExtraBold 特粗 -->
+	<FontWeight x:Key="FontWeight-W850">850</FontWeight> <!-- ExtraBold+ -->
+	<FontWeight x:Key="FontWeight-W900">900</FontWeight> <!-- Black 黑体 -->
+	<FontWeight x:Key="FontWeight-W950">950</FontWeight> <!-- Black+ 极黑 -->
+
+	<!-- 语义化命名（映射到数值） -->
+	<FontWeight x:Key="FontWeight-Thin">100</FontWeight>
+	<FontWeight x:Key="FontWeight-ExtraLight">200</FontWeight>
+	<!-- <FontWeight x:Key="FontWeight-Light">300</FontWeight> -->
+	<!-- <FontWeight x:Key="FontWeight-Normal">400</FontWeight> -->
+	<FontWeight x:Key="FontWeight-Medium">500</FontWeight>
+	<FontWeight x:Key="FontWeight-SemiBold">600</FontWeight>
+	<!-- <FontWeight x:Key="FontWeight-Bold">700</FontWeight> -->
+	<FontWeight x:Key="FontWeight-ExtraBold">800</FontWeight>
+	<FontWeight x:Key="FontWeight-Black">900</FontWeight>
+
+	<FontWeight x:Key="FontWeight-Light">200</FontWeight> <!-- 字重 - 轻 -->
+	<FontWeight x:Key="FontWeight-Normal">400</FontWeight> <!-- 字重 - 常规 -->
+	<FontWeight x:Key="FontWeight-Bold">600</FontWeight> <!-- 字重 - 粗 -->
+</ResourceDictionary>

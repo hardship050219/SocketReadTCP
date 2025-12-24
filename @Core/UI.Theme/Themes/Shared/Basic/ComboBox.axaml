@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ComboBox.SelectorCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="ComboBox.SelectorThickness" ResourceKey="Border-ThicknessControl" />
+	<Thickness x:Key="ComboBox.ItemDefaultPadding">12 8</Thickness>
+	<Thickness x:Key="ComboBox.SelectorDefaultPadding">12 0 0 0</Thickness>
+	<x:Double x:Key="ComboBox.PopupMaxDropDownHeight">504</x:Double>
+	<StaticResource x:Key="ComboBox.PopupBorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="ComboBox.PopupBoxCornerRadius" ResourceKey="Border-RadiusMedium" />
+	<x:Double x:Key="ComboBox.IconWidth">32</x:Double>
+	<StaticResource x:Key="ComboBox.Icon" ResourceKey="Icon-ChevronDown" />
+	<StaticResource x:Key="ComboBox.PopupBorderMargin" ResourceKey="Thickness-ExtraTight" />
+	<Thickness x:Key="ComboBox.PopupBorderPadding">0 4</Thickness>
+	<StaticResource x:Key="ComboBox.DefaultHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="ComboBox.SmallHeight" ResourceKey="Height-ControlSmall" />
+	<StaticResource x:Key="ComboBox.LargeHeight" ResourceKey="Height-ControlLarge" />
+</ResourceDictionary>

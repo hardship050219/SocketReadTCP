@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+							xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<x:Double x:Key="Height-ControlSmall">24</x:Double> <!-- 表单项高度 - 小尺寸 -->
+	<x:Double x:Key="Height-ControlDefault">32</x:Double> <!-- 表单项高度 - 默认尺寸 -->
+	<x:Double x:Key="Height-ControlLarge">40</x:Double> <!-- 表单项高度 - 大尺寸 -->
+	<x:Double x:Key="Width-IconExtraSmall">8</x:Double> <!-- 图标尺寸 - 超小 -->
+	<x:Double x:Key="Width-IconSmall">12</x:Double> <!-- 图标尺寸 - 小 -->
+	<x:Double x:Key="Width-IconMedium">16</x:Double> <!-- 图标尺寸 - 中 -->
+	<x:Double x:Key="Width-IconLarge">20</x:Double> <!-- 图标尺寸 - 大 -->
+	<x:Double x:Key="Width-IconExtraLarge">24</x:Double> <!-- 图标尺寸 - 超大 -->
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Pub AppZC" type="DotNetFolderPublish" factoryName="Publish to folder">
+    <riderPublish configuration="Release" include_native_libs_for_self_extract="true" platform="Any CPU" produce_single_file="true" target_folder="bin/Publish" target_framework="net8.0" uuid_high="2829583457238531343" uuid_low="-3054641311067468181">
+      <runtimes>
+        <item value="win-x64" />
+      </runtimes>
+    </riderPublish>
+    <method v="2" />
+  </configuration>
+</component>

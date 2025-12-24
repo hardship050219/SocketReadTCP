@@ -1,0 +1,22 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="DateTimePicker.ListItemBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.PopupBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.PopupBorderBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPointeroverForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPressedForeground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="DateTimePicker.FlyoutButtonPressedBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.SeparatorBackground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.ButtonBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="DateTimePicker.ButtonBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.ButtonForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.IconForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.EmptyForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="DateTimePicker.ButtonPointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="DateTimePicker.ButtonPointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="DateTimePicker.ButtonDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="DateTimePicker.ButtonDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="DateTimePicker.ButtonDisabledIconForeground" ResourceKey="Brush-GrayText" />
+</ResourceDictionary>

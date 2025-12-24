@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="CalendarDatePicker.IconGlyph" ResourceKey="Icon-Calendar" />
+	<StaticResource x:Key="CalendarDatePicker.BorderThickness" ResourceKey="Border-ThicknessControl" />
+	<StaticResource x:Key="CalendarDatePicker.CornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="CalendarDatePicker.DefaultHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="CalendarDatePicker.SmallHeight" ResourceKey="Height-ControlSmall" />
+	<StaticResource x:Key="CalendarDatePicker.LargeHeight" ResourceKey="Height-ControlLarge" />
+</ResourceDictionary>

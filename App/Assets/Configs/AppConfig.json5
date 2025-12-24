@@ -1,0 +1,19 @@
+﻿{
+  "Database": {
+    "DbType": "Sqlite",
+    "ConnectionString": "Data Source=AppData/AppData.db",
+    "IsAutoCloseConnection": false
+  },
+  /* xx */
+  "TaskServiceHostOptions": {
+    "MaxRemainStartCount": -1,
+    "EnableAutoRestart": true,
+    "IsUseThreadLongRunningMode": false
+  },
+  
+  "GarnetServer": {
+    "Port": 1234,
+    "Address": "127.0.0.1",
+    "MemorySize": "2g",
+  }
+}

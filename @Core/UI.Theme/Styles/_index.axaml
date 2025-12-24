@@ -1,0 +1,14 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StyleInclude Source="Breadcrumb.axaml" />
+	<StyleInclude Source="ButtonGroup.axaml" />
+	<StyleInclude Source="PinCode.axaml" />
+	<StyleInclude Source="Skeleton.axaml" />
+	<StyleInclude Source="ToolBar.axaml" />
+	<StyleInclude Source="TimeBox.axaml" />
+	<StyleInclude Source="UiView.axaml" />
+	<StyleInclude Source="UiWindow.axaml" />
+	<StyleInclude Source="/Styles/Background.axaml" />
+
+	<StyleInclude Source="Margin.axaml" />
+	<StyleInclude Source="Padding.axaml" />
+</Styles>

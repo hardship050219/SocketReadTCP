@@ -1,0 +1,33 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<StackPanel Orientation="Horizontal" Margin="20" Spacing="20">
+			<Border Theme="{StaticResource Border-Card}">
+				<TextBlock>Hello</TextBlock>
+			</Border>
+			<Border Classes="Shadow" Theme="{StaticResource Border-Card}">
+				<TextBlock>Hello</TextBlock>
+			</Border>
+			<Border Classes="Hover" Theme="{StaticResource Border-Card}">
+				<TextBlock>Hello</TextBlock>
+			</Border>
+		</StackPanel>
+	</Design.PreviewWith>
+
+	<ControlTheme x:Key="Border-Card" TargetType="Border">
+		<Setter Property="Padding" Value="{DynamicResource Border.CardPadding}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Border.CardBorderBrush}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource Border.CardCornerRadius}" />
+		<Setter Property="Background" Value="{DynamicResource Border.CardBackground}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource Border.CardThickness}" />
+		<Setter Property="Margin" Value="{DynamicResource Border.CardMargin}" />
+		<Style Selector="^.Shadow">
+			<Setter Property="BoxShadow" Value="{DynamicResource Border.CardBoxShadow}" />
+		</Style>
+		<Style Selector="^.Hover:pointerover">
+			<Setter Property="BoxShadow" Value="{DynamicResource Border.CardBoxShadow}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

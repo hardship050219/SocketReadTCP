@@ -1,0 +1,54 @@
+<Project>
+	<PropertyGroup>
+<!--		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>-->
+<!--		<CompilerGeneratedFilesOutputPath>$(SolutionDir)\-\.generated\$(AssemblyName)</CompilerGeneratedFilesOutputPath>-->
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>ZIT DOTNET DEV FRAMEWORK</Title>
+		<Product>ZIT DOTNET DEV FRAMEWORK</Product>
+		<Description>ZIT DOTNET DEV FRAMEWORK</Description>
+		<Version>25.10.30.1</Version>
+		<Authors>ZIT SCADA TEAM</Authors>
+		<Company>苏州中昌智能科技有限公司</Company>
+		<AssemblyVersion>25.11.16.1</AssemblyVersion>
+		<FileVersion>25.11.16.1</FileVersion>
+		<NeutralLanguage>zh</NeutralLanguage>
+		<Copyright>szzit.com</Copyright>
+		<PackageProjectUrl>https://github.com/ZCScadaTeam/ZC.CORE</PackageProjectUrl>
+		<PackageLicenseUrl>None</PackageLicenseUrl>
+		<RepositoryUrl>https://github.com/ZCScadaTeam/ZC.CORE</RepositoryUrl>
+		<RepositoryType>GITHUB</RepositoryType>
+		<!-- Nuget 打包 -->
+		<PackageTags>DEV</PackageTags>
+		<PackageReleaseNotes>DEV TEST</PackageReleaseNotes>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageOutputPath>$(SolutionDir)\-\.nuget\@proj</PackageOutputPath>
+		<IncludeSymbols>false</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<SlnName>ZC</SlnName>
+		<DotnetTargetFrameworkVersion>net10.0</DotnetTargetFrameworkVersion>
+		<DotnetLangVersion>preview</DotnetLangVersion>
+		<AppFrameworkVersion>1.0.0</AppFrameworkVersion>
+		<AvaloniaVersion>11.3.8</AvaloniaVersion>
+		<AvaloniaTreeDataGridVersion>11.1.1</AvaloniaTreeDataGridVersion>
+		<AvaloniaLibPath>E:/ZC.CORE/-/libs/Avalonia</AvaloniaLibPath>
+		<ReactiveUIVersion>22.1.1</ReactiveUIVersion>
+		<DataGridVersion>11.3.6</DataGridVersion>
+		<AvaloniaEditVersion>11.3.0</AvaloniaEditVersion>
+		<SqlSugarVersion>5.1.4.205</SqlSugarVersion>
+		<SqlSugarCoreNoDriveVersion>5.1.4.205</SqlSugarCoreNoDriveVersion>
+		<SqliteVersion>10.0.0-preview.7.25380.108</SqliteVersion>
+		<MvvmTookitVersion>8.4.0</MvvmTookitVersion>
+		<SqlSugarVersion>5.1.4.203</SqlSugarVersion>
+		<SqliteVersion>9.0.9</SqliteVersion>
+		<NpgSqlVersion>9.0.3</NpgSqlVersion>
+		<NLuaVersion>1.7.5</NLuaVersion>
+		<NLogVersion>6.0.3</NLogVersion>
+		<NewtonsoftJsonVersion>13.0.4</NewtonsoftJsonVersion>
+		<EnableIOPorts>true</EnableIOPorts>
+	</PropertyGroup>
+</Project>

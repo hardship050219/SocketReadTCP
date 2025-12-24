@@ -1,0 +1,741 @@
+﻿<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+
+	<ControlTheme x:Key="{x:Type DialogHost}" TargetType="DialogHost">
+		<Setter Property="OverlayMaskBrush" Value="{DynamicResource OverlayDialogMaskBrush}" />
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type CustomDialog}" TargetType="CustomDialog">
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource DialogCornerRadius}" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+			</Transitions>
+		</Setter>
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="RenderTransform" Value="scale(1.0)" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="CustomDialog">
+				<Panel>
+					<Border
+						Name="PART_Border"
+						Padding="0"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Background="{DynamicResource Brush-Background2}"
+						Classes="Shadow"
+						ClipToBounds="False"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Focusable="True"
+						IsHitTestVisible="True"
+						Theme="{DynamicResource Border-Card}">
+						<Border ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid RowDefinitions="Auto, *">
+								<ScrollViewer
+									Grid.Row="0"
+									Grid.RowSpan="2"
+									HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}"
+									VerticalScrollBarVisibility="{Binding (ScrollViewer.VerticalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}">
+									<ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+								</ScrollViewer>
+								<Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+									<Panel
+										Name="{x:Static DialogBase.PART_TitleArea}"
+										Grid.Column="0"
+										Grid.ColumnSpan="2"
+										Background="Transparent" />
+									<Button
+										Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+										Grid.Column="1"
+										Margin="0,24,24,0"
+										DockPanel.Dock="Right"
+										Theme="{DynamicResource OverlayCloseButton}" />
+								</Grid>
+							</Grid>
+						</Border>
+					</Border>
+					<u:DialogResizer Margin="{Binding #PART_Border.Margin}" IsVisible="{TemplateBinding CanResize}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:full-screen">
+			<Setter Property="CornerRadius" Value="0" />
+			<Style Selector="^ /template/ Border#PART_Border">
+				<Setter Property="HorizontalAlignment" Value="Stretch" />
+				<Setter Property="VerticalAlignment" Value="Stretch" />
+				<Setter Property="Theme" Value="{x:Null}" />
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="Background" Value="{DynamicResource Border.CardBackground}" />
+			</Style>
+		</Style>
+		<Style Selector="^ /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+		<Style Selector="^:not(:modal) /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringForward}"
+						Header="{DynamicResource STRING_MENU_BRING_FORWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringForwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringToFront}"
+						Header="{DynamicResource STRING_MENU_BRING_TO_FRONT}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringToFrontGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendBackward}"
+						Header="{DynamicResource STRING_MENU_SEND_BACKWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendBackwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendToBack}"
+						Header="{DynamicResource STRING_MENU_SEND_TO_BACK}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendToBackGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type DefaultDialog}" TargetType="DefaultDialog">
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource DialogCornerRadius}" />
+		<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+		<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0.2" />
+			</Transitions>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="DefaultDialog">
+				<Panel>
+					<Border
+						Name="PART_Border"
+						Theme="{DynamicResource Border-Card}"
+						Padding="0"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Background="{DynamicResource Brush-Background2}"
+						BoxShadow="0 0 8 0 #1A000000"
+						Classes="Shadow"
+						ClipToBounds="False"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Focusable="True"
+						IsHitTestVisible="True"
+						>
+						<Border ClipToBounds="True" CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid RowDefinitions="Auto, *, Auto">
+								<ScrollViewer
+									Grid.Row="1"
+									HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}"
+									VerticalScrollBarVisibility="{Binding (ScrollViewer.VerticalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}">
+									<ContentPresenter
+										Name="PART_ContentPresenter"
+										Margin="24,8"
+										Content="{TemplateBinding Content}" />
+								</ScrollViewer>
+								<Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
+									<Panel
+										Name="{x:Static DialogBase.PART_TitleArea}"
+										Grid.Column="0"
+										Grid.ColumnSpan="3"
+										Background="Transparent" />
+									<PathIcon
+										Name="PART_Icon"
+										Grid.Column="0"
+										Margin="24,24,8,0"
+										VerticalAlignment="Center"
+										Classes="ExtraLarge"
+										Theme="{StaticResource PathIcon-Inner}" />
+									<TextBlock
+										Name="PART_Title"
+										Grid.Column="1"
+										Margin="0,24,0,0"
+										VerticalAlignment="Center"
+										FontSize="16"
+										FontWeight="{DynamicResource TextBlock.TitleFontWeight}"
+										IsHitTestVisible="False"
+										IsVisible="{TemplateBinding Title,
+                                                                    Converter={x:Static ObjectConverters.IsNotNull}}"
+										Text="{TemplateBinding Title}"
+										TextWrapping="Wrap" />
+									<Button
+										Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+										Grid.Column="2"
+										Margin="0,24,24,0"
+										DockPanel.Dock="Right"
+										Theme="{DynamicResource OverlayCloseButton}" />
+								</Grid>
+								<Grid
+									Grid.Row="2"
+									Margin="24,0,24,24"
+									HorizontalAlignment="Right"
+									ColumnDefinitions="Auto, Auto, Auto, Auto">
+									<Button Name="{x:Static DefaultDialog.PART_CancelButton}" Margin="8,0,0,0" />
+									<Button Name="{x:Static DefaultDialog.PART_NoButton}" Margin="8,0,0,0" />
+									<Button Name="{x:Static DefaultDialog.PART_YesButton}" Margin="8,0,0,0" />
+									<Button Name="{x:Static DefaultDialog.PART_OKButton}" Margin="8,0,0,0" />
+								</Grid>
+
+							</Grid>
+						</Border>
+					</Border>
+					<u:DialogResizer Margin="{Binding #PART_Border.Margin}" IsVisible="{TemplateBinding CanResize}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:full-screen">
+			<Setter Property="CornerRadius" Value="0" />
+		</Style>
+		<Style Selector="^:full-screen /template/ Border#PART_Border">
+			<Setter Property="HorizontalAlignment" Value="Stretch" />
+			<Setter Property="VerticalAlignment" Value="Stretch" />
+			<Setter Property="Theme" Value="{x:Null}" />
+			<Setter Property="Margin" Value="0" />
+			<Setter Property="Background" Value="{DynamicResource Border.CardBackground}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_CancelButton">
+			<Setter Property="Grid.Column" Value="0" />
+			<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_CANCEL}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_NoButton">
+			<Setter Property="Grid.Column" Value="1" />
+			<Setter Property="ClassHelper.Classes" Value="Danger" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_NO}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_YesButton">
+			<Setter Property="Grid.Column" Value="2" />
+			<Setter Property="ClassHelper.Classes" Value="Primary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_YES}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_OKButton">
+			<Setter Property="Grid.Column" Value="3" />
+			<Setter Property="ClassHelper.Classes" Value="Primary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_OK}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^[Mode=None]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Title">
+				<Setter Property="Margin" Value="24 24 0 0" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Info]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogInformationIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Warning]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogWarningIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Orange6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Warning" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Warning" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Error]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogErrorIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Red6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Question]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogQuestionIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Success]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogSuccessIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Green6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Success" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Success" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^ /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem Command="{Binding $parent[DialogBase].Close}"
+								Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+		<Style Selector="^:not(:modal) /template/ Panel#PART_TitleArea">
+			<Setter Property="ContextFlyout">
+				<MenuFlyout>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringForward}"
+						Header="{DynamicResource STRING_MENU_BRING_FORWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringForwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringToFront}"
+						Header="{DynamicResource STRING_MENU_BRING_TO_FRONT}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeBringToFrontGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendBackward}"
+						Header="{DynamicResource STRING_MENU_SEND_BACKWARD}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendBackwardGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].UpdateLayer}"
+						CommandParameter="{x:Static DialogLayerChangeType.SendToBack}"
+						Header="{DynamicResource STRING_MENU_SEND_TO_BACK}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource DialogArrangeSendToBackGlyph}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem
+						Command="{Binding $parent[DialogBase].Close}"
+						CommandParameter="{x:Static DialogLayerChangeType.BringForward}"
+						Header="{DynamicResource STRING_MENU_DIALOG_CLOSE}">
+						<MenuItem.Icon>
+							<PathIcon Data="{DynamicResource Icon-Close}" Theme="{StaticResource PathIcon-Inner}" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuFlyout>
+			</Setter>
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type DialogWindow}" TargetType="DialogWindow">
+		<Setter Property="Title" Value="{x:Null}" />
+		<Setter Property="Background" Value="{DynamicResource Brush-Background2}" />
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window.DefaultForeground}" />
+		<Setter Property="FontSize" Value="{DynamicResource Default.FontSize}" />
+		<Setter Property="FontFamily" Value="{DynamicResource Default.FontFamily}" />
+		<Setter Property="Padding" Value="48 24" />
+		<Setter Property="SizeToContent" Value="WidthAndHeight" />
+		<Setter Property="WindowStartupLocation" Value="CenterOwner" />
+		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="1" />
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+		<Setter Property="ExtendClientAreaChromeHints" Value="SystemChrome" />
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="SystemDecorations">
+			<OnPlatform>
+				<OnPlatform.Windows>
+					<SystemDecorations>Full</SystemDecorations>
+				</OnPlatform.Windows>
+				<OnPlatform.Default>
+					<SystemDecorations>BorderOnly</SystemDecorations>
+				</OnPlatform.Default>
+			</OnPlatform>
+		</Setter>
+		<Setter Property="CanResize" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="DialogWindow">
+				<Panel>
+					<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+					<Border
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="InnerBorderEdge"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						IsHitTestVisible="False" />
+					<Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent" />
+					<VisualLayerManager>
+						<Grid RowDefinitions="Auto, *">
+							<ContentPresenter
+								Grid.Row="0"
+								Grid.RowSpan="2"
+								Content="{TemplateBinding Content}" />
+							<Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+								<Panel
+									Name="{x:Static DialogWindow.PART_TitleArea}"
+									Grid.Column="0"
+									Grid.ColumnSpan="2"
+									Background="Transparent" />
+								<TextBlock
+									Grid.Column="0"
+									Margin="24,24,0,0"
+									FontSize="14"
+									FontWeight="{DynamicResource TextBlock.TitleFontWeight}"
+									Text="{TemplateBinding Title}"
+									TextTrimming="CharacterEllipsis"
+									TextWrapping="NoWrap" />
+								<Button
+									Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+									Grid.Column="1"
+									Margin="0,24,24,0"
+									Theme="{DynamicResource CloseButton}" />
+							</Grid>
+
+						</Grid>
+					</VisualLayerManager>
+					<u:WindowResizer IsVisible="{TemplateBinding IsManagedResizerVisible}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type DefaultDialogWindow}" TargetType="DefaultDialogWindow">
+		<Setter Property="Title" Value="{x:Null}" />
+		<Setter Property="Background" Value="{DynamicResource Brush-Background2}" />
+		<Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource Window.DefaultBackground}" />
+		<Setter Property="Foreground" Value="{DynamicResource Window.DefaultForeground}" />
+		<Setter Property="FontSize" Value="{DynamicResource Default.FontSize}" />
+		<Setter Property="FontFamily" Value="{DynamicResource Default.FontFamily}" />
+		<Setter Property="Padding" Value="48 24" />
+		<Setter Property="SizeToContent" Value="WidthAndHeight" />
+		<Setter Property="WindowStartupLocation" Value="CenterOwner" />
+		<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="1" />
+		<Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+		<Setter Property="ExtendClientAreaChromeHints" Value="SystemChrome" />
+		<Setter Property="MinWidth" Value="{DynamicResource DialogMinWidth}" />
+		<Setter Property="MinHeight" Value="{DynamicResource DialogMinHeight}" />
+		<Setter Property="SystemDecorations">
+			<OnPlatform>
+				<OnPlatform.Windows>
+					<SystemDecorations>Full</SystemDecorations>
+				</OnPlatform.Windows>
+				<OnPlatform.Default>
+					<SystemDecorations>BorderOnly</SystemDecorations>
+				</OnPlatform.Default>
+			</OnPlatform>
+		</Setter>
+		<Setter Property="CanResize" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="DefaultDialogWindow">
+				<Panel>
+					<Border Name="PART_TransparencyFallback" IsHitTestVisible="False" />
+					<Border
+						Background="{TemplateBinding Background}"
+						BackgroundSizing="InnerBorderEdge"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						IsHitTestVisible="False" />
+					<Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent" />
+					<VisualLayerManager>
+						<Grid RowDefinitions="Auto, *, Auto">
+							<ContentPresenter
+								Name="PART_ContentPresenter"
+								Grid.Row="1"
+								Margin="24,8"
+								Content="{TemplateBinding Content}" />
+							<Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
+								<Panel
+									Name="{x:Static DialogWindow.PART_TitleArea}"
+									Grid.Column="0"
+									Grid.ColumnSpan="3"
+									Background="Transparent" />
+								<PathIcon
+									Name="PART_Icon"
+									Grid.Column="0"
+									Margin="24,24,8,0"
+									VerticalAlignment="Center"
+									Classes="ExtraLarge"
+									Theme="{StaticResource PathIcon-Inner}" />
+								<TextBlock
+									Name="PART_Title"
+									Grid.Column="1"
+									Margin="0,24,0,0"
+									VerticalAlignment="Center"
+									FontSize="16"
+									FontWeight="{DynamicResource TextBlock.TitleFontWeight}"
+									IsHitTestVisible="False"
+									IsVisible="{TemplateBinding Title,
+                                                                Converter={x:Static ObjectConverters.IsNotNull}}"
+									Text="{TemplateBinding Title}"
+									TextWrapping="Wrap" />
+								<Button
+									Name="{x:Static u:MessageBoxWindow.PART_CloseButton}"
+									Grid.Column="2"
+									Margin="0,24,24,0"
+									DockPanel.Dock="Right"
+									Theme="{DynamicResource CloseButton}" />
+							</Grid>
+							<StackPanel
+								Grid.Row="2"
+								Margin="24,0,24,24"
+								HorizontalAlignment="Right"
+								Orientation="Horizontal">
+								<Button Name="{x:Static DefaultDialog.PART_CancelButton}" Margin="8,0,0,0" />
+								<Button Name="{x:Static DefaultDialog.PART_NoButton}" Margin="8,0,0,0" />
+								<Button Name="{x:Static DefaultDialog.PART_YesButton}" Margin="8,0,0,0" />
+								<Button Name="{x:Static DefaultDialog.PART_OKButton}" Margin="8,0,0,0" />
+							</StackPanel>
+
+						</Grid>
+					</VisualLayerManager>
+					<u:WindowResizer IsVisible="{TemplateBinding IsManagedResizerVisible}" />
+				</Panel>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^ /template/ Button#PART_CancelButton">
+			<Setter Property="Grid.Column" Value="0" />
+			<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_CANCEL}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_NoButton">
+			<Setter Property="Grid.Column" Value="1" />
+			<Setter Property="ClassHelper.Classes" Value="Danger" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_NO}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_YesButton">
+			<Setter Property="Grid.Column" Value="2" />
+			<Setter Property="ClassHelper.Classes" Value="Primary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_YES}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^ /template/ Button#PART_OKButton">
+			<Setter Property="Grid.Column" Value="3" />
+			<Setter Property="ClassHelper.Classes" Value="Primary" />
+			<Setter Property="Content" Value="{DynamicResource STRING_MENU_DIALOG_OK}" />
+			<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+		</Style>
+		<Style Selector="^[Mode=None]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+			<Style Selector="^ /template/ TextBlock#PART_Title">
+				<Setter Property="Margin" Value="24 24 0 0" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Info]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogInformationIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Warning]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogWarningIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Orange6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Warning" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Warning" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+				<Setter Property="Theme" Value="{DynamicResource Button-Solid}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Error]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogErrorIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Red6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Question]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogQuestionIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Blue6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Primary" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+		<Style Selector="^[Mode=Success]">
+			<Style Selector="^ /template/ PathIcon#PART_Icon">
+				<Setter Property="IsVisible" Value="True" />
+				<Setter Property="Data" Value="{DynamicResource DialogSuccessIconGlyph}" />
+				<Setter Property="Foreground" Value="{DynamicResource Brush-Green6}" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_OKButton">
+				<Setter Property="ClassHelper.Classes" Value="Success" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_YesButton">
+				<Setter Property="ClassHelper.Classes" Value="Success" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_NoButton">
+				<Setter Property="ClassHelper.Classes" Value="Danger" />
+			</Style>
+			<Style Selector="^ /template/ Button#PART_CancelButton">
+				<Setter Property="ClassHelper.Classes" Value="Tertiary" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

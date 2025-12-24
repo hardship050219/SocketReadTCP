@@ -1,0 +1,32 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ButtonGroupSeparatorForeground" ResourceKey="Brush-ButtonText" />
+	<!--  Light  -->
+	<StaticResource x:Key="ButtonGroupDefaultPrimaryForeground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ButtonGroupDefaultDisabledForeground" ResourceKey="Brush-GrayText" />
+
+	<StaticResource x:Key="ButtonGroupDefaultBackground" ResourceKey="Brush-ButtonFace" />
+	<StaticResource x:Key="ButtonGroupDefaultPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ButtonGroupDefaultPressedBackground" ResourceKey="Brush-Highlight" />
+
+	<StaticResource x:Key="ButtonGroupDefaultBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ButtonGroupDefaultPointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<SolidColorBrush x:Key="ButtonGroupDefaultPressedBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="ButtonGroupDefaultDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+
+	<!--  end Light  -->
+
+	<!--  Solid  -->
+	<StaticResource x:Key="ButtonGroupSolidForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ButtonGroupSolidDisabledForeground" ResourceKey="Brush-GrayText" />
+
+	<StaticResource x:Key="ButtonGroupSolidPrimaryBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ButtonGroupSolidPrimaryPointeroverBackground" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ButtonGroupSolidPrimaryPressedBackground" ResourceKey="Brush-Highlight" />
+
+	<StaticResource x:Key="ButtonGroupSolidPrimaryBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ButtonGroupSolidPrimaryPointeroverBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="ButtonGroupSolidPrimaryPressedBorderBrush" ResourceKey="Brush-Highlight" />
+
+	<StaticResource x:Key="ButtonGroupSolidDisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<!--  end Solid  -->
+</ResourceDictionary>

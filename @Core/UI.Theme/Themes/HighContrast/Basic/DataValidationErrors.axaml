@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="DataValidation.ErrorsForeground" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsBackground" Opacity="0.2" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsBorderBrush" Opacity="0.2" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsPointerOverBackground" Opacity="0.3" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsPointerOverBorderBrush" Opacity="0.3" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsPressedBackground" Opacity="0.4" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsPressedBorderBrush" Opacity="0.4" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsSelectedBackground" Opacity="0.2" Color="#FC725A" />
+	<SolidColorBrush x:Key="DataValidation.ErrorsSelectedBorderBrush" Color="#FC725A" />
+</ResourceDictionary>

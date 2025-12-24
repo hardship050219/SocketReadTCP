@@ -1,0 +1,29 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Calendar.Background" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="Calendar.Foreground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="Calendar.BorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="Calendar.ItemWeekDayNameForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="Calendar.ItemIconForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonBackground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonForeground" ResourceKey="Brush-Text0" />
+	<SolidColorBrush x:Key="Calendar.ItemCalendarButtonBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonPressedBackground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonSelectedBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonSelectedForeground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonDisabledForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonBlackoutForeground" ResourceKey="Brush-Text3" />
+	<StaticResource x:Key="Calendar.ItemCalendarButtonInactiveForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonForeground" ResourceKey="Brush-Text0" />
+	<SolidColorBrush x:Key="Calendar.ItemCalendarDayButtonBackground" Color="Transparent" />
+	<SolidColorBrush x:Key="Calendar.ItemCalendarDayButtonBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonPressedBackground" ResourceKey="Brush-Fill2" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonSelectedBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonSelectedForeground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonTodayForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonTodayBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonDisabledForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonBlackoutForeground" ResourceKey="Brush-Text3" />
+	<StaticResource x:Key="Calendar.ItemCalendarDayButtonInactiveForeground" ResourceKey="Brush-Text2" />
+</ResourceDictionary>

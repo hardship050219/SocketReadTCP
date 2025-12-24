@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TreeDataGridSortIconAscendingPath" ResourceKey="Icon-SmallTriangleTop" />
+	<StaticResource x:Key="TreeDataGridSortIconDescendingPath" ResourceKey="Icon-SmallTriangleDown" />
+	<StaticResource x:Key="TreeDataGridItemCollapsedChevronPathData" ResourceKey="Icon-TreeTriangleRight" />
+	<StaticResource x:Key="TreeDataGridItemCollapsedChevronWidth" ResourceKey="Width-IconMedium" />
+	<StaticResource x:Key="TreeDataGridColumnHeaderCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="TreeDataGridColumnHeaderMinHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="TreeDataGridRowCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<StaticResource x:Key="TreeDataGridRowMinHeight" ResourceKey="Height-ControlDefault" />
+	<StaticResource x:Key="TreeDataGridRowMargin" ResourceKey="Thickness-SuperTight" />
+</ResourceDictionary>

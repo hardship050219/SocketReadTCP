@@ -1,0 +1,99 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<StackPanel>
+			<HyperlinkButton NavigateUri="http://www.irihi.tech/">
+				链接文本
+			</HyperlinkButton>
+			<HyperlinkButton NavigateUri="http://www.irihi.tech/" Classes="WithIcon Underline">
+				网页链接
+			</HyperlinkButton>
+			<HyperlinkButton NavigateUri="http://www.irihi.tech/" Classes="OnlyIcon">
+				OnlyIcon
+			</HyperlinkButton>
+		</StackPanel>
+	</Design.PreviewWith>
+	<ControlTheme TargetType="HyperlinkButton" x:Key="{x:Type HyperlinkButton}">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="{DynamicResource HyperlinkButton.FontSize}" />
+		<Setter Property="FontWeight" Value="{DynamicResource HyperlinkButton.FontWeight}" />
+		<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.Foreground}" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="HyperlinkButton">
+				<DockPanel>
+					<PathIcon
+						Name="PART_LinkGlyph"
+						Theme="{DynamicResource PathIcon-Inner}"
+						Margin="{DynamicResource HyperlinkButton.LinkGlyphMargin}"
+						IsVisible="False"
+						Data="{DynamicResource HyperlinkButton.LinkGlyph}"
+						Foreground="{TemplateBinding Foreground}"
+						Width="{DynamicResource HyperlinkButton.LinkGlyphWidth}"
+						Height="{DynamicResource HyperlinkButton.LinkGlyphHeight}" />
+					<ContentPresenter
+						Name="PART_ContentPresenter"
+						Content="{TemplateBinding Content}"
+						ContentTemplate="{TemplateBinding ContentTemplate}"
+						HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+						RecognizesAccessKey="True" />
+				</DockPanel>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^:pointerover">
+			<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.PointeroverForeground}" />
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.PressedForeground}" />
+		</Style>
+
+		<Style Selector="^:disabled">
+			<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.DisabledForeground}" />
+		</Style>
+
+		<Style Selector="^:visited">
+			<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.VisitedForeground}" />
+
+			<Style Selector="^:pointerover">
+				<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.PointeroverForeground}" />
+			</Style>
+
+			<Style Selector="^:pressed">
+				<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.PressedForeground}" />
+			</Style>
+
+			<Style Selector="^:disabled">
+				<Setter Property="Foreground" Value="{DynamicResource HyperlinkButton.DisabledForeground}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.WithIcon">
+			<Style Selector="^ /template/ PathIcon#PART_LinkGlyph">
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.Underline">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter:pointerover">
+				<Setter Property="TextBlock.TextDecorations" Value="Underline" />
+			</Style>
+		</Style>
+
+		<Style Selector="^.OnlyIcon">
+			<Style Selector="^ /template/ PathIcon#PART_LinkGlyph">
+				<Setter Property="Margin" Value="0" />
+				<Setter Property="IsVisible" Value="True" />
+			</Style>
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="IsVisible" Value="False" />
+			</Style>
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

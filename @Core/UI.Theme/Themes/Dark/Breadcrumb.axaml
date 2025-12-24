@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="BreadcrumbItemForeground" ResourceKey="Brush-Text2" />
+	<StaticResource x:Key="BreadcrumbItemSeparatorForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="BreadcrumbItemLastForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="BreadcrumbItemPointeroverForeground" ResourceKey="Brush-Primary" />
+</ResourceDictionary>

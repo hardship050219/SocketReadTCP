@@ -1,0 +1,91 @@
+﻿<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:u="https://zit.com/ui">
+	<Design.PreviewWith>
+		<u:PinCode Count="4" />
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type u:PinCodeItem}" TargetType="u:PinCodeItem">
+		<Setter Property="Focusable" Value="True" />
+		<Setter Property="Height" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="Width" Value="{DynamicResource TextBox.DefaultHeight}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource TextBox.DefaultCornerRadius}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource TextBox.BorderThickness}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource TextBox.DefaultBorderBrush}" />
+		<Setter Property="Background" Value="{DynamicResource TextBox.DefaultBackground}" />
+		<Setter Property="FocusAdorner" Value="{x:Null}" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border
+					Name="PART_Background"
+					HorizontalAlignment="Stretch"
+					VerticalAlignment="Stretch"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<TextPresenter
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center"
+						PasswordChar="{TemplateBinding PasswordChar}"
+						Text="{TemplateBinding Text}"
+						TextElement.FontSize="{TemplateBinding FontSize}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Style Selector="^:pointerover /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PointeroverBackground}" />
+		</Style>
+		<Style Selector="^:focus /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource TextBox.PointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBox.FocusBorderBrush}" />
+		</Style>
+		<Style Selector="^:error /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+		</Style>
+		<Style Selector="^:focus:error /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+		</Style>
+		<Style Selector="^.Large">
+			<Setter Property="Height" Value="{DynamicResource TextBox.LargeHeight}" />
+			<Setter Property="Width" Value="{DynamicResource TextBox.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="Height" Value="{DynamicResource TextBox.SmallHeight}" />
+			<Setter Property="Width" Value="{DynamicResource TextBox.SmallHeight}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:PinCodeCollection}" TargetType="u:PinCodeCollection">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:PinCodeCollection">
+				<ItemsPresenter ItemsPanel="{TemplateBinding ItemsPanel}" />
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+
+	<ControlTheme x:Key="{x:Type u:PinCode}" TargetType="u:PinCode">
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="u:PinCode">
+				<DataValidationErrors>
+					<u:PinCodeCollection HorizontalAlignment="Left" Name="{x:Static u:PinCode.PART_ItemsControl}"
+												ItemsSource="{TemplateBinding Digits}">
+						<u:PinCodeCollection.ItemsPanel>
+							<ItemsPanelTemplate>
+								<StackPanel Orientation="Horizontal" />
+							</ItemsPanelTemplate>
+						</u:PinCodeCollection.ItemsPanel>
+						<u:PinCodeCollection.ItemContainerTheme>
+							<ControlTheme BasedOn="{StaticResource {x:Type u:PinCodeItem}}" TargetType="u:PinCodeItem">
+								<Setter Property="PasswordChar" Value="{Binding $parent[u:PinCode].PasswordChar}" />
+								<Setter Property="DataValidationErrors.Errors"
+											Value="{Binding $parent[u:PinCode].(DataValidationErrors.Errors)}" />
+							</ControlTheme>
+						</u:PinCodeCollection.ItemContainerTheme>
+					</u:PinCodeCollection>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+	</ControlTheme>
+</ResourceDictionary>

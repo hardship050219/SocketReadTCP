@@ -1,0 +1,7 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			xmlns:u="https://zit.com/ui">
+	<Style Selector=":is(u|UiOldView)">
+		<Setter Property="Theme" Value="{DynamicResource {x:Type u:UiOldView}}" />
+	</Style>
+</Styles>

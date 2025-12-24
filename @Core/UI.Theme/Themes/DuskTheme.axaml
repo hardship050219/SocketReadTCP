@@ -1,0 +1,26 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="ZC.UI.Themes.DuskTheme">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceInclude Source="/Themes/HighContrast/_index.axaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+	<Color x:Key="Color-Window">#2D3236</Color>
+	<Color x:Key="Color-WindowText">#FFFFFF</Color>
+	<Color x:Key="Color-Hotlight">#70EBDE</Color>
+	<Color x:Key="Color-GrayText">#A6A6A6</Color>
+	<Color x:Key="Color-HighlightText">#212D3B</Color>
+	<Color x:Key="Color-Highlight">#A1BFDE</Color>
+	<Color x:Key="Color-ButtonText">#B6F6F0</Color>
+	<Color x:Key="Color-ButtonFace">#2D3236</Color>
+	<SolidColorBrush x:Key="Brush-Window" Color="{StaticResource Color-Window}" />
+	<SolidColorBrush x:Key="Brush-WindowText" Color="{StaticResource Color-WindowText}" />
+	<SolidColorBrush x:Key="Brush-Hotlight" Color="{StaticResource Color-Hotlight}" />
+	<SolidColorBrush x:Key="Brush-GrayText" Color="{StaticResource Color-GrayText}" />
+	<SolidColorBrush x:Key="Brush-HighlightText" Color="{StaticResource Color-HighlightText}" />
+	<SolidColorBrush x:Key="Brush-Highlight" Color="{StaticResource Color-Highlight}" />
+	<SolidColorBrush x:Key="Brush-ButtonText" Color="{StaticResource Color-ButtonText}" />
+	<SolidColorBrush x:Key="Brush-ButtonFace" Color="{StaticResource Color-ButtonFace}" />
+</ResourceDictionary>

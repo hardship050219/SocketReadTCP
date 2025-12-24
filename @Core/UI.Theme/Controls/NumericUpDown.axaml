@@ -1,0 +1,75 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="CornerRadius" Value="{DynamicResource NumericUpDown.CornerRadius}" />
+		<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.DefaultHeight}" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="NumericUpDown">
+				<DataValidationErrors>
+					<ButtonSpinner
+						Name="PART_Spinner"
+						MinWidth="0"
+						HorizontalContentAlignment="Stretch"
+						VerticalContentAlignment="Stretch"
+						AllowSpin="{TemplateBinding AllowSpin}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
+						ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+						<TextBox
+							Name="PART_TextBox"
+							Height="{TemplateBinding Height}"
+							MinHeight="{TemplateBinding MinHeight}"
+							VerticalAlignment="Stretch"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							AcceptsReturn="False"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							DataValidationErrors.Errors="{Binding $parent[NumericUpDown].(DataValidationErrors.Errors)}"
+							FontSize="{TemplateBinding FontSize}"
+							Foreground="{TemplateBinding Foreground}"
+							IsReadOnly="{TemplateBinding IsReadOnly}"
+							Text="{TemplateBinding Text}"
+							TextWrapping="NoWrap"
+							Theme="{DynamicResource TextBox-NonError}"
+							InnerLeftContent="{TemplateBinding InnerLeftContent}"
+							InnerRightContent="{TemplateBinding InnerRightContent}"
+							Watermark="{TemplateBinding Watermark}" />
+					</ButtonSpinner>
+				</DataValidationErrors>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.LargeHeight}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource NumericUpDown.SmallHeight}" />
+		</Style>
+
+		<Style Selector="^:error">
+			<Style Selector="^ /template/ TextBox#PART_TextBox">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pointerover /template/ TextBox#PART_TextBox">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPointerOverBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:pressed /template/ TextBox#PART_TextBox">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsPressedBackground}" />
+				<Setter Property="BorderBrush" Value="Transparent" />
+			</Style>
+			<Style Selector="^:focus /template/ TextBox#PART_TextBox">
+				<Setter Property="Background" Value="{DynamicResource DataValidation.ErrorsSelectedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource DataValidation.ErrorsSelectedBorderBrush}" />
+			</Style>
+		</Style>
+	</ControlTheme>
+
+</ResourceDictionary>

@@ -1,0 +1,99 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!--  Typography related resources are combined with TextBlock  -->
+	<StaticResource x:Key="Label.TagLightRedForeground" ResourceKey="Brush-Red8" />
+	<SolidColorBrush x:Key="Label.TagLightRedBackground" Opacity="0.15" Color="{StaticResource Color-Red5}" />
+	<StaticResource x:Key="Label.TagLightPinkForeground" ResourceKey="Brush-Pink8" />
+	<SolidColorBrush x:Key="Label.TagLightPinkBackground" Opacity="0.15" Color="{StaticResource Color-Pink5}" />
+	<StaticResource x:Key="Label.TagLightPurpleForeground" ResourceKey="Brush-Purple8" />
+	<SolidColorBrush x:Key="Label.TagLightPurpleBackground" Opacity="0.15" Color="{StaticResource Color-Purple5}" />
+	<StaticResource x:Key="Label.TagLightVioletForeground" ResourceKey="Brush-Violet8" />
+	<SolidColorBrush x:Key="Label.TagLightVioletBackground" Opacity="0.15" Color="{StaticResource Color-Violet5}" />
+	<StaticResource x:Key="Label.TagLightIndigoForeground" ResourceKey="Brush-Indigo8" />
+	<SolidColorBrush x:Key="Label.TagLightIndigoBackground" Opacity="0.15" Color="{StaticResource Color-Indigo5}" />
+	<StaticResource x:Key="Label.TagLightBlueForeground" ResourceKey="Brush-Blue8" />
+	<SolidColorBrush x:Key="Label.TagLightBlueBackground" Opacity="0.15" Color="{StaticResource Color-Blue5}" />
+	<StaticResource x:Key="Label.TagLightLightBlueForeground" ResourceKey="Brush-LightBlue8" />
+	<SolidColorBrush x:Key="Label.TagLightLightBlueBackground" Opacity="0.15" Color="{StaticResource Color-LightBlue5}" />
+	<StaticResource x:Key="Label.TagLightCyanForeground" ResourceKey="Brush-Cyan8" />
+	<SolidColorBrush x:Key="Label.TagLightCyanBackground" Opacity="0.15" Color="{StaticResource Color-Cyan5}" />
+	<StaticResource x:Key="Label.TagLightTealForeground" ResourceKey="Brush-Teal8" />
+	<SolidColorBrush x:Key="Label.TagLightTealBackground" Opacity="0.15" Color="{StaticResource Color-Teal5}" />
+	<StaticResource x:Key="Label.TagLightGreenForeground" ResourceKey="Brush-Green8" />
+	<SolidColorBrush x:Key="Label.TagLightGreenBackground" Opacity="0.15" Color="{StaticResource Color-Green5}" />
+	<StaticResource x:Key="Label.TagLightLightGreenForeground" ResourceKey="Brush-LightGreen8" />
+	<SolidColorBrush x:Key="Label.TagLightLightGreenBackground" Opacity="0.15"
+							Color="{StaticResource Color-LightGreen5}" />
+	<StaticResource x:Key="Label.TagLightLimeForeground" ResourceKey="Brush-Lime8" />
+	<SolidColorBrush x:Key="Label.TagLightLimeBackground" Opacity="0.15" Color="{StaticResource Color-Lime5}" />
+	<StaticResource x:Key="Label.TagLightYellowForeground" ResourceKey="Brush-Yellow8" />
+	<SolidColorBrush x:Key="Label.TagLightYellowBackground" Opacity="0.15" Color="{StaticResource Color-Yellow5}" />
+	<StaticResource x:Key="Label.TagLightAmberForeground" ResourceKey="Brush-Amber8" />
+	<SolidColorBrush x:Key="Label.TagLightAmberBackground" Opacity="0.15" Color="{StaticResource Color-Amber5}" />
+	<StaticResource x:Key="Label.TagLightOrangeForeground" ResourceKey="Brush-Orange8" />
+	<SolidColorBrush x:Key="Label.TagLightOrangeBackground" Opacity="0.15" Color="{StaticResource Color-Orange5}" />
+	<StaticResource x:Key="Label.TagLightGreyForeground" ResourceKey="Brush-Grey8" />
+	<SolidColorBrush x:Key="Label.TagLightGreyBackground" Opacity="0.15" Color="{StaticResource Color-Grey5}" />
+
+	<StaticResource x:Key="Label.TagGhostRedBorderBrush" ResourceKey="Brush-Red4" />
+	<StaticResource x:Key="Label.TagGhostRedForeground" ResourceKey="Brush-Red5" />
+	<StaticResource x:Key="Label.TagGhostPinkBorderBrush" ResourceKey="Brush-Pink4" />
+	<StaticResource x:Key="Label.TagGhostPinkForeground" ResourceKey="Brush-Pink5" />
+	<StaticResource x:Key="Label.TagGhostPurpleBorderBrush" ResourceKey="Brush-Purple4" />
+	<StaticResource x:Key="Label.TagGhostPurpleForeground" ResourceKey="Brush-Purple5" />
+	<StaticResource x:Key="Label.TagGhostVioletBorderBrush" ResourceKey="Brush-Violet4" />
+	<StaticResource x:Key="Label.TagGhostVioletForeground" ResourceKey="Brush-Violet5" />
+	<StaticResource x:Key="Label.TagGhostIndigoBorderBrush" ResourceKey="Brush-Indigo4" />
+	<StaticResource x:Key="Label.TagGhostIndigoForeground" ResourceKey="Brush-Indigo5" />
+	<StaticResource x:Key="Label.TagGhostBlueBorderBrush" ResourceKey="Brush-Blue4" />
+	<StaticResource x:Key="Label.TagGhostBlueForeground" ResourceKey="Brush-Blue5" />
+	<StaticResource x:Key="Label.TagGhostLightBlueBorderBrush" ResourceKey="Brush-LightBlue4" />
+	<StaticResource x:Key="Label.TagGhostLightBlueForeground" ResourceKey="Brush-LightBlue5" />
+	<StaticResource x:Key="Label.TagGhostCyanBorderBrush" ResourceKey="Brush-Cyan4" />
+	<StaticResource x:Key="Label.TagGhostCyanForeground" ResourceKey="Brush-Cyan5" />
+	<StaticResource x:Key="Label.TagGhostTealBorderBrush" ResourceKey="Brush-Teal4" />
+	<StaticResource x:Key="Label.TagGhostTealForeground" ResourceKey="Brush-Teal5" />
+	<StaticResource x:Key="Label.TagGhostGreenBorderBrush" ResourceKey="Brush-Green4" />
+	<StaticResource x:Key="Label.TagGhostGreenForeground" ResourceKey="Brush-Green5" />
+	<StaticResource x:Key="Label.TagGhostLightGreenBorderBrush" ResourceKey="Brush-LightGreen4" />
+	<StaticResource x:Key="Label.TagGhostLightGreenForeground" ResourceKey="Brush-LightGreen5" />
+	<StaticResource x:Key="Label.TagGhostLimeBorderBrush" ResourceKey="Brush-Lime4" />
+	<StaticResource x:Key="Label.TagGhostLimeForeground" ResourceKey="Brush-Lime5" />
+	<StaticResource x:Key="Label.TagGhostYellowBorderBrush" ResourceKey="Brush-Yellow4" />
+	<StaticResource x:Key="Label.TagGhostYellowForeground" ResourceKey="Brush-Yellow5" />
+	<StaticResource x:Key="Label.TagGhostAmberBorderBrush" ResourceKey="Brush-Amber4" />
+	<StaticResource x:Key="Label.TagGhostAmberForeground" ResourceKey="Brush-Amber5" />
+	<StaticResource x:Key="Label.TagGhostOrangeBorderBrush" ResourceKey="Brush-Orange4" />
+	<StaticResource x:Key="Label.TagGhostOrangeForeground" ResourceKey="Brush-Orange5" />
+	<StaticResource x:Key="Label.TagGhostGreyBorderBrush" ResourceKey="Brush-Grey4" />
+	<StaticResource x:Key="Label.TagGhostGreyForeground" ResourceKey="Brush-Grey5" />
+
+	<StaticResource x:Key="Label.TagSolidForeground" ResourceKey="Color-White" />
+	<StaticResource x:Key="Label.TagSolidRedBackground" ResourceKey="Brush-Red5" />
+	<StaticResource x:Key="Label.TagSolidPinkBackground" ResourceKey="Brush-Pink5" />
+	<StaticResource x:Key="Label.TagSolidPurpleBackground" ResourceKey="Brush-Purple5" />
+	<StaticResource x:Key="Label.TagSolidVioletBackground" ResourceKey="Brush-Violet5" />
+	<StaticResource x:Key="Label.TagSolidIndigoBackground" ResourceKey="Brush-Indigo5" />
+	<StaticResource x:Key="Label.TagSolidBlueBackground" ResourceKey="Brush-Blue5" />
+	<StaticResource x:Key="Label.TagSolidLightBlueBackground" ResourceKey="Brush-LightBlue5" />
+	<StaticResource x:Key="Label.TagSolidCyanBackground" ResourceKey="Brush-Cyan5" />
+	<StaticResource x:Key="Label.TagSolidTealBackground" ResourceKey="Brush-Teal5" />
+	<StaticResource x:Key="Label.TagSolidGreenBackground" ResourceKey="Brush-Green5" />
+	<StaticResource x:Key="Label.TagSolidLightGreenBackground" ResourceKey="Brush-LightGreen5" />
+	<StaticResource x:Key="Label.TagSolidLimeBackground" ResourceKey="Brush-Lime5" />
+	<StaticResource x:Key="Label.TagSolidYellowBackground" ResourceKey="Brush-Yellow5" />
+	<StaticResource x:Key="Label.TagSolidAmberBackground" ResourceKey="Brush-Amber5" />
+	<StaticResource x:Key="Label.TagSolidOrangeBackground" ResourceKey="Brush-Orange5" />
+	<StaticResource x:Key="Label.TagSolidGreyBackground" ResourceKey="Brush-Grey5" />
+
+	<StaticResource x:Key="Label.TagSolidWhiteForeground" ResourceKey="Brush-Text0" />
+	<StaticResource x:Key="Label.TagSolidWhiteBackground" ResourceKey="Brush-Background4" />
+	<SolidColorBrush x:Key="Label.TagSolidWhiteBorderBrush" Opacity="0.7" Color="{StaticResource Color-Grey2}" />
+
+	<!-- Obsolete -->
+	<StaticResource x:Key="Label.TagLightWhiteForeground" ResourceKey="Label.TagSolidWhiteForeground" />
+	<StaticResource x:Key="Label.TagLightWhiteBackground" ResourceKey="Label.TagSolidWhiteBackground" />
+	<StaticResource x:Key="Label.TagLightWhiteBorderBrush" ResourceKey="Label.TagSolidWhiteBorderBrush" />
+	<StaticResource x:Key="Label.TagGhostWhiteForeground" ResourceKey="Label.TagSolidWhiteForeground" />
+	<StaticResource x:Key="Label.TagGhostWhiteBackground" ResourceKey="Label.TagSolidWhiteBackground" />
+	<StaticResource x:Key="Label.TagGhostWhiteBorderBrush" ResourceKey="Label.TagSolidWhiteBorderBrush" />
+</ResourceDictionary>

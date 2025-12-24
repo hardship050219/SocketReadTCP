@@ -1,0 +1,315 @@
+<ResourceDictionary
+	xmlns="https://github.com/avaloniaui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:CompileBindings="True">
+	<Design.PreviewWith>
+		<StackPanel Margin="20">
+			<DropDownButton Content="Button" />
+			<DropDownButton Classes="Primary" Content="Button" />
+			<DropDownButton Classes="Secondary" Content="Button" />
+			<DropDownButton IsEnabled="False" Classes="Tertiary" Content="Button" />
+			<DropDownButton Theme="{DynamicResource DropDownButton-Solid}" Classes="Success" Content="Button" />
+			<DropDownButton Theme="{DynamicResource DropDownButton-Outline}" Classes="Warning" Content="Button" />
+			<DropDownButton Theme="{DynamicResource DropDownButton-Borderless}" Classes="Danger" Content="Button" />
+		</StackPanel>
+	</Design.PreviewWith>
+	<ControlTheme x:Key="{x:Type DropDownButton}" TargetType="DropDownButton">
+		<Setter Property="Padding" Value="{DynamicResource Button.DefaultPadding}" />
+		<Setter Property="MinHeight" Value="{DynamicResource Button.DefaultHeight}" />
+		<Setter Property="Foreground" Value="{DynamicResource Button.DefaultPrimaryForeground}" />
+		<Setter Property="Background" Value="{DynamicResource Button.DefaultBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultBorderBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource Button.BorderThickness}" />
+		<Setter Property="CornerRadius" Value="{DynamicResource Button.CornerRadius}" />
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="FontSize" Value="{DynamicResource Button.Default.FontSize}" />
+		<Setter Property="FontWeight" Value="{DynamicResource Button.Default.FontWeight}" />
+		<Setter Property="RenderTransform" Value="none" />
+		<Setter Property="BackgroundSizing" Value="OuterBorderEdge" />
+		<Setter Property="Cursor" Value="Hand" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="DropDownButton">
+				<Border
+					Name="PART_Background"
+					Padding="{TemplateBinding Padding}"
+					BorderThickness="{TemplateBinding BorderThickness}"
+					CornerRadius="{TemplateBinding CornerRadius}">
+					<DockPanel>
+						<PathIcon
+							Name="DropDownGlyph"
+							DockPanel.Dock="Right"
+							Theme="{DynamicResource PathIcon-Inner}"
+							HorizontalAlignment="Right"
+							Margin="8,0,0,0"
+							Data="{DynamicResource DropDownButton.IconGlyph}"
+							Foreground="{Binding #PART_ContentPresenter.Foreground}"
+							IsHitTestVisible="False"
+							UseLayoutRounding="False" />
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Foreground="{TemplateBinding Foreground}"
+							RecognizesAccessKey="True" />
+					</DockPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+
+		<Style Selector="^ /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{TemplateBinding Background}" />
+			<Setter Property="BorderBrush" Value="{TemplateBinding BorderBrush}" />
+		</Style>
+
+		<Style Selector="^.Primary /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultPrimaryForeground}" />
+		</Style>
+		<Style Selector="^.Secondary /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultSecondaryForeground}" />
+		</Style>
+		<Style Selector="^.Tertiary /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultTertiaryForeground}" />
+		</Style>
+		<Style Selector="^.Success /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultSuccessForeground}" />
+		</Style>
+		<Style Selector="^.Warning /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultWarningForeground}" />
+		</Style>
+		<Style Selector="^.Danger /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDangerForeground}" />
+		</Style>
+
+		<Style Selector="^:pointerover /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.DefaultPointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultPointeroverBorderBrush}" />
+		</Style>
+
+		<Style Selector="^:pressed /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.DefaultPressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultPressedBorderBrush}" />
+		</Style>
+
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.DefaultDisabledBorderBrush}" />
+		</Style>
+
+		<Style Selector="^.Large">
+			<Setter Property="MinHeight" Value="{DynamicResource Button.LargeHeight}" />
+			<Setter Property="Padding" Value="{DynamicResource Button.LargePadding}" />
+		</Style>
+		<Style Selector="^.Small">
+			<Setter Property="MinHeight" Value="{DynamicResource Button.SmallHeight}" />
+			<Setter Property="Padding" Value="{DynamicResource Button.SmallPadding}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="DropDownButton-Solid"
+		BasedOn="{StaticResource {x:Type DropDownButton}}"
+		TargetType="DropDownButton">
+		<Setter Property="FocusAdorner">
+			<FocusAdornerTemplate>
+				<Border Theme="{DynamicResource AdornerLayer-Border}"
+							Classes="Solid" />
+			</FocusAdornerTemplate>
+		</Setter>
+		<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+		<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryBorderBrush}" />
+
+		<Style Selector="^:pointerover /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPointeroverBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidPrimaryPressedForeground}" />
+		</Style>
+		<Style Selector="^:pressed /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPressedBorderBrush}" />
+		</Style>
+
+		<Style Selector="^.Primary">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidPrimaryPressedForeground}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidPrimaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidPrimaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Secondary">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSecondaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSecondaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Tertiary">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidTertiaryPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidTertiaryPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Success">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidSuccessPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidSuccessPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Warning">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidWarningBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidWarningPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidWarningPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidWarningPressedBorderBrush}" />
+			</Style>
+		</Style>
+		<Style Selector="^.Danger">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Foreground" Value="{DynamicResource Button.SolidForeground}" />
+			</Style>
+			<Style Selector="^ /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidDangerBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerBorderBrush}" />
+			</Style>
+			<Style Selector="^:pointerover /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidDangerPointeroverBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerPointeroverBorderBrush}" />
+			</Style>
+			<Style Selector="^:pressed /template/ Border#PART_Background">
+				<Setter Property="Background" Value="{DynamicResource Button.SolidDangerPressedBackground}" />
+				<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDangerPressedBorderBrush}" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.SolidDisabledForeground}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.SolidDisabledBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.SolidDisabledBorderBrush}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="DropDownButton-Outline"
+		BasedOn="{StaticResource {x:Type DropDownButton}}"
+		TargetType="DropDownButton">
+		<Style Selector="^ /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlineBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlinePrimaryBorderBrush}" />
+		</Style>
+		<Style Selector="^:pointerover /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlinePointeroverBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlinePrimaryBorderBrush}" />
+		</Style>
+		<Style Selector="^:pressed /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlinePressedBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlinePrimaryBorderBrush}" />
+		</Style>
+		<Style Selector="^.Primary /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlinePrimaryBorderBrush}" />
+		</Style>
+		<Style Selector="^.Secondary /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineSecondaryBorderBrush}" />
+		</Style>
+		<Style Selector="^.Tertiary /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineTertiaryBorderBrush}" />
+		</Style>
+		<Style Selector="^.Success /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineSuccessBorderBrush}" />
+		</Style>
+		<Style Selector="^.Warning /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineWarningBorderBrush}" />
+		</Style>
+		<Style Selector="^.Danger /template/ Border#PART_Background">
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineDangerBorderBrush}" />
+		</Style>
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.OutlineBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.OutlineBorderBrush}" />
+		</Style>
+	</ControlTheme>
+
+	<ControlTheme
+		x:Key="DropDownButton-Borderless"
+		BasedOn="{StaticResource {x:Type DropDownButton}}"
+		TargetType="DropDownButton">
+		<Style Selector="^ /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.BorderlessBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.BorderlessBorderBrush}" />
+		</Style>
+		<Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Foreground" Value="{DynamicResource Button.DefaultDisabledForeground}" />
+		</Style>
+		<Style Selector="^:disabled /template/ Border#PART_Background">
+			<Setter Property="Background" Value="{DynamicResource Button.BorderlessBackground}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource Button.BorderlessBorderBrush}" />
+		</Style>
+	</ControlTheme>
+</ResourceDictionary>

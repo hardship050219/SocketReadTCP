@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TreeView.ItemDefaultCornerRadius" ResourceKey="Border-RadiusSmall" />
+	<x:Double x:Key="TreeView.ItemIndent">20</x:Double>
+	<StaticResource x:Key="Expander.IconData" ResourceKey="Icon-TreeTriangleRight" />
+	<Thickness x:Key="TreeView.ItemIconMargin">8 0</Thickness>
+	<Thickness x:Key="TreeView.ItemPadding">0 4 8 4</Thickness>
+</ResourceDictionary>

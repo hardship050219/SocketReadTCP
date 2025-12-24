@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="Expander.HeaderFontWeight" ResourceKey="FontWeight-Bold" />
+	<StaticResource x:Key="Expander.IconSize" ResourceKey="Width-IconExtraSmall" />
+	<Thickness x:Key="Expander.IconMargin">8 0 0 0</Thickness>
+	<StaticResource x:Key="Expander.Icon" ResourceKey="Icon-ChevronDown" />
+	<Thickness x:Key="Expander.HeaderMargin">8 4</Thickness>
+	<StaticResource x:Key="Expander.HeaderPadding" ResourceKey="Thickness-Tight" />
+	<Thickness x:Key="Expander.ContentMargin">16 4 16 8</Thickness>
+	<Thickness x:Key="Expander.DownContentBorderThickness">0 0 0 1</Thickness>
+	<Thickness x:Key="Expander.UpContentBorderThickness">0 1 0 0</Thickness>
+	<Thickness x:Key="Expander.LeftContentBorderThickness">1 0 0 0</Thickness>
+	<Thickness x:Key="Expander.RightContentBorderThickness">0 0 1 0</Thickness>
+</ResourceDictionary>

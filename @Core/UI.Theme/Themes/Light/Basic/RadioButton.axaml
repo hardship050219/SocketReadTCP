@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- RadioButton -->
+	<StaticResource x:Key="RadioButtonDisabledForeground" ResourceKey="Brush-DisabledText" />
+	<SolidColorBrush x:Key="RadioButton.UncheckIconDefaultBackground" Color="Transparent" />
+	<StaticResource x:Key="RadioButton.UncheckIconPointeroverBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="RadioButton.UncheckIconPressedBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="RadioButton.UncheckIconDisabledBackground" ResourceKey="Brush-DisabledFill" />
+	<StaticResource x:Key="RadioButton.UncheckIconDefaultBorderBrush" ResourceKey="Brush-Text3" />
+	<StaticResource x:Key="RadioButton.UncheckIconPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="RadioButton.UncheckIconPressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="RadioButton.UncheckIconDisabledBorderBrush" ResourceKey="Brush-Border" />
+	<StaticResource x:Key="RadioButton.CheckIconDefaultBackground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="RadioButton.CheckIconPointeroverBackground" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="RadioButton.CheckIconPressedBackground" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="RadioButton.CheckIconDisabledBackground" ResourceKey="Brush-PrimaryDisabled" />
+	<StaticResource x:Key="RadioButton.CheckIconDefaultBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="RadioButton.CheckIconPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="RadioButton.CheckIconPressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="RadioButton.CheckIconDisabledBorderBrush" ResourceKey="Brush-PrimaryDisabled" />
+	<StaticResource x:Key="RadioButton.CheckGlyphFill" ResourceKey="Color-White" />
+	<StaticResource x:Key="RadioButton.Foreground" ResourceKey="Brush-Text0" />
+	<SolidColorBrush x:Key="RadioButton.DefaultBackground" Color="Transparent" />
+	<StaticResource x:Key="RadioButton.DefaultBorderBrush" ResourceKey="Brush-Text3" />
+	<StaticResource x:Key="RadioButton.GroupBackground" ResourceKey="Brush-Fill0" />
+	<!-- RadioButton-Button -->
+	<StaticResource x:Key="RadioButton.ButtonUncheckedForeground" ResourceKey="Brush-Text1" />
+	<StaticResource x:Key="RadioButton.ButtonUncheckedPointeroverBackground" ResourceKey="Brush-Fill1" />
+	<StaticResource x:Key="RadioButton.ButtonUncheckedDisabledForeground" ResourceKey="Brush-DisabledText" />
+	<StaticResource x:Key="RadioButton.ButtonCheckedBackground" ResourceKey="Brush-Background3" />
+	<StaticResource x:Key="RadioButton.ButtonCheckedForeground" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="RadioButton.ButtonCheckedDisabledForeground" ResourceKey="Brush-DisabledText" />
+	<!-- RadioButton-Card -->
+	<SolidColorBrush x:Key="RadioButton.CardDefaultBackground" Color="Transparent" />
+	<SolidColorBrush x:Key="RadioButton.CardDefaultBorderBrush" Color="Transparent" />
+	<StaticResource x:Key="RadioButton.CardCheckedBackground" ResourceKey="Brush-PrimaryLight" />
+	<StaticResource x:Key="RadioButton.CardCheckDefaultBorderBrush" ResourceKey="Brush-Primary" />
+	<StaticResource x:Key="RadioButton.CardCheckPointeroverBorderBrush" ResourceKey="Brush-PrimaryPointerover" />
+	<StaticResource x:Key="RadioButton.CardCheckPressedBorderBrush" ResourceKey="Brush-PrimaryActive" />
+	<StaticResource x:Key="RadioButton.CardUncheckPointeroverBackground" ResourceKey="Brush-Fill0" />
+	<StaticResource x:Key="RadioButton.CardUncheckPressedBackground" ResourceKey="Brush-Fill1" />
+</ResourceDictionary>

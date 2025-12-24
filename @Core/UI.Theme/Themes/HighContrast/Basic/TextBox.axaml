@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TextBox.TextCaretBrush" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TextBox.DefaultBorderBrush" ResourceKey="Brush-ButtonText" />
+	<StaticResource x:Key="TextBox.DefaultBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="TextBox.PointeroverBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TextBox.PointeroverBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TextBox.PressedBackground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TextBox.FocusBorderBrush" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TextBox.Foreground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TextBox.InnerForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TextBox.DisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="TextBox.DisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="TextBox.DisabledBorderBrush" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="TextBox.SelectionBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="TextBox.SelectionForeground" ResourceKey="Brush-HighlightText" />
+</ResourceDictionary>

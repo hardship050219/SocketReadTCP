@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- ListBox -->
+	<StaticResource x:Key="ListBox.ItemDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="ListBox.ItemDefaultBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ListBox.ItemPointeroverForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ListBox.ItemPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ListBox.ItemPressedForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ListBox.ItemPressedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ListBox.ItemSelectedForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="ListBox.ItemSelectedBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ListBox.ItemSelectedPointeroverBackground" ResourceKey="Brush-Highlight" />
+	<StaticResource x:Key="ListBox.ItemDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="ListBox.ItemSelectedDisabledBackground" ResourceKey="Brush-HighlightText" />
+</ResourceDictionary>

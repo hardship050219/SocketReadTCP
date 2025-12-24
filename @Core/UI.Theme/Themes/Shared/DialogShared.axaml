@@ -1,0 +1,7 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="DialogQuestionIconGlyph" ResourceKey="Icon-HelpCircle" />
+	<StaticResource x:Key="DialogInformationIconGlyph" ResourceKey="Icon-InfoCircle" />
+	<StaticResource x:Key="DialogWarningIconGlyph" ResourceKey="Icon-AlertTriangle" />
+	<StaticResource x:Key="DialogErrorIconGlyph" ResourceKey="Icon-AlertCircle" />
+	<StaticResource x:Key="DialogSuccessIconGlyph" ResourceKey="Icon-TickCircle" />
+</ResourceDictionary>

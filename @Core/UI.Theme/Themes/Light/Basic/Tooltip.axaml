@@ -1,0 +1,5 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="ToolTip.Background" ResourceKey="Brush-TertiaryActive" />
+	<StaticResource x:Key="ToolTip.Foreground" ResourceKey="Color-White" />
+	<SolidColorBrush x:Key="ToolTip.BorderBrush" Color="Transparent" />
+</ResourceDictionary>

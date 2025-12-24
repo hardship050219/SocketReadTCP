@@ -1,0 +1,14 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<StaticResource x:Key="TreeView.ItemDefaultForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TreeView.ItemIconDefaultForeground" ResourceKey="Brush-WindowText" />
+	<StaticResource x:Key="TreeView.ItemIconHoverForeground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="TreeView.ItemDisabledForeground" ResourceKey="Brush-GrayText" />
+	<StaticResource x:Key="TreeView.ItemDefaultBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="TreeView.ItemPointeroverForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TreeView.ItemPointeroverBackground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="TreeView.ItemPressedBackground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="TreeView.ItemSelectedForeground" ResourceKey="Brush-HighlightText" />
+	<StaticResource x:Key="TreeView.ItemSelectedBackground" ResourceKey="Brush-Hotlight" />
+	<StaticResource x:Key="TreeView.ItemDisabledBackground" ResourceKey="Brush-Window" />
+	<StaticResource x:Key="TreeView.ItemSelectedDisabledBackground" ResourceKey="Brush-Window" />
+</ResourceDictionary>
