@@ -125,30 +125,8 @@
 					
 					<!-- 底部：输入区域和选项 -->
 					<Grid Grid.Row="2" RowDefinitions="Auto,Auto" RowSpacing="10" Margin="0,10,0,0">
-						<!-- 输入区域 -->
-						<Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
-							<TextBox Grid.Column="0" 
-							         Text="{Binding SendDataText}" 
-							         AcceptsReturn="True" 
-							         TextWrapping="Wrap" 
-							         Watermark="请输入要发送的数据..."
-							         IsEnabled="{Binding IsConnected}"
-							         FontFamily="Consolas"/>
-							<Button Grid.Column="1" 
-							        Classes="Success" 
-							        Command="{Binding SendDataCommand}" 
-							        Content="发送" 
-							        MinWidth="100"
-							        IsEnabled="{Binding IsConnected}"/>
-						</Grid>
-						
 						<!-- 选项和清空按钮 -->
 						<Grid Grid.Row="1" ColumnDefinitions="*,Auto" ColumnSpacing="10">
-							<CheckBox Grid.Column="0" 
-							          Content="十六进制发送" 
-							          IsChecked="{Binding SendAsHex}"
-							          VerticalAlignment="Center"
-							          IsEnabled="{Binding IsConnected}"/>
 							<Button Grid.Column="1" 
 							        Classes="Secondary" 
 							        Command="{Binding ClearSendDisplayCommand}" 
@@ -191,10 +169,6 @@
 					</ScrollViewer>
 					
 					<Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10" Margin="0,10,0,0">
-						<CheckBox Grid.Column="0" 
-						          Content="十六进制显示" 
-						          IsChecked="{Binding DisplayAsHex}"
-						          VerticalAlignment="Center"/>
 						<Button Grid.Column="1" 
 						        Classes="Secondary" 
 						        Command="{Binding ClearReceivedCommand}" 

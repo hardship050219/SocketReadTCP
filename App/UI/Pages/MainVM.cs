@@ -19,7 +19,7 @@ public partial class MainVM : UiVM<MainPage>
 
 	public partial string ServerIp { get; set; } = "127.0.0.1";
 	public partial int ServerPort { get; set; } = 502;
-	public partial string ReadAddress { get; set; } = "";
+	public partial string ReadAddress { get; set; } = "100";
 	public partial string DataType { get; set; } = "int";
 	public partial bool IsConnected { get; set; }
 	public List<string> DataTypes { get; } = new() { "bool", "int", "short", "double", "float", "string" };
@@ -60,24 +60,31 @@ public partial class MainVM : UiVM<MainPage>
 	{
 		try
 		{
+			//判断是否为空地址
 			if (string.IsNullOrWhiteSpace(ServerIp))
 			{
 				ShowToast("请输入服务器地址");
 				return;
 			}
-
+			
+			//判断端口号范围
 			if (ServerPort < 1 || ServerPort > 65535)
 			{
 				ShowToast("端口号必须在1-65535之间");
 				return;
 			}
 
+			//创建TCP连接实例
 			_tcpClient = new TcpClient();
+			//连接TCP服务器
 			await _tcpClient.ConnectAsync(ServerIp, ServerPort);
+			//获取网络流，方便后续数据读写
 			_networkStream = _tcpClient.GetStream();
 			IsConnected = true;
 
+			//初始化取消令牌源，防止线程堵塞
 			_receiveCancellationTokenSource = new CancellationTokenSource();
+			//启动线程接收数据
 			_receiveTask = Task.Run(() => ReceiveDataAsync(_receiveCancellationTokenSource.Token));
 
 			AppendReceivedData($"[{DateTime.Now:HH:mm:ss}] 已连接到 {ServerIp}:{ServerPort}\r\n");
@@ -123,10 +130,14 @@ public partial class MainVM : UiVM<MainPage>
 			catch { }
 
 			// 释放资源
+			//释放网络流
 			_networkStream?.Dispose();
+			//释放TCP客户端
 			_tcpClient?.Dispose();
+			//释放取消令牌源
 			_receiveCancellationTokenSource?.Dispose();
 
+			//清空赋值
 			_networkStream = null;
 			_tcpClient = null;
 			_receiveTask = null;
@@ -149,6 +160,7 @@ public partial class MainVM : UiVM<MainPage>
 		{
 			try
 			{
+				//利用网络流读取byte值
 				var bytesRead = await _networkStream.ReadAsync(buffer, 0, buffer.Length, cancellationToken);
 				if (bytesRead == 0)
 				{
@@ -211,87 +223,11 @@ public partial class MainVM : UiVM<MainPage>
 			}
 		}
 	}
-
-	async Task @SendData()
-	{
-		if (!IsConnected || _networkStream == null)
-		{
-			ShowToast("请先连接服务器");
-			return;
-		}
-
-		var sendDataValue = this.SendDataText;
-		if (string.IsNullOrWhiteSpace(sendDataValue))
-		{
-			ShowToast("请输入要发送的数据");
-			return;
-		}
-
-		try
-		{
-			byte[] dataToSend;
-			if (SendAsHex)
-			{
-				// 处理十六进制字符串
-				var hexString = sendDataValue.Replace(" ", "").Replace("-", "").Replace("\r", "").Replace("\n", "");
-				if (hexString.Length % 2 != 0)
-				{
-					ShowToast("十六进制数据长度必须是偶数");
-					return;
-				}
-
-				dataToSend = new byte[hexString.Length / 2];
-				for (int i = 0; i < dataToSend.Length; i++)
-				{
-					dataToSend[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
-				}
-			}
-			else
-			{
-				dataToSend = Encoding.UTF8.GetBytes(sendDataValue);
-			}
-
-			await _networkStream.WriteAsync(dataToSend, 0, dataToSend.Length);
-			await _networkStream.FlushAsync();
-
-			// 更新发送数据显示
-			var sendDisplay = $"[{DateTime.Now:HH:mm:ss}] 发送 ({dataToSend.Length} 字节):\r\n";
-			if (DisplayAsHex)
-			{
-				sendDisplay += BitConverter.ToString(dataToSend).Replace("-", " ") + "\r\n";
-			}
-			else
-			{
-				sendDisplay += sendDataValue + "\r\n";
-			}
-			sendDisplay += "\r\n";
-			AppendSendData(sendDisplay);
-
-			// 同时更新接收数据区域
-			AppendReceivedData($"[{DateTime.Now:HH:mm:ss}] 发送 ({dataToSend.Length} 字节):\r\n");
-			if (DisplayAsHex)
-			{
-				AppendReceivedData(BitConverter.ToString(dataToSend).Replace("-", " ") + "\r\n");
-			}
-			else
-			{
-				AppendReceivedData(sendDataValue + "\r\n");
-			}
-			AppendReceivedData("\r\n");
-
-			ShowToast("数据发送成功");
-		}
-		catch (Exception ex)
-		{
-			AppendReceivedData($"[{DateTime.Now:HH:mm:ss}] 发送数据出错: {ex.Message}\r\n");
-			ShowToast($"发送失败: {ex.Message}");
-			await DisconnectAsync();
-		}
-	}
-
+	
 	void @ClearLog()
 	{
 		ReceivedData = "";
+		SendDataDisplay = "";
 		_receivedCount = 0;
 	}
 
